@@ -1,0 +1,11 @@
+
+Library/**
+Temp/**
+*.orig
+*.csproj
+*.unityproj
+*.sln
+*.booproj
+*.userprefs
+*.suo
+obj/Debug/*
