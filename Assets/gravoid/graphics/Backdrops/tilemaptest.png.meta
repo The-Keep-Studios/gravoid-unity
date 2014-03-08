@@ -4,7 +4,7 @@ TextureImporter:
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -24,12 +24,94 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
-  nPOTScale: 1
+    wrapMode: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  textureType: -1
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
   buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: tilemaptest_0
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 230
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: tilemaptest_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 195
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: tilemaptest_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 206
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: tilemaptest_3
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 175
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: tilemaptest_4
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 129
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: tilemaptest_5
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 100
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: tilemaptest_6
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: tilemaptest_7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
   userData: 

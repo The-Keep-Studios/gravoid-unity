@@ -3,10 +3,12 @@ using UnityEngine;
 
 namespace TheKeepStudios
 {
-		public struct IntVector2
+	[Serializable]
+		public class IntVector2
 		{
-		
+		[SerializeField]
 				public int x;
+		[SerializeField]
 				public int y ;
 
 				public IntVector2 (int x, int y)

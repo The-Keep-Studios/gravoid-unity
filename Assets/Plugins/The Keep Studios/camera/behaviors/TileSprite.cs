@@ -16,7 +16,7 @@ namespace TheKeepStudios
 		[SerializeField] private List<Transform> tiles;
 		[SerializeField] private Vector2 offset;
 		[SerializeField] private IntVector2 rotation;
-		[SerializeField] private Sprite[] sourceSprites;
+		[SerializeField] private List<Sprite> sourceSprites;
 		[SerializeField] private bool fillRandomly;
 
 		[SerializeField] public int seedNumber;
@@ -81,10 +81,17 @@ namespace TheKeepStudios
 		public void FillSpritesRandomly ()
 		{
 			Random.seed = seedNumber;
-			this.tiles.Capacity =  tileSize.x * tileSize.y; //Sets the capacity of the list to be the correct number
+			foreach(Transform tile in this.tiles){
+				Transform.Destroy(tile.gameObject); //destroy each existing tile
+			}
+			this.tiles.Clear();
+			this.tiles.Capacity =  gridSize.x * gridSize.y; //Sets the capacity of the list to be the correct number
 			for (int i = 0; i<tiles.Capacity;++i)
 			{
-				this.tiles.Add (sourceSprites[sourceSprites.size % Random]);
+				SpriteRenderer renderer = new GameObject(this.gameObject.name + "-sprite_"+i).AddComponent<SpriteRenderer>();
+				renderer.sprite = sourceSprites[ Random.Range(0,sourceSprites.Count)];
+				renderer.transform.parent = this.transform;
+				this.tiles.Add ( renderer.transform );
 			}
 
 		}
@@ -92,19 +99,20 @@ namespace TheKeepStudios
 		private void UpdateSpritePositions ()
 		{
 			spritesNeedPositionUpdate = false;
-			for (uint tiles_idx = 0; tiles_idx < this.tiles.Length; ++tiles_idx) {
-				Transform tile = this.tiles [tiles_idx];
+			for (int tiles_idx = 0; tiles_idx < this.tiles.Count; ++tiles_idx) {
+				Transform tile = this.tiles[tiles_idx];
 				tile.position = getTilePosition (tiles_idx);
 			}
 			spritesNeedPositionUpdate = false;
 		}
 
-		private Vector3 getTilePosition (uint tiles_idx)
+		private Vector3 getTilePosition (int tiles_idx)
 		{
-			return TilesOffset + (tileSize * ((getRowCol (tiles_idx) + Rotation) - (gridSize / 2)));
+			Vector2 point = TilesOffset + (tileSize * ((getRowCol (tiles_idx) + Rotation) - (gridSize / 2)));
+			return  new Vector3(point.x, point.y, 0);
 		}
 
-		private IntVector2 getRowCol (uint tiles_idx)
+		private IntVector2 getRowCol (int tiles_idx)
 		{
 			int row = Mathf.FloorToInt (tiles_idx / gridSize.y);
 			int column = Mathf.FloorToInt (tiles_idx % gridSize.y);
