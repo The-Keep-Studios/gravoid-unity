@@ -23,9 +23,11 @@ namespace TheKeepStudios
 		void Update ()
 		{
 			//calculate our tile scroll change
-			Vector2 shiftAmount = (relativeObject.transform.position - lastPosition) * scrollRate;
-			this.GetComponent<TileSprite> ().ShiftTiles (shiftAmount);
+			Vector2 shiftAmount = (lastPosition - relativeObject.transform.position) * scrollRate;
 			UpdateLastPosition();
+			Debug.Log("Adjusted parallax of tilesprite by : " + shiftAmount.ToString(), this.gameObject);
+			TileSprite ts =  this.GetComponent<TileSprite> ();
+			ts.ShiftTiles (shiftAmount/ts.tileSize);
 		}
 
 		void UpdateLastPosition(){

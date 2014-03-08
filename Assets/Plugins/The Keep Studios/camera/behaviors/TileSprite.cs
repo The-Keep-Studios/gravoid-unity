@@ -7,47 +7,53 @@ namespace TheKeepStudios
 	{
 
 		/// The height of the grid in tiles
-		[SerializeField] public IntVector2 gridSize;
+		public IntVector2 gridSize;
 
 		/// The size of each individual tile within the tilesprite.
-		[SerializeField] public float tileSize;
+		public float tileSize;
+		public int seedNumber;
+		public bool fillRandomly;
 
 		/// The tiles in their original starting grid positions stored in row-major order.
-		[SerializeField] private List<Transform> tiles;
-		[SerializeField] private Vector2 offset;
-		[SerializeField] private IntVector2 rotation;
-		[SerializeField] private List<Sprite> sourceSprites;
-		[SerializeField] private bool fillRandomly;
-
-		[SerializeField] public int seedNumber;
-
-
+		[SerializeField]
+		private List<Transform>
+			tiles;
+		[SerializeField]
+		private List<Sprite>
+			sourceSprites;
+		private Vector2 offset = Vector2.zero;
+		private IntVector2 rotation = new IntVector2(Vector2.zero);
 		private bool spritesNeedPositionUpdate;
 
 		public Vector2 TilesOffset {
 			get { return offset; }
 			set {
 				if (Mathf.Abs (offset.x) >= 1 || Mathf.Abs (offset.y) >= 1) {
-					throw new System.ArgumentOutOfRangeException ("TilesOffset x and y values magnitude must each be less than 1");
+					Debug.LogWarning ("TilesOffset x and y values magnitude must each be less than 1");
 				}
+				//make sure to only use the fractional part
+				offset.x = value.x % 1;
+				offset.y = value.y % 1;
 				spritesNeedPositionUpdate = true;
-				offset = value;
+
 			}
 		}
 
 		public IntVector2 Rotation {
 			get { return rotation; }
 			set {
-				spritesNeedPositionUpdate = true;
 				// values greater than a given grid size "loop", so we do that here
 				rotation.x = value.x % this.gridSize.x;
 				rotation.y = value.y % this.gridSize.y;
+				spritesNeedPositionUpdate = true;
 			}
 		}
 
 		// Use this for initialization
 		void Start ()
 		{
+			TilesOffset = Vector2.zero;
+			Rotation = new IntVector2 (Vector2.zero);
 			if (fillRandomly) {
 				FillSpritesRandomly ();
 			}
@@ -59,6 +65,15 @@ namespace TheKeepStudios
 			if (spritesNeedPositionUpdate) {
 				UpdateSpritePositions ();
 			}
+		}
+
+		void Reset ()
+		{
+			tiles = new List<Transform> ();
+			TilesOffset = Vector2.zero;
+			Rotation = new IntVector2 (Vector2.zero);
+			sourceSprites = new List<Sprite> ();
+			fillRandomly = false;
 		}
 
 		/// <summary>
@@ -81,17 +96,16 @@ namespace TheKeepStudios
 		public void FillSpritesRandomly ()
 		{
 			Random.seed = seedNumber;
-			foreach(Transform tile in this.tiles){
-				Transform.Destroy(tile.gameObject); //destroy each existing tile
+			foreach (Transform tile in this.tiles) {
+				Transform.Destroy (tile.gameObject); //destroy each existing tile
 			}
-			this.tiles.Clear();
-			this.tiles.Capacity =  gridSize.x * gridSize.y; //Sets the capacity of the list to be the correct number
-			for (int i = 0; i<tiles.Capacity;++i)
-			{
-				SpriteRenderer renderer = new GameObject(this.gameObject.name + "-sprite_"+i).AddComponent<SpriteRenderer>();
-				renderer.sprite = sourceSprites[ Random.Range(0,sourceSprites.Count)];
+			this.tiles.Clear ();
+			this.tiles.Capacity = gridSize.x * gridSize.y; //Sets the capacity of the list to be the correct number
+			for (int i = 0; i<tiles.Capacity; ++i) {
+				SpriteRenderer renderer = new GameObject (this.gameObject.name + "-sprite_" + i).AddComponent<SpriteRenderer> ();
+				renderer.sprite = sourceSprites [Random.Range (0, sourceSprites.Count)];
 				renderer.transform.parent = this.transform;
-				this.tiles.Add ( renderer.transform );
+				this.tiles.Add (renderer.transform);
 			}
 
 		}
@@ -100,23 +114,33 @@ namespace TheKeepStudios
 		{
 			spritesNeedPositionUpdate = false;
 			for (int tiles_idx = 0; tiles_idx < this.tiles.Count; ++tiles_idx) {
-				Transform tile = this.tiles[tiles_idx];
-				tile.position = getTilePosition (tiles_idx);
+				Transform tile = this.tiles [tiles_idx];
+				tile.transform.localPosition = getTilePosition (tiles_idx);
 			}
 			spritesNeedPositionUpdate = false;
 		}
 
+		/// <summary>
+		/// Gets the tile position relative to this.transform.position
+		/// </summary>
+		/// <returns>The tile position relative to this.transform.position</returns>
+		/// <param name="tiles_idx">The index number of the tile in #tiles.</param>
 		private Vector3 getTilePosition (int tiles_idx)
 		{
-			Vector2 point = TilesOffset + (tileSize * ((getRowCol (tiles_idx) + Rotation) - (gridSize / 2)));
-			return  new Vector3(point.x, point.y, 0);
+			Vector2 gridCenter = gridSize / 2;
+			Vector2 gridCoords = (getRowCol (tiles_idx) + Rotation); //FIXME This doesn't LOOP the tile around, just shifts it
+			Vector2 gridPointUnscaledCoord = TilesOffset + (gridCoords - gridCenter);
+			Vector2 tileCoord = tileSize * gridPointUnscaledCoord;
+			return new Vector3 (tileCoord.x, tileCoord.y, 0);
 		}
 
 		private IntVector2 getRowCol (int tiles_idx)
 		{
 			int row = Mathf.FloorToInt (tiles_idx / gridSize.y);
 			int column = Mathf.FloorToInt (tiles_idx % gridSize.y);
-			return new IntVector2 (row, column);
+			IntVector2 ivec = new IntVector2 (row, column);
+			//Debug.Log ("Calculated tile number " + tiles_idx + "" + ivec.ToString (), this.gameObject);
+			return ivec;
 		}
 	}
 }
