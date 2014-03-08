@@ -13,11 +13,15 @@ namespace TheKeepStudios
 		[SerializeField] public float tileSize;
 
 		/// The tiles in their original starting grid positions stored in row-major order.
-		[SerializeField] private Transform[] tiles;
+		[SerializeField] private List<Transform> tiles;
 		[SerializeField] private Vector2 offset;
 		[SerializeField] private IntVector2 rotation;
 		[SerializeField] private Sprite[] sourceSprites;
 		[SerializeField] private bool fillRandomly;
+
+		[SerializeField] public int seedNumber;
+
+
 		private bool spritesNeedPositionUpdate;
 
 		public Vector2 TilesOffset {
@@ -76,8 +80,13 @@ namespace TheKeepStudios
 
 		public void FillSpritesRandomly ()
 		{
-			//no clue how I want to do this yet, will have to figure it out
-			throw new System.NotImplementedException ();
+			Random.seed = seedNumber;
+			this.tiles.Capacity =  tileSize.x * tileSize.y; //Sets the capacity of the list to be the correct number
+			for (int i = 0; i<tiles.Capacity;++i)
+			{
+				this.tiles.Add (sourceSprites[sourceSprites.size % Random]);
+			}
+
 		}
 
 		private void UpdateSpritePositions ()
