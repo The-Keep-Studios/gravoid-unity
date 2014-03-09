@@ -9,6 +9,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Fabric;
 
 public class ShipRotationController : BaseShipMovementController
 {
@@ -39,6 +40,22 @@ public class ShipRotationController : BaseShipMovementController
 		UpdateSpecialEffect (specialEffects.positiveTurnEffect, inputVal);
 		
 		UpdateSpecialEffect (specialEffects.negativeTurnEffect, inputVal * -1);
+
+		UpdateThrusterSound (soundTrigger, inputVal);
+		
+	}
+
+	private void UpdateThrusterSound (EventTrigger thrusterTrigger, float val)
+	{
+		if (val != 0)
+		{
+			soundTrigger._trigger = false;
+		}
+		else if (val == 0)
+		{
+			soundTrigger._trigger = true;
+		}
+		
 		
 	}
 	

@@ -106,7 +106,7 @@ MonoBehaviour:
   _maxInstances: 1
   _stealingBehaviour: 0
   _overrideParentVolume: 0
-  _volume: 1
+  _volume: .532110095
   _volumeRandomization: 0
   _mute: 0
   _overrideParentPitch: 0
@@ -307,8 +307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb3fbf1634e9fb4c9f86fe76172b1d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navPoints:
-  - {x: 10, y: 0, z: 0}
 --- !u!23 &56155459
 Renderer:
   m_ObjectHideFlags: 0
@@ -379,6 +377,7 @@ Transform:
   m_LocalPosition: {x: -10.7136612, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 609228759}
   - {fileID: 194128795}
   m_Father: {fileID: 0}
 --- !u!1 &194128794
@@ -540,58 +539,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 286007048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07887af6cc1ce7a43a92635bbda1c921, type: 3}
+  m_Script: {fileID: 11500000, guid: 69bb060189c3a74439a50cf70a8cd0b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: tiled debris background
-  _position: {x: 0, y: 0}
-  _size: {x: 1, y: 1}
-  _rotation: 0
-  _pivot: 4
-  _pivotPoint: {x: 0, y: 0}
-  _registerInput: 0
-  _depth: 1000
-  _collidable: 0
-  _physics: 0
-  _colliderType: 0
-  _collisionDepth: 0
-  _collisionSize: .400000006
-  draggable: 0
-  dragButton: 0
-  init: 0
-  _worldBounds:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  protoType: 
-  baseName: tiled debris background
-  oSize: {x: 10.1587305, y: 7.61904764}
-  imageSize: {x: 0, y: 0}
-  _offset: {x: 0, y: 0}
-  _baseOffset: {x: 0, y: 0}
-  _flipHorizontal: 0
-  _flipVertical: 0
-  _transparent: 1
-  _additive: 0
-  _materialReference: transparent
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
-  _alpha: 1
-  _image: {fileID: 0}
-  sizeImages: []
-  _frameIndex: 0
-  _frameName: frame0
-  _spriteContainer: {fileID: 0}
-  _containerName: asteroid sheet 1
-  _newSprite: 0
-  _tileMatrix:
-    x: 32
-    y: 32
-  _tileSize:
-    x: 32
-    y: 32
-  showRandomTiles: 1
 --- !u!23 &286007050
 Renderer:
   m_ObjectHideFlags: 0
@@ -3186,6 +3136,7 @@ MonoBehaviour:
   canControl: 1
   inputVal: 0
   inputAxisName: Vertical
+  soundTrigger: {fileID: 485601116}
   lastDrag: 0
   lastForce: {x: 0, y: 0, z: 0}
   positionalMovement:
@@ -3211,6 +3162,7 @@ MonoBehaviour:
   canControl: 1
   inputVal: 0
   inputAxisName: Horizontal
+  soundTrigger: {fileID: 485601116}
   rotationalMovement:
     maxSpeed: 2
     positiveAcceleration: 50
@@ -3305,7 +3257,7 @@ MonoBehaviour:
   switchPresetData:
     _sourcePreset: 
     _targetPreset: 
-  _eventName: Music
+  _eventName: Player_Ship_Thrusters
   _eventAction: 0
   _trigger: 0
   _eventValue: 
@@ -3368,6 +3320,77 @@ Prefab:
   m_RootGameObject: {fileID: 1297196244}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &609228756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: dfcd02952188a644eb49640fe4cffb45, type: 2}
+  m_PrefabInternal: {fileID: 1300824060}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 609228759}
+  - 135: {fileID: 609228758}
+  - 114: {fileID: 609228757}
+  m_Layer: 0
+  m_Name: Drone_Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &609228757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: dfcd02952188a644eb49640fe4cffb45,
+    type: 2}
+  m_PrefabInternal: {fileID: 1300824060}
+  m_GameObject: {fileID: 609228756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2066047398, guid: 4b4e8768ed04d6a4f98af6f4f83be984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchPresetData:
+    _sourcePreset: 
+    _targetPreset: 
+  _eventName: Shobatha_Drone_Proximity
+  _eventAction: 0
+  _trigger: 0
+  _eventValue: 
+  _eventParameter: 1
+  _eventParameterName: 
+  _delay: 0
+  _probability: 100
+  _eventTriggerType: 5
+  _ignoreGameObject: 0
+  _min: 0
+  _max: 1
+  _dspType: 0
+  _timeToTarget: 0
+  _curve: .5
+--- !u!135 &609228758
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13500000, guid: dfcd02952188a644eb49640fe4cffb45,
+    type: 2}
+  m_PrefabInternal: {fileID: 1300824060}
+  m_GameObject: {fileID: 609228756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 50
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &609228759
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: dfcd02952188a644eb49640fe4cffb45, type: 2}
+  m_PrefabInternal: {fileID: 1300824060}
+  m_GameObject: {fileID: 609228756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 56155463}
 --- !u!1 &698723412
 GameObject:
   m_ObjectHideFlags: 0
@@ -7010,6 +7033,9 @@ GameObject:
   - 20: {fileID: 1297196249}
   - 92: {fileID: 1297196248}
   - 124: {fileID: 1297196247}
+  - 114: {fileID: 1297196251}
+  - 114: {fileID: 1297196250}
+  - 114: {fileID: 1297196246}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7032,6 +7058,22 @@ Transform:
   - {fileID: 250344275}
   - {fileID: 286007052}
   m_Father: {fileID: 0}
+--- !u!114 &1297196246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: c6cbd8eabc000df4fafafdfe86cdeba2,
+    type: 2}
+  m_PrefabInternal: {fileID: 575887437}
+  m_GameObject: {fileID: 1297196244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab74eacfcd11dd1441005d5ac3b58615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  distance: 80
+  springiness: 1
+  lastGoalPosition: {x: 0, y: 0, z: 0}
 --- !u!124 &1297196247
 Behaviour:
   m_ObjectHideFlags: 0
@@ -7065,11 +7107,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0
+  near clip plane: .00999999978
   far clip plane: 1730
   field of view: 60
   orthographic: 1
-  orthographic size: 80
+  orthographic size: 19.3500004
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7078,6 +7120,35 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
   m_OcclusionCulling: 1
+--- !u!114 &1297196250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: c6cbd8eabc000df4fafafdfe86cdeba2,
+    type: 2}
+  m_PrefabInternal: {fileID: 575887437}
+  m_GameObject: {fileID: 1297196244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69bb060189c3a74439a50cf70a8cd0b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1297196251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: c6cbd8eabc000df4fafafdfe86cdeba2,
+    type: 2}
+  m_PrefabInternal: {fileID: 575887437}
+  m_GameObject: {fileID: 1297196244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a5d1a4b753b334cb57410d30a84fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomFactoMin: 10
+  zoomFactoMax: 80
+  zoomButtonName: Zoom
+  zoomAxisName: Zoom
+  zoomRate: 10
 --- !u!1001 &1300824060
 Prefab:
   m_ObjectHideFlags: 0
@@ -7309,7 +7380,7 @@ MonoBehaviour:
   _RTPManager:
     _parameters: []
     _RTPParameters: []
-  _audioClip: {fileID: 8300000, guid: 929d258165d3df84fa6095486587c9b3, type: 3}
+  _audioClip: {fileID: 8300000, guid: 6bb93c25fc06fe34381ba0aaa611192c, type: 3}
   _delay: 0
   _loop: 1
   _dontPlay: 0
@@ -7351,6 +7422,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: ca830500d595e1144baaa7a7ecb3513d, type: 2}
+      propertyPath: soundTrigger
+      value: 
+      objectReference: {fileID: 485601116}
+    - target: {fileID: 11400006, guid: ca830500d595e1144baaa7a7ecb3513d, type: 2}
+      propertyPath: soundTrigger
+      value: 
+      objectReference: {fileID: 485601116}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca830500d595e1144baaa7a7ecb3513d, type: 2}
   m_RootGameObject: {fileID: 485601103}

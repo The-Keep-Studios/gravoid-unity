@@ -7,6 +7,7 @@
 // Copyright (c) 2013 The Keep Studios LLC
 using System;
 using UnityEngine;
+using Fabric;
 
 public class BaseShipMovementController : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class BaseShipMovementController : MonoBehaviour
 	protected float inputVal;
 	[SerializeField]
 	protected string inputAxisName;
+
+	[SerializeField]
+	protected EventTrigger soundTrigger;
+
 
 	public SpecialEffects specialEffects {
 		get {
@@ -50,16 +55,16 @@ public class BaseShipMovementController : MonoBehaviour
 	{
 		
 		inputVal = 0.0f;
-		
+				
 	}
 	
 	
 	/* Use this for initialization */
 	void Start ()
 	{
-		
+
 		inputVal = 0.0f;
-		
+				
 	}
 	
 	virtual public void Update ()
