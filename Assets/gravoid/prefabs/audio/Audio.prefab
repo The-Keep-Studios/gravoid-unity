@@ -669,7 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dspComponents: []
   _isComponentActive: 0
-  _maxInstances: 1
+  _maxInstances: 2
   _stealingBehaviour: 0
   _overrideParentVolume: 0
   _volume: 1
@@ -689,9 +689,9 @@ MonoBehaviour:
   _minDistance: 1
   _rolloffMode: 0
   _overrideFadeProperties: 0
-  _fadeInTime: 0
+  _fadeInTime: 1.5
   _fadeInCurve: .5
-  _fadeOutTime: 0
+  _fadeOutTime: .200000003
   _fadeOutCurve: .5
   _componentStatus: 2
   _multipleInstancesPerGameObject: 1
@@ -706,7 +706,7 @@ MonoBehaviour:
   _RTPManager:
     _parameters: []
     _RTPParameters: []
-  _audioClip: {fileID: 8300000, guid: 929d258165d3df84fa6095486587c9b3, type: 3}
+  _audioClip: {fileID: 8300000, guid: 6bb93c25fc06fe34381ba0aaa611192c, type: 3}
   _delay: 0
   _loop: 1
   _dontPlay: 0
