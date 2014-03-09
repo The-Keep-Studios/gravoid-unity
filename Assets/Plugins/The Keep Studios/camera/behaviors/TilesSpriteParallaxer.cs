@@ -16,21 +16,24 @@ namespace TheKeepStudios
 			// set parent of tilesprite to achieve a parallaxing effect by sticking (literally) to the object
 			transform.parent = relativeObject.transform;
 
-			UpdateLastPosition();
+			UpdateLastPosition ();
 		}
 	
 		// Update is called once per frame
 		void Update ()
 		{
-			//calculate our tile scroll change
-			Vector2 shiftAmount = (lastPosition - relativeObject.transform.position) * scrollRate;
-			UpdateLastPosition();
-			Debug.Log("Adjusted parallax of tilesprite by : " + shiftAmount.ToString(), this.gameObject);
-			TileSprite ts =  this.GetComponent<TileSprite> ();
-			ts.ShiftTiles (shiftAmount/ts.tileSize);
+			if (relativeObject.transform.position != lastPosition) {
+				//calculate our tile scroll change
+				TileSprite ts = this.GetComponent<TileSprite> ();
+				Vector2 shiftAmount = (lastPosition - relativeObject.transform.position) * scrollRate / ts.tileSize;
+				UpdateLastPosition ();
+				Debug.Log ("Adjusted parallax of tilesprite by : " + shiftAmount.ToString (), this.gameObject);
+				ts.ShiftTiles (shiftAmount );
+			}
 		}
 
-		void UpdateLastPosition(){
+		void UpdateLastPosition ()
+		{
 			
 			//store the position for the next update
 			lastPosition = relativeObject.transform.position;

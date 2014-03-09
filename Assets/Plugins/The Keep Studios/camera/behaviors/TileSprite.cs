@@ -22,7 +22,7 @@ namespace TheKeepStudios
 		private List<Sprite>
 			sourceSprites;
 		private Vector2 offset = Vector2.zero;
-		private IntVector2 rotation = new IntVector2(Vector2.zero);
+		private IntVector2 rotation = new IntVector2 (Vector2.zero);
 		private bool spritesNeedPositionUpdate;
 
 		public Vector2 TilesOffset {
@@ -43,6 +43,12 @@ namespace TheKeepStudios
 			get { return rotation; }
 			set {
 				// values greater than a given grid size "loop", so we do that here
+				if (value.x < 0) {
+					value.x = value.x + this.gridSize.x;
+				}
+				if (value.y < 0) {
+					value.y = value.y + this.gridSize.y;
+				}
 				rotation.x = value.x % this.gridSize.x;
 				rotation.y = value.y % this.gridSize.y;
 				spritesNeedPositionUpdate = true;
@@ -128,7 +134,7 @@ namespace TheKeepStudios
 		private Vector3 getTilePosition (int tiles_idx)
 		{
 			Vector2 gridCenter = gridSize / 2;
-			Vector2 gridCoords = (getRowCol (tiles_idx) + Rotation); //FIXME This doesn't LOOP the tile around, just shifts it
+			Vector2 gridCoords = getRowCol (tiles_idx);
 			Vector2 gridPointUnscaledCoord = TilesOffset + (gridCoords - gridCenter);
 			Vector2 tileCoord = tileSize * gridPointUnscaledCoord;
 			return new Vector3 (tileCoord.x, tileCoord.y, 0);
@@ -136,11 +142,16 @@ namespace TheKeepStudios
 
 		private IntVector2 getRowCol (int tiles_idx)
 		{
+			//find the row and column via a row-major algorithm
 			int row = Mathf.FloorToInt (tiles_idx / gridSize.y);
 			int column = Mathf.FloorToInt (tiles_idx % gridSize.y);
-			IntVector2 ivec = new IntVector2 (row, column);
-			//Debug.Log ("Calculated tile number " + tiles_idx + "" + ivec.ToString (), this.gameObject);
-			return ivec;
+
+			//now adjust the row and column by the current Rotation (use modulus to create the "looping" effect of rotation
+			row = (Rotation.x + row) % gridSize.x;
+			column = (Rotation.y + column) % gridSize.y;
+
+			//slap them together into a Int
+			return new IntVector2 (row, column);
 		}
 	}
 }
