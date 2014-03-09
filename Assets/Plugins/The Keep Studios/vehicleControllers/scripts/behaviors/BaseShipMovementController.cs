@@ -22,8 +22,6 @@ public class BaseShipMovementController : MonoBehaviour
 	[SerializeField]
 	protected string inputAxisName;
 
-	[SerializeField]
-	protected EventTrigger soundTrigger;
 
 
 	public SpecialEffects specialEffects {
@@ -64,7 +62,7 @@ public class BaseShipMovementController : MonoBehaviour
 	{
 
 		inputVal = 0.0f;
-				
+	
 	}
 	
 	virtual public void Update ()

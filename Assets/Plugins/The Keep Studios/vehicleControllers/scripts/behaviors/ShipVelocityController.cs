@@ -21,8 +21,7 @@ public class ShipVelocityController : BaseShipMovementController
 	{
 		
 		inputVal = 0.0f;
-
-		
+				
 	}
 	
 	
@@ -32,7 +31,6 @@ public class ShipVelocityController : BaseShipMovementController
 		
 		inputVal = 0.0f;
 
-		
 	}
 	
 	
@@ -71,24 +69,19 @@ public class ShipVelocityController : BaseShipMovementController
 		
 		UpdateSpecialEffect (specialEffects.negativeThrustEffect, inputVal * -1);
 
-		UpdateThrusterSound (soundTrigger, inputVal);
-		
+		if (Input.GetButtonDown ("Vertical"))
+		{
+			Fabric.EventManager.Instance.PostEvent("Player_Ship_Thrusters", Fabric.EventAction.PlaySound, null, gameObject);
+		}
+		else if (Input.GetButtonUp ("Vertical"))
+		{
+			Fabric.EventManager.Instance.PostEvent("Player_Ship_Thrusters", Fabric.EventAction.StopSound, null, gameObject);
+		}
+
+
 
 	}
 
-	private void UpdateThrusterSound (EventTrigger thrusterTrigger, float val)
-	{
-		if (val != 0)
-		{
-			soundTrigger._trigger = false;
-		}
-		else if (val == 0)
-		{
-			soundTrigger._trigger = true;
-		}
-	
-
-	}
 
 	private void UpdateSpecialEffect ( List<ThrusterSpecialEffect> thrusters, float val)
 	{

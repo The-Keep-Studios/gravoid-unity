@@ -40,25 +40,20 @@ public class ShipRotationController : BaseShipMovementController
 		UpdateSpecialEffect (specialEffects.positiveTurnEffect, inputVal);
 		
 		UpdateSpecialEffect (specialEffects.negativeTurnEffect, inputVal * -1);
+		
+		if (Input.GetButtonDown ("Horizontal"))
+		{
+			Fabric.EventManager.Instance.PostEvent("Player_Ship_Thrusters", Fabric.EventAction.PlaySound, null, gameObject);
+		}
+		else if (Input.GetButtonUp ("Horizontal"))
+		{
+			Fabric.EventManager.Instance.PostEvent("Player_Ship_Thrusters", Fabric.EventAction.StopSound, null, gameObject);
+		}
 
-		UpdateThrusterSound (soundTrigger, inputVal);
 		
 	}
 
-	private void UpdateThrusterSound (EventTrigger thrusterTrigger, float val)
-	{
-		if (val != 0)
-		{
-			soundTrigger._trigger = false;
-		}
-		else if (val == 0)
-		{
-			soundTrigger._trigger = true;
-		}
-		
-		
-	}
-	
+
 	private void UpdateSpecialEffect (List<ThrusterSpecialEffect> thrusters, float val)
 	{
 		
