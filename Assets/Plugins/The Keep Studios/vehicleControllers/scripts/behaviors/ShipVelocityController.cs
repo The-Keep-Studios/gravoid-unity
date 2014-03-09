@@ -8,6 +8,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Fabric;
 
 public class ShipVelocityController : BaseShipMovementController
 {
@@ -20,7 +21,7 @@ public class ShipVelocityController : BaseShipMovementController
 	{
 		
 		inputVal = 0.0f;
-		
+				
 	}
 	
 	
@@ -29,7 +30,7 @@ public class ShipVelocityController : BaseShipMovementController
 	{
 		
 		inputVal = 0.0f;
-		
+
 	}
 	
 	
@@ -67,9 +68,21 @@ public class ShipVelocityController : BaseShipMovementController
 		UpdateSpecialEffect (specialEffects.positiveThrustEffect, inputVal);
 		
 		UpdateSpecialEffect (specialEffects.negativeThrustEffect, inputVal * -1);
-		
+
+		if (Input.GetButtonDown ("Vertical"))
+		{
+			Fabric.EventManager.Instance.PostEvent("Player_Ship_Thrusters", Fabric.EventAction.PlaySound, null, gameObject);
+		}
+		else if (Input.GetButtonUp ("Vertical"))
+		{
+			Fabric.EventManager.Instance.PostEvent("Player_Ship_Thrusters", Fabric.EventAction.StopSound, null, gameObject);
+		}
+
+
+
 	}
-	
+
+
 	private void UpdateSpecialEffect ( List<ThrusterSpecialEffect> thrusters, float val)
 	{
 		

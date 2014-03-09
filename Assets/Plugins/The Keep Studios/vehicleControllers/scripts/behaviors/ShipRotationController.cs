@@ -9,6 +9,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Fabric;
 
 public class ShipRotationController : BaseShipMovementController
 {
@@ -40,8 +41,19 @@ public class ShipRotationController : BaseShipMovementController
 		
 		UpdateSpecialEffect (specialEffects.negativeTurnEffect, inputVal * -1);
 		
+		if (Input.GetButtonDown ("Horizontal"))
+		{
+			Fabric.EventManager.Instance.PostEvent("Player_Ship_Thrusters", Fabric.EventAction.PlaySound, null, gameObject);
+		}
+		else if (Input.GetButtonUp ("Horizontal"))
+		{
+			Fabric.EventManager.Instance.PostEvent("Player_Ship_Thrusters", Fabric.EventAction.StopSound, null, gameObject);
+		}
+
+		
 	}
-	
+
+
 	private void UpdateSpecialEffect (List<ThrusterSpecialEffect> thrusters, float val)
 	{
 		
