@@ -1,11 +1,12 @@
 
 Library/**
 Temp/**
-*.orig
-*.csproj
-*.unityproj
-*.sln
-*.booproj
-*.userprefs
+**.orig
+**.csproj
+**.unityproj
+**.sln
+**.booproj
+**.userprefs
 *.suo
 obj/Debug/*
+**.orig.meta
