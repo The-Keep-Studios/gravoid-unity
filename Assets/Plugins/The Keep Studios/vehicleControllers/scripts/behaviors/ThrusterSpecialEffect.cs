@@ -18,6 +18,8 @@ public class ThrusterSpecialEffect : MonoBehaviour {
 	
 	public int length;
 
+	public string soundEffectName = "Player_Ship_Thrusters";
+
 	public float ThrustRatio{
 		get{ return r1; }
 		set { r1 = Mathf.Clamp(value , 0, 1); }
@@ -26,6 +28,10 @@ public class ThrusterSpecialEffect : MonoBehaviour {
 	public float TurnRatio{
 		get { return r2; }
 		set { r2 = Mathf.Clamp(value , 0, 1); }
+	}
+
+	public bool IsActive{
+		get { return (ThrustRatio + TurnRatio) > 0; }
 	}
 	
 	// Use this for initialization
@@ -46,6 +52,17 @@ public class ThrusterSpecialEffect : MonoBehaviour {
 		CreatePoints();
 		
 		particleSystem.SetParticles(points, points.Length);
+
+		if( IsActive ){
+
+			Fabric.EventManager.Instance.PostEvent(soundEffectName, Fabric.EventAction.PlaySound, null, gameObject);
+
+		}
+		else{
+
+			Fabric.EventManager.Instance.PostEvent(soundEffectName, Fabric.EventAction.StopSound, null, gameObject);
+
+		}
 	}
 
 
