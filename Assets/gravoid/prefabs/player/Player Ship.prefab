@@ -20,8 +20,8 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400008}
   - 114: {fileID: 11400028}
-  - 114: {fileID: 11400032}
   - 114: {fileID: 11400026}
+  - 114: {fileID: 11400032}
   m_Layer: 0
   m_Name: Player Ship
   m_TagString: Untagged
@@ -383,6 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   density: 100
   length: 2
+  soundEffectName: Player_Ship_Thrusters
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -396,6 +397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   density: 100
   length: 2
+  soundEffectName: Player_Ship_Thrusters
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -409,6 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   density: 100
   length: 2
+  soundEffectName: Player_Ship_Thrusters
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -422,6 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   density: 100
   length: 2
+  soundEffectName: Player_Ship_Thrusters
 --- !u!114 &11400020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -542,8 +546,8 @@ MonoBehaviour:
   m_SubSystemLinks:
   - launchKeyName: Fire2
     m_launcher: {fileID: 11400030}
-    m_componentSelector: {fileID: 0}
-    m_inventory: {fileID: 0}
+    m_componentSelector: {fileID: 11400026}
+    m_inventory: {fileID: 11400028}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
