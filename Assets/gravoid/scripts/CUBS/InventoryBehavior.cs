@@ -168,7 +168,6 @@ namespace TheKeepStudios.Gravoid
 		
 			List<PartSelectionBehavior> selections = new List<PartSelectionBehavior> (_selection.Count);
 		
-			//TODO refactor this, the local variable is unnecessary
 			List<PartSelectionBehavior> lackingComponents = this.GetInsufficientselections (_selection);
 		
 			if (lackingComponents.Count == 0) {
@@ -193,9 +192,9 @@ namespace TheKeepStudios.Gravoid
 	
 		private void DisplayInsufficientselections (List<PartSelectionBehavior> _selectionTypes)
 		{
-			string output = "Missing: %s" + _selectionTypes.ToArray ().ToString () + "; ";
-	
-			//string missingselectionName = _selectionTypes[1].GetType().ToString();
+			string output = "Missing: %s" + _selectionTypes.ToArray ().ToString ();
+
+			Debug.Log(output);
 	
 			//TODO Send notification to the user
 	

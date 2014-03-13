@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+namespace TheKeepStudios.Gravoid 
+{
 public class LauncherBehavior : MonoBehaviour
 {
 	
@@ -88,4 +90,5 @@ public class LauncherBehavior : MonoBehaviour
 	#endregion
 
 
+}
 }
