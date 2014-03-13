@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace TheKeepStudios
+namespace TheKeepStudios.Gravoid
 {
-	public class CollectableItem : MonoBehaviour
+	public class CollectableResource : TheKeepStudios.CollectableItem
 	{
 
 		// Use this for initialization
