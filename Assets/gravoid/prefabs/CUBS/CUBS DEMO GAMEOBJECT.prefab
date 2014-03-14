@@ -244,7 +244,7 @@ MonoBehaviour:
   m_disabled: 0
   m_projectilePrefab: {fileID: 11400000, guid: 5f79c8216d608424c90d6b119a9c0043, type: 2}
   m_SubSystemLinks:
-  - launchKeyName: 4669726531
+  - launchKeyName: Fire1
     m_launcher: {fileID: 11400002}
     m_componentSelector: {fileID: 11400000}
     m_inventory: {fileID: 11400004}

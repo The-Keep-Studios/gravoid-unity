@@ -44,7 +44,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6095b46f1f6fb30458ef8d9b4bd66c8c, type: 3}
+  m_Script: {fileID: 11500000, guid: e2cb55d7c096aae4c8961b747f03d609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_projectilePartPrefab: {fileID: 11400000, guid: 6ba4ca7abeda4844599a3e6b38d57e99,
