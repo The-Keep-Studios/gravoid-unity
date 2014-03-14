@@ -6,16 +6,10 @@ namespace TheKeepStudios.Gravoid
 	public class CollectableResource : TheKeepStudios.CollectableItem
 	{
 
-		// Use this for initialization
-		void Start ()
+
+		void OnCollected()
 		{
-	
-		}
-	
-		// Update is called once per frame
-		void Update ()
-		{
-	
+			Destroy(gameObject);
 		}
 	}
 }
