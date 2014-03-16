@@ -69,16 +69,6 @@ public class ShipVelocityController : BaseShipMovementController
 		
 		UpdateSpecialEffect (specialEffects.negativeThrustEffect, inputVal * -1);
 
-		if (Input.GetButtonDown ("Vertical"))
-		{
-			Fabric.EventManager.Instance.PostEvent("Player_Ship_Thrusters", Fabric.EventAction.PlaySound, null, gameObject);
-		}
-		else if (Input.GetButtonUp ("Vertical"))
-		{
-			Fabric.EventManager.Instance.PostEvent("Player_Ship_Thrusters", Fabric.EventAction.StopSound, null, gameObject);
-		}
-
-
 
 	}
 
