@@ -11,13 +11,8 @@ namespace TheKeepStudios.Gravoid
 		//FIXME this needs find CollectableParts (via collider as trigger) and store it in this inventory
 		void OnTriggerEnter (Collider other)
 		{
-			Debug.Log ("Collected Resource");
 
 			CollectablePart collected = other.gameObject.GetComponent<CollectablePart> (); //attempt to rerieve a collectable part from this
-
-			collected.SendMessage("OnCollected");
-
-
 
 			if (collected && collected.part && inventory) {
 
@@ -27,7 +22,11 @@ namespace TheKeepStudios.Gravoid
 
 				}
 				else{
-					collected.Despawn();
+
+					Debug.Log ("Collected Resource");
+					
+					collected.OnCollected();
+
 				}
 			}
 		}

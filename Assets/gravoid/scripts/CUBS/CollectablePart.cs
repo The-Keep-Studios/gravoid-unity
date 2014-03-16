@@ -8,8 +8,12 @@ namespace TheKeepStudios.Gravoid
 
 		public PartSelectionBehavior part;
 
+		public void OnCollected(){
+			Despawn();
+		}
+
 		public void Despawn(){
-			//FIXME we need to despawn ourself when told to
+			Destroy(this.gameObject);
 		}
 
 	}

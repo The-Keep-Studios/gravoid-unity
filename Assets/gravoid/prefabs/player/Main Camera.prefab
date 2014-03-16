@@ -207,7 +207,7 @@ Camera:
   m_OcclusionCulling: 1
 --- !u!23 &2300000
 Renderer:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
@@ -228,7 +228,7 @@ Renderer:
   m_SortingLayerID: 0
 --- !u!33 &3300000
 MeshFilter:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
