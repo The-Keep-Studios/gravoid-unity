@@ -5,22 +5,22 @@ using System.Collections;
 
 public class CameraScrolling : MonoBehaviour
 {
-// The object in our scene that our camera is currently tracking.
-	Transform target;
-// How far back should the camera be from the target?
-	float distance = 15.0f;
-// How strict should the camera follow the target?  Lower values make the camera more lazy.
-	float springiness = 4.0f;
-	Vector3 lastGoalPosition = Vector3.zero;
+	/// The object in our scene that our camera is currently tracking.
+	public Transform target;
+	/// How far back should the camera be from the target?
+	public float distance = 15.0f;
+	/// How strict should the camera follow the target?  Lower values make the camera more lazy.
+	public float springiness = 4.0f;
+	private Vector3 lastGoalPosition = Vector3.zero;
 
-// Keep handy reference sto our level's attributes.  We set up these references in the Awake () function.
-// This also is very slightly more performant, but it's mostly just convenient.
-//private LevelAttributes levelAttributes;
+	/// Keep handy reference sto our level's attributes.  We set up these references in the Awake () function.
+	/// This also is very slightly more performant, but it's mostly just convenient.
+	//private LevelAttributes levelAttributes;
 	private Rect levelBounds;
 	private bool targetLock = false;
 
-// This is for setting interpolation on our target, but making sure we don't permanently
-// alter the target's interpolation setting.  This is used in the SetTarget () function.
+	/// This is for setting interpolation on our target, but making sure we don't permanently
+	/// alter the target's interpolation setting.  This is used in the SetTarget () function.
 	private RigidbodyInterpolation savedInterpolationSetting = RigidbodyInterpolation.None;
 
 	void  Awake ()
@@ -63,8 +63,7 @@ public class CameraScrolling : MonoBehaviour
 
 // Provide another version of SetTarget that doesn't require the snap variable to set.
 // This is for convenience and cleanliness.  By default, we will not snap to the target.
-	public void  SetTarget (Transform newTarget)
-	{
+	public void  SetTarget (Transform newTarget) {
 		SetTarget (newTarget, false);
 	}
 
@@ -72,13 +71,11 @@ public class CameraScrolling : MonoBehaviour
 // function that returns a private variable.  Notice how target defined at the top of the script
 // is marked "private"?  We can not access it from other scripts directly.  Therefore, we just
 // have a function that returns it.  Sneaky!
-	public Transform  GetTarget ()
-	{
+	public Transform  GetTarget () {
 		return target;
 	}
 
-	void  FixedUpdate ()
-	{
+	void  FixedUpdate () {
 		// Where should our camera be looking right now?
 		lastGoalPosition = GetGoalPosition ();
 	
@@ -87,8 +84,8 @@ public class CameraScrolling : MonoBehaviour
 		transform.position = Vector3.Lerp (transform.position, lastGoalPosition, Time.deltaTime * springiness);	
 	}
 
-// Based on the camera attributes and the target's special camera attributes, find out where the
-// camera should move to.
+	// Based on the camera attributes and the target's special camera attributes, find out where the
+	// camera should move to.
 	Vector3  GetGoalPosition ()
 	{
 
