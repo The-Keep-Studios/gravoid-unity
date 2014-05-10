@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Main Menu Controller
+  m_Name: Example  Menu Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,6 +38,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0983a3e0a40774a814b2317910e1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topBannerSkin: {fileID: 0}
+  topBannerText: 
+  topBannerH: 0
+  topBannerW: 0
+  defaultButtonSkin: {fileID: 0}
+  buttons: []
+  bottomBannerH: 0
+  bottomBannerW: 0
+  bottomBannerPos: 0
+  bottomBannerSkin: {fileID: 0}
+  bottomBannerText: 
+  lastScreenHeight: -1
+  lastScreenWidth: -1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
