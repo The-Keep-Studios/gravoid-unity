@@ -155,8 +155,8 @@ public class LevelController : MonoBehaviour {
 			
 			//update the neighbors
 			foreach ( Vector3 nextLoc in this.neighborsRelativeGridLocation ) {
-				
-				Vector3 neighborPosition = TKSMath.Mulitiply ( nextLoc, zoneDimensions );
+
+				Vector3 neighborPosition = VectorOperators.Multiply ( nextLoc, zoneDimensions );
 				
 				this.neighborOffsets.Add ( neighborPosition );
 				
@@ -166,7 +166,7 @@ public class LevelController : MonoBehaviour {
 			//now update foreign neighbors
 			foreach ( Vector3 nextLoc in this.foreignNeighborRelativeGridLocation ) {
 				
-				Vector3 fNeighborPosition = TKSMath.Mulitiply ( nextLoc, zoneDimensions );
+				Vector3 fNeighborPosition = VectorOperators.Multiply ( nextLoc, zoneDimensions );
 				
 				this.foreignNeighborOffsets.Add ( fNeighborPosition );
 				
