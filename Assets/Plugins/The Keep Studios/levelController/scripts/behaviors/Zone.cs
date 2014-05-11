@@ -345,7 +345,7 @@ public class Zone : MonoBehaviour {
 				
 				//ready to calculate the center point
 				Vector3 nextSpawnAreaCenter = 
-					TKSMath.Mulitiply ( attributes.spawnerSize, matrixPosition ) + matrixMinPoint;
+					VectorOperators.Multiply ( attributes.spawnerSize, matrixPosition ) + matrixMinPoint;
 				
 				/*
 				Debug.Log (

@@ -2,35 +2,20 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace TheKeepStudios.Menu
+namespace TheKeepStudios.menu.containers
 {
-	public class MainMenu : MonoBehaviour
+	public class Window : MonoBehaviour
 	{
 		protected static int windowID = 0;
 		private int myWindowId = ++windowID; //increment the global window id and take that as our id
 		public string menuName;
 		public GUISkin skin;
-
-		//Top Banner
-		public string topBannerText;
-		float topBannerH;
-		float topBannerW;
-	
-		//Bottom Banner
-		public string bottomBannerText;
 		public Rect windowRect;
-		[Range(0,100)]
-		public float defaultWindowScreenPercentHeight;
-		[Range(0,100)]
-		public float defaultWindowScreenPercentWidth;
+		[Range(0,100)] public float defaultWindowScreenPercentHeight;
+		[Range(0,100)] public float defaultWindowScreenPercentWidth;
 
 		// Use this for initialization
 		void Start ()
-		{
-			
-		}
-	
-		void  Awake ()
 		{
 			SetWindowToDefaultSize ();
 		}
@@ -44,17 +29,10 @@ namespace TheKeepStudios.Menu
 		void Draw (int windowID)
 		{
 			GUI.skin = skin;
-
-			//Title Banner
-			GUILayout.Box (topBannerText);
-			
-			//Buttons
-			foreach (Widget nextWidget in this.gameObject.GetComponents<Widget>()) {
+			//Widgets
+			foreach (widgets.Widget nextWidget in this.gameObject.GetComponents<widgets.Widget>()) {
 				nextWidget.Draw ();
 			}
-
-			//Bottom Banner
-			GUILayout.Box (bottomBannerText);
 		}
 
 		void SetWindowToDefaultSize ()

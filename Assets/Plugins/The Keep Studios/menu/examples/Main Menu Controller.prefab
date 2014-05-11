@@ -8,13 +8,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400000}
+  - 114: {fileID: 11400012}
   - 114: {fileID: 11400010}
   - 114: {fileID: 11400008}
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
-  - 114: {fileID: 11400012}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Main Menu Controller
   m_TagString: Untagged
@@ -45,15 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuName: 
-  skin: {fileID: 11400000, guid: 59677b676c6177e41a62c00bb7882ec6, type: 2}
+  skin: {fileID: 0}
   windowRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 0
     height: 0
-  defaultWindowScreenPercentHeight: 50
-  defaultWindowScreenPercentWidth: 50
+  defaultWindowScreenPercentHeight: 0
+  defaultWindowScreenPercentWidth: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c16fff6291792943afd4c6bf14ca0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: Exit
+  label: Credits
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c16fff6291792943afd4c6bf14ca0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: Options
+  label: Exit
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c16fff6291792943afd4c6bf14ca0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: Save Game
+  label: Options
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c16fff6291792943afd4c6bf14ca0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: Load Game
+  label: Save Game
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c16fff6291792943afd4c6bf14ca0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: New Game
+  label: Load Game
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c16fff6291792943afd4c6bf14ca0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: Credits
+  label: New Game
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
