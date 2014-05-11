@@ -89,9 +89,9 @@ GameObject:
   - 114: {fileID: 643615467}
   - 114: {fileID: 643615466}
   - 114: {fileID: 643615465}
-  - 114: {fileID: 643615475}
   - 114: {fileID: 643615474}
   - 114: {fileID: 643615473}
+  - 114: {fileID: 643615475}
   m_Layer: 0
   m_Name: Main Menu Controller
   m_TagString: Untagged
@@ -236,6 +236,9 @@ MonoBehaviour:
   - producer: {fileID: 643615470}
     listeners:
     - {fileID: 643615473}
+  - producer: {fileID: 643615466}
+    listeners:
+    - {fileID: 643615475}
 --- !u!114 &643615475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,10 +247,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 643615464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 498f84912f761cf4dbca135e1bfaad2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 46d1cc6bb9a347c42961b0112684c5af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
 --- !u!1 &1120614131
 GameObject:
   m_ObjectHideFlags: 0
