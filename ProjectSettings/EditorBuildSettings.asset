@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/gravoid/scenes/menu.unity
   - enabled: 1
-    path: Assets/gravoid/scenes/Layer0.unity
+    path: Assets/gravoid/scenes/credits.unity
+  - enabled: 1
+    path: Assets/gravoid/scenes/new_game.unity
