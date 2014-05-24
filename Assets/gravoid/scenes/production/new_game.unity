@@ -238,6 +238,63 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!1 &353458102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: de0feede5d975c74e88780453d1c6ee4, type: 2}
+  m_PrefabInternal: {fileID: 1450533616}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 353458104}
+  - 114: {fileID: 353458103}
+  m_Layer: 0
+  m_Name: PauseMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &353458103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: de0feede5d975c74e88780453d1c6ee4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1450533616}
+  m_GameObject: {fileID: 353458102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 786b4bbbef936f2419b138002718681d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skin: {fileID: 11400000, guid: 59677b676c6177e41a62c00bb7882ec6, type: 2}
+  mat: {fileID: 0}
+  lowFPSColor: {r: 1, g: 0, b: 0, a: 1}
+  highFPSColor: {r: 0, g: 1, b: 0, a: 1}
+  lowFPS: 30
+  highFPS: 50
+  start: {fileID: 0}
+  url: http://www.thekeepstudios.com
+  statColor: {r: .996078432, g: .996078432, b: .996078432, a: 1}
+  credits:
+  - A Keep Studios Production
+  - Copyright (c) 2010-2014 The Keep Studios, LLC
+  crediticons: []
+  allowedHostURLs:
+  - http://www.thekeepstudios.com/
+  - http://thekeepstudios.com/
+  - https://www.thekeepstudios.com/
+  - https://thekeepstudios.com/
+--- !u!4 &353458104
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: de0feede5d975c74e88780453d1c6ee4, type: 2}
+  m_PrefabInternal: {fileID: 1450533616}
+  m_GameObject: {fileID: 353458102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &394897933
 GameObject:
   m_ObjectHideFlags: 0
@@ -5081,6 +5138,46 @@ Transform:
   m_Children:
   - {fileID: 199667582}
   m_Father: {fileID: 480885995}
+--- !u!1001 &1450533616
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: de0feede5d975c74e88780453d1c6ee4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: de0feede5d975c74e88780453d1c6ee4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: de0feede5d975c74e88780453d1c6ee4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: de0feede5d975c74e88780453d1c6ee4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: de0feede5d975c74e88780453d1c6ee4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: de0feede5d975c74e88780453d1c6ee4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: de0feede5d975c74e88780453d1c6ee4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: de0feede5d975c74e88780453d1c6ee4, type: 2}
+  m_RootGameObject: {fileID: 353458102}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1506394657
 GameObject:
   m_ObjectHideFlags: 0
