@@ -20,7 +20,7 @@ namespace TheKeepStudios.menu.widgets{
 			if (GUILayout.Button (Label)) {
 				Debug.Log("Button " + this.Label + " clicked");
 				if(onClicked!=null){
-					onClicked(this, new EventArgs());
+					onClicked(this, EventArgs.Empty);
 				}
 			}
 		}
