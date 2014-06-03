@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections;
-
+using TheKeepStudios.events.eventArgs;
 namespace TheKeepStudios.menu.widgets{
 	public class Slider : Widget{
 
@@ -29,10 +29,7 @@ namespace TheKeepStudios.menu.widgets{
 			float newValue = drawSlider();
 			if (newValue != lastValue) {
 				Debug.Log("Slider " + this.Label + " value changed to " + newValue);
-				if(onChanged!=null){
-					EventArgs args = new TheKeepStudios.events.FloatValueChageEventArgs(lastValue, newValue);
-					onChanged(this, args);
-				}
+				OnTKSEvent(new FloatValueChageEventArgs(lastValue, newValue));
 				this.lastValue = newValue;
 			}
 		}

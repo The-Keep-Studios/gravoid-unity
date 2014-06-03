@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TheKeepStudios.events.listeners;
 namespace TheKeepStudios.events{
 	public class EventRegistrationManager : MonoBehaviour {
 
 		[System.Serializable]
 		public class Registration{
-			public EventProducer producer;
+			public producers.EventProducer producer;
 			public List<EventListener> listeners;
 		}
 

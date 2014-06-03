@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using TheKeepStudios.events.eventArgs;
 
 namespace TheKeepStudios.menu.widgets{
 	public class ToolBox : Widget{
@@ -9,31 +10,14 @@ namespace TheKeepStudios.menu.widgets{
 
 		public string[] options;
 		
-		public event EventHandler onChanged;
-		
-		override public void RegisterListener(EventHandler onEvent){
-			onChanged += onEvent;
-		}
-		
-		override public void DeregisterListener(EventHandler onEvent){
-			onChanged -= onEvent;
-		}
-		
 		override public void Draw (){
-			//display the button and react to it if it had been pressed
-			int newSelected = drawSlider();
+			//display the toolbox and react to it if it had been changed
+			int newSelected = GUILayout.Toolbar(currentSelected,options);
 			if (newSelected != currentSelected) {
 				Debug.Log("Toolbox " + this.Label + " value changed to " + options[newSelected]);
-				if(onChanged!=null){
-					EventArgs args = new TheKeepStudios.events.IntValueChageEventArgs(this.currentSelected, newSelected);
-					onChanged(this, args);
-				}
+				this.OnTKSEvent(new IntValueChageEventArgs(this.currentSelected, newSelected));
 				this.currentSelected = newSelected;
 			}
-		}
-		
-		private int drawSlider(){
-			return GUILayout.Toolbar(currentSelected,options);
 		}
 	}
 }

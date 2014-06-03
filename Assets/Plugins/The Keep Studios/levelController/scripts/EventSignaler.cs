@@ -2,35 +2,41 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class EventSignaler : ScriptableObject{
-
-	// Use this for initialization
-	void Start () {
+namespace TheKeepStudios.levelController
+{
+	public class EventSignaler : ScriptableObject
+	{
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-	
-	
-	public void activateListeners(List<EventListener> listeners, GameObject triggeringObj, GameObject signallingObj){
+		// Use this for initialization
+		void Start ()
+		{
 		
-		foreach( EventListener listener in listeners){
+		}
+		
+		// Update is called once per frame
+		void Update ()
+		{
+		
+		}
+		
+		
+		public void activateListeners (List<EventListener> listeners, GameObject triggeringObj, GameObject signallingObj)
+		{
 			
-			activateListener(listener, triggeringObj, signallingObj);
+			foreach (EventListener listener in listeners) {
+				
+				activateListener (listener, triggeringObj, signallingObj);
+				
+			}
 			
 		}
 		
-	}
-	
-	
-	public void activateListener(EventListener listener, GameObject triggeringObj, GameObject signallingObj){
 		
-		listener.onEvent(triggeringObj, signallingObj);
-		
+		public void activateListener (EventListener listener, GameObject triggeringObj, GameObject signallingObj)
+		{
+			
+			listener.OnEvent (triggeringObj, signallingObj);
+			
+		}
 	}
-	
-	
 }

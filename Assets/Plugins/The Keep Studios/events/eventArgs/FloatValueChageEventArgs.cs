@@ -1,6 +1,6 @@
 using System;
 
-namespace TheKeepStudios.events{
+namespace TheKeepStudios.events.eventArgs{
 	public class FloatValueChageEventArgs : System.EventArgs
 	{
 		public readonly float oldValue;

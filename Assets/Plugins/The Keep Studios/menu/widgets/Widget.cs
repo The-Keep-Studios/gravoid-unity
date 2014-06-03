@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections;
+using TheKeepStudios.events.producers;
+
 namespace TheKeepStudios.menu.widgets{
-	public abstract class Widget  : events.EventProducer
+	public abstract class Widget  : EventProducer
 	{
 		[UnityEngine.SerializeField]
 		private string label;
