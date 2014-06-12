@@ -9,6 +9,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Fabric;
 
 public class ShipRotationController : BaseShipMovementController
 {
@@ -41,7 +42,8 @@ public class ShipRotationController : BaseShipMovementController
 		UpdateSpecialEffect (specialEffects.negativeTurnEffect, inputVal * -1);
 		
 	}
-	
+
+
 	private void UpdateSpecialEffect (List<ThrusterSpecialEffect> thrusters, float val)
 	{
 		
