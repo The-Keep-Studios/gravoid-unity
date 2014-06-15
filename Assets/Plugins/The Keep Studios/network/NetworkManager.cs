@@ -14,15 +14,16 @@ namespace TheKeepStudios.network
 		}
 		
 		void OnGUI () {
-			if (!Network.isClient && !Network.isServer && GUI.Button (new Rect (0, 0, 200, 20), "Start Server")) {
+			if (!(Network.isClient || Network.isServer) && GUI.Button (new Rect (0, 0, 200, 20), "Start Server")) {
 				StartServer ();
 			}
 		}
 		
-		private void StartServer ()
+		public void StartServer ()
 		{
+			Debug.Log("Starting Server");
 			Network.InitializeServer (5, 25000, !Network.HavePublicAddress ());
-			MasterServer.RegisterHost (typeName, ApplicationValues.Name);
+			MasterServer.RegisterHost (ApplicationValues.Name, typeName);
 		}
 		
 		void OnServerInitialized ()

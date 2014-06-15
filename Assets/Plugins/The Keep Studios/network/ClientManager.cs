@@ -10,39 +10,22 @@ namespace TheKeepStudios.network
 		private bool isRefreshingHostList = false;
 		public GameObject playerPrefab;
 		public int playerSpawnGroup;
-
-		void OnGUI ()
-		{
-			if (!Network.isClient && !Network.isServer) {
-				GUILayout.BeginArea (new Rect (0, 21, 200, 200));
-			
-				if (GUILayout.Button ("Refresh Hosts")) {
-					RefreshHostList ();
-				}
-
-				GUILayout.BeginScrollView (new Vector2 (190, 190));
-				foreach (HostData host in hostList) {
-					if (GUILayout.Button (host.gameName)) {
-						JoinServer (host);
-					}
-				}
-				GUILayout.EndScrollView ();
-				GUILayout.EndArea ();
-			}
-		}
 	
 		void Update ()
 		{
-			if (isRefreshingHostList && MasterServer.PollHostList ().Length > 0) {
-				isRefreshingHostList = false;
+			if (isRefreshingHostList ) {
 				hostList = MasterServer.PollHostList ();
+				isRefreshingHostList = hostList.Length == 0;
+				Debug.Log("Retrieved host list of size " + hostList.Length);
 			}
 		}
 	
-		private void RefreshHostList ()
+		public void RefreshHostList ()
 		{
 			if (!isRefreshingHostList) {
+				Debug.Log("Refreshing the host list");
 				isRefreshingHostList = true;
+				hostList = null;
 				MasterServer.RequestHostList (ApplicationValues.Name);
 			}
 		}
@@ -60,6 +43,13 @@ namespace TheKeepStudios.network
 		private void SpawnPlayer ()
 		{
 			Network.Instantiate (playerPrefab, Vector3.zero, Quaternion.identity, playerSpawnGroup);
+		}
+
+		public HostData[] HostList {
+			get {
+				//never return a null array
+				return hostList == null ? new HostData[0] : hostList;
+			}
 		}
 	}
 }

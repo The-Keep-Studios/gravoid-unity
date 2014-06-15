@@ -187,6 +187,7 @@ GameObject:
   - 114: {fileID: 338698743}
   - 114: {fileID: 338698738}
   - 114: {fileID: 338698742}
+  - 114: {fileID: 338698746}
   - 114: {fileID: 338698740}
   - 114: {fileID: 338698739}
   - 114: {fileID: 338698737}
@@ -196,6 +197,7 @@ GameObject:
   - 114: {fileID: 338698733}
   - 114: {fileID: 338698732}
   - 114: {fileID: 338698731}
+  - 114: {fileID: 338698741}
   m_Layer: 0
   m_Name: Main Menu
   m_TagString: Untagged
@@ -343,6 +345,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   label: Options
+--- !u!114 &338698741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400078, guid: 6961e6dbadce8a14b8414bb2fdfb8cf2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1061028879}
+  m_GameObject: {fileID: 338698730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243369dcdbd4ede45bcef3a2d28ecded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventProducer: {fileID: 338698746}
+  sceneToLoad: client
 --- !u!114 &338698742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +418,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1101878507}
+--- !u!114 &338698746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400076, guid: 6961e6dbadce8a14b8414bb2fdfb8cf2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1061028879}
+  m_GameObject: {fileID: 338698730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c16fff6291792943afd4c6bf14ca0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: Join Muiltiplayer Game
 --- !u!1 &348459340
 GameObject:
   m_ObjectHideFlags: 0
