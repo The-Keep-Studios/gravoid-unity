@@ -21,13 +21,12 @@ namespace TheKeepStudios.menu.widgets{
 		}
 
 		override public void Draw () {
-			string currentServerName = ServerName;
 			if (!Network.isClient && !Network.isServer) {
 				GUILayout.BeginHorizontal ();
 				ServerName = GUILayout.TextField (ServerName);
 				if (GUILayout.Button (Label)) {
-					Debug.Log ("Button " + this.Label + " clicked");
-					OnTKSEvent (EventArgs.Empty);
+					Debug.Log ("Button '" + this.Label + "' clicked to create server '" + ServerName +"'");
+					OnTKSEvent (new TheKeepStudios.events.eventArgs.CreateServerEventArgs(this, ServerName));
 				}
 				GUILayout.EndHorizontal ();
 			}
