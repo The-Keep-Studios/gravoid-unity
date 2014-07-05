@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace TheKeepStudios
+namespace TheKeepStudios.Gravoid
 {
 	public class CollectableItem : MonoBehaviour
 	{

@@ -1,33 +1,38 @@
 using UnityEngine;
 using System.Collections;
 
-public class CursorFollower : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+namespace TheKeepStudios.Gravoid
+{
+	public class CursorFollower : MonoBehaviour
+	{
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+		// Use this for initialization
+		void Start ()
+		{
 		
-		Vector3 newPosition;
-			
-		if(Input.touchCount != 1){
-			
-			newPosition = Input.mousePosition;
-			
-		}
-		else{
-			
-			newPosition = Input.touches[0].position;
-			
 		}
 		
-		newPosition.z = this.transform.position.z - Camera.main.transform.position.z;
+		// Update is called once per frame
+		void Update ()
+		{
 			
-		newPosition = Camera.main.ScreenToWorldPoint(newPosition);
-		
-		this.transform.position = newPosition;
+			Vector3 newPosition;
+				
+			if (Input.touchCount != 1) {
+				
+				newPosition = Input.mousePosition;
+				
+			} else {
+				
+				newPosition = Input.touches [0].position;
+				
+			}
+			
+			newPosition.z = this.transform.position.z - Camera.main.transform.position.z;
+				
+			newPosition = Camera.main.ScreenToWorldPoint (newPosition);
+			
+			this.transform.position = newPosition;
+		}
 	}
 }
