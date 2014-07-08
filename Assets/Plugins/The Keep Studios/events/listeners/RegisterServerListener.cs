@@ -8,13 +8,15 @@ namespace TheKeepStudios.events.listeners {
 		
 		override public EventHandler OnEvent {
 			get {
-				return StartServer;
+				return RegisterServer;
 			}
 		}
 		
-		private void StartServer(object requestSource,  EventArgs e){ 
+
+		private void RegisterServer(object requestSource,  EventArgs e){ 
 			eventArgs.CreateServerEventArgs csEventArgs = (eventArgs.CreateServerEventArgs) e;
 			Debug.Log("Starting Server " + csEventArgs.hostName);
+			//Need below line to happen when player clicks "New Game"
 			Network.InitializeServer ( csEventArgs.connectionsAllowed,  csEventArgs.portNumber, !Network.HavePublicAddress ());
 			MasterServer.RegisterHost (ApplicationValues.Name, csEventArgs.hostName);
 		}

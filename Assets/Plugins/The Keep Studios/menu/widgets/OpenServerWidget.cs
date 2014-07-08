@@ -21,7 +21,7 @@ namespace TheKeepStudios.menu.widgets{
 		}
 
 		override public void Draw () {
-			if (!Network.isClient && !Network.isServer) {
+			if (Network.maxConnections == 0 || (!Network.isClient && !Network.isServer)) {
 				GUILayout.BeginHorizontal ();
 				ServerName = GUILayout.TextField (ServerName);
 				if (GUILayout.Button (Label)) {
