@@ -21,7 +21,7 @@ Platform assembly: C:\Users\Ian Small\git\gravoid-unity_project\build\gravoid_Da
 Loading C:\Users\Ian Small\git\gravoid-unity_project\build\gravoid_Data\Managed\Fabric.LoudnessMeter.dll into Unity Child Domain
 Platform assembly: C:\Users\Ian Small\git\gravoid-unity_project\build\gravoid_Data\Managed\Fabric.ModularSynth.dll (this message is harmless)
 Loading C:\Users\Ian Small\git\gravoid-unity_project\build\gravoid_Data\Managed\Fabric.ModularSynth.dll into Unity Child Domain
-- Completed reload, in  0.061 seconds
+- Completed reload, in  0.068 seconds
 desktop: 1920x1080 60Hz; virtual: 3600x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -31,12 +31,7 @@ Profiler is only supported with Pro License
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Profiler/ProfilerConnection.cpp Line: 218)
 
-PlayerConnection accepted from [192.168.1.6] handle:0x2f0
-Profiler is only supported with Pro License
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Profiler/ProfilerConnection.cpp Line: 218)
-
-Button New Game clicked
+Button Join Muiltiplayer Game clicked
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
 TheKeepStudios.menu.widgets.Button:Draw() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\menu\widgets\Button.cs:11)
@@ -46,334 +41,175 @@ UnityEngine.GUI:CallWindowDelegate(WindowFunction, Int32, GUISkin, Int32, Single
  
 (Filename: C Line: 0)
 
-UnloadTime: 0.552018 ms
-System memory in use before: 25.9 MB.
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-System memory in use after: 26.0 MB.
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 10443.
-Total: 2.230439 ms (FindLiveObjects: 0.497704 ms CreateObjectMapping: 0.044019 ms MarkObjects: 1.037653 ms  DeleteObjects: 0.031949 ms)
-
-Initializing Zone
-	 id:[0,0,0]	 size:[200,200,0]	 regionRegion1 (Region)
+Activation of Server Browser Menu (UnityEngine.GameObject) requested by Main Menu (TheKeepStudios.menu.widgets.Button)
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:136)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-LevelController:Start() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:87)
+UnityEngine.Debug:Log(Object, Object)
+TheKeepStudios.events.listeners.GameObjectActivator:DeactivateObject(Object, EventArgs) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\events\listeners\GameObjectActivator.cs:18)
+TheKeepStudios.events.producers.<triggerEvent>c__Iterator1:MoveNext() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\events\producers\EventProducer.cs:21)
  
 (Filename: C Line: 0)
 
-Creating A Spawn Area Matrix
-	 size:[200,200,0]	 matrixLayout:[1,1,0]	 tesselationStart:[-50,-50,0]	 spawnerSize:[100,100,100]
+Deactivation of Main Menu (UnityEngine.GameObject) requested by Main Menu (TheKeepStudios.menu.widgets.Button)
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:CreateSpawnAreaMatrix(RegionAttributes) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:300)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:145)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-LevelController:Start() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:87)
+UnityEngine.Debug:Log(Object, Object)
+TheKeepStudios.events.listeners.GameObjectDeactivator:DeactivateObject(Object, EventArgs) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\events\listeners\GameObjectDeactivator.cs:18)
+TheKeepStudios.events.producers.<triggerEvent>c__Iterator1:MoveNext() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\events\producers\EventProducer.cs:21)
  
 (Filename: C Line: 0)
 
-Zone Entered by 
-	Player Ship (UnityEngine.GameObject)
+Refreshing the host list
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:108)
+TheKeepStudios.network.ClientManager:RefreshHostList() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:37)
+TheKeepStudios.menu.widgets.<RefreshHostList>c__Iterator4:MoveNext() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\menu\widgets\ServerHostListWidget.cs:34)
  
 (Filename: C Line: 0)
 
-Waking neighbor zones of: (0.0, 0.0, 0.0)
+Retrieved host list of size 0
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:200)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:Update() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:30)
  
 (Filename: C Line: 0)
 
-Waking zone with center at: (0.0, 200.0, 0.0)
+Retrieved host list of size 0
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:Update() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:30)
  
 (Filename: C Line: 0)
 
-Initializing Zone
-	 id:[0,200,0]	 size:[200,200,0]	 regionRegion1 (Region)
+Retrieved host list of size 0
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:136)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:Update() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:30)
  
 (Filename: C Line: 0)
 
-Creating A Spawn Area Matrix
-	 size:[200,200,0]	 matrixLayout:[1,1,0]	 tesselationStart:[-50,150,0]	 spawnerSize:[100,100,100]
+Retrieved host list of size 0
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:CreateSpawnAreaMatrix(RegionAttributes) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:300)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:145)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:Update() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:30)
  
 (Filename: C Line: 0)
 
-Waking zone with center at: (0.0, -200.0, 0.0)
+Retrieved host list of size 0
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:Update() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:30)
  
 (Filename: C Line: 0)
 
-Initializing Zone
-	 id:[0,-200,0]	 size:[200,200,0]	 regionRegion1 (Region)
+Retrieved host list of size 0
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:136)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:Update() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:30)
  
 (Filename: C Line: 0)
 
-Creating A Spawn Area Matrix
-	 size:[200,200,0]	 matrixLayout:[1,1,0]	 tesselationStart:[-50,-250,0]	 spawnerSize:[100,100,100]
+Retrieved host list of size 0
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:CreateSpawnAreaMatrix(RegionAttributes) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:300)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:145)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:Update() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:30)
  
 (Filename: C Line: 0)
 
-Waking zone with center at: (-200.0, 0.0, 0.0)
+Retrieved host list of size 0
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:Update() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:30)
  
 (Filename: C Line: 0)
 
-Initializing Zone
-	 id:[-200,0,0]	 size:[200,200,0]	 regionRegion1 (Region)
+Connected to master server at 67.225.180.24:23466
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
+
+Retrieved host list of size 0
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:136)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:Update() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:30)
  
 (Filename: C Line: 0)
 
-Creating A Spawn Area Matrix
-	 size:[200,200,0]	 matrixLayout:[1,1,0]	 tesselationStart:[-250,-50,0]	 spawnerSize:[100,100,100]
+Retrieved host list of size 0
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:CreateSpawnAreaMatrix(RegionAttributes) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:300)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:145)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:Update() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:30)
  
 (Filename: C Line: 0)
 
-Waking zone with center at: (200.0, 0.0, 0.0)
+Retrieved host list of size 0
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:Update() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:30)
  
 (Filename: C Line: 0)
 
-Initializing Zone
-	 id:[200,0,0]	 size:[200,200,0]	 regionRegion1 (Region)
+Retrieved host list of size 0
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:136)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:Update() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:30)
  
 (Filename: C Line: 0)
 
-Creating A Spawn Area Matrix
-	 size:[200,200,0]	 matrixLayout:[1,1,0]	 tesselationStart:[150,-50,0]	 spawnerSize:[100,100,100]
+Incoming host list query response from master server.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
+
+Retrieved host list of size 1
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:CreateSpawnAreaMatrix(RegionAttributes) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:300)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:145)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:Update() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:30)
  
 (Filename: C Line: 0)
 
-Waking zone with center at: (200.0, 200.0, 0.0)
+Received pong from 192.168.56.1:26789
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 836)
+
+Running as client. No player ID set yet.
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
+
+Received pong from 192.168.1.6:26789
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 836)
+
+Connected to 192.168.56.1:26789
+
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
+
+Connected to the server
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:OnConnectedToServer() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:51)
  
 (Filename: C Line: 0)
 
-Initializing Zone
-	 id:[200,200,0]	 size:[200,200,0]	 regionRegion1 (Region)
+Spawning 'player' object
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
 UnityEngine.Debug:Log(Object)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:136)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
+TheKeepStudios.network.ClientManager:SpawnPlayer() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:64)
+TheKeepStudios.network.ClientManager:OnConnectedToServer() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\network\ClientManager.cs:52)
  
 (Filename: C Line: 0)
 
-Creating A Spawn Area Matrix
-	 size:[200,200,0]	 matrixLayout:[1,1,0]	 tesselationStart:[150,150,0]	 spawnerSize:[100,100,100]
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:CreateSpawnAreaMatrix(RegionAttributes) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:300)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:145)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
+Set player ID to 1
 
-Waking zone with center at: (-200.0, 200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
  
-(Filename: C Line: 0)
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
 
-Initializing Zone
-	 id:[-200,200,0]	 size:[200,200,0]	 regionRegion1 (Region)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:136)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
+Received state update for view ID SceneID: 1 Level Prefix: 0
 
-Creating A Spawn Area Matrix
-	 size:[200,200,0]	 matrixLayout:[1,1,0]	 tesselationStart:[-250,150,0]	 spawnerSize:[100,100,100]
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:CreateSpawnAreaMatrix(RegionAttributes) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:300)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:145)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
  
-(Filename: C Line: 0)
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
 
-Waking zone with center at: (200.0, -200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
+Received state update for view ID SceneID: 1 Level Prefix: 0
 
-Initializing Zone
-	 id:[200,-200,0]	 size:[200,200,0]	 regionRegion1 (Region)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:136)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
  
-(Filename: C Line: 0)
-
-Creating A Spawn Area Matrix
-	 size:[200,200,0]	 matrixLayout:[1,1,0]	 tesselationStart:[150,-250,0]	 spawnerSize:[100,100,100]
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:CreateSpawnAreaMatrix(RegionAttributes) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:300)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:145)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (-200.0, -200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Initializing Zone
-	 id:[-200,-200,0]	 size:[200,200,0]	 regionRegion1 (Region)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:136)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Creating A Spawn Area Matrix
-	 size:[200,200,0]	 matrixLayout:[1,1,0]	 tesselationStart:[-250,-250,0]	 spawnerSize:[100,100,100]
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:CreateSpawnAreaMatrix(RegionAttributes) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:300)
-Zone:Initialize(ZoneId, Vector3, Region) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:145)
-Region:SpawnZone(ZoneId, Vector3) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs:88)
-LevelController:GetZoneById(ZoneId, Boolean) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:264)
-LevelController:WakeZone(ZoneId, Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs:108)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:206)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
 
 Activation of Main Menu Controller (UnityEngine.GameObject) requested by Playing Menu (TheKeepStudios.events.producers.KeyEventProducer)
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
@@ -390,59 +226,6 @@ TheKeepStudios.events.listeners.GameObjectDeactivator:DeactivateObject(Object, E
 TheKeepStudios.events.producers.<triggerEvent>c__Iterator1:MoveNext() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\events\producers\EventProducer.cs:21)
  
 (Filename: C Line: 0)
-
-Button 'Start Server' clicked to create server 'Gravoid 0.1.0'
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-TheKeepStudios.menu.widgets.OpenServerWidget:Draw() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\menu\widgets\OpenServerWidget.cs:28)
-TheKeepStudios.menu.containers.Window:Draw(Int32) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\menu\containers\Window.cs:34)
-UnityEngine.LayoutedWindow:DoWindow(Int32) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\GUILayout.cs:413)
-UnityEngine.GUI:CallWindowDelegate(WindowFunction, Int32, GUISkin, Int32, Single, Single, GUIStyle) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\GUI.cs:1402)
- 
-(Filename: C Line: 0)
-
-Starting Server Gravoid 0.1.0
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-TheKeepStudios.events.listeners.RegisterServerListener:StartServer(Object, EventArgs) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\events\listeners\RegisterServerListener.cs:17)
-TheKeepStudios.events.producers.<triggerEvent>c__Iterator1:MoveNext() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\events\producers\EventProducer.cs:21)
- 
-(Filename: C Line: 0)
-
-Running as server. Player ID is 0.
-UnityEngine.Network:InitializeServer(Int32, Int32, Boolean)
-TheKeepStudios.events.listeners.RegisterServerListener:StartServer(Object, EventArgs) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\events\listeners\RegisterServerListener.cs:18)
-TheKeepStudios.events.producers.<triggerEvent>c__Iterator1:MoveNext() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\events\producers\EventProducer.cs:21)
-
-[C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp line 2484] 
-(Filename: C Line: 0)
-
-Attempting to connect to master server at 67.225.180.24:23466
-UnityEngine.MasterServer:RegisterHost(String, String, String)
-UnityEngine.MasterServer:RegisterHost(String, String) (at C:\BuildAgent\work\d63dfc6385190b60\artifacts\StandalonePlayerGenerated\Networking.cs:1076)
-TheKeepStudios.events.listeners.RegisterServerListener:StartServer(Object, EventArgs) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\events\listeners\RegisterServerListener.cs:19)
-TheKeepStudios.events.producers.<triggerEvent>c__Iterator1:MoveNext() (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\events\producers\EventProducer.cs:21)
-
-[C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp line 2484] 
-(Filename: C Line: 0)
-
-Connected to facilitator at 67.225.180.24:50005
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Connected to master server at 67.225.180.24:23466
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Sent host registration to master server, registering a NAT assisted game as
- "Gravoid 0.1.0", 1, 6, not password protected, ""
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Received identifier 0 from master server
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
 
 Button Play clicked
 UnityEngine.Debug:Internal_Log(Int32, String, Object)
@@ -470,406 +253,8 @@ TheKeepStudios.events.producers.<triggerEvent>c__Iterator1:MoveNext() (at C:\Use
  
 (Filename: C Line: 0)
 
-New connection established (192.168.56.1:63083)
+The server has disconnected from the client. Most likely the server has shut down.
  
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Network protocol version 0 connected
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-New scope index 0 is now in scope for SceneID: 2 Level Prefix: 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-New scope index 0 is now in scope for SceneID: 1 Level Prefix: 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-New scope index 0 is now in scope for SceneID: 3 Level Prefix: 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Allocated 2 batches of size 50 for player 1
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Sent initalization to player 1
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Sending generic initial state update, broadcast on, view ID 'SceneID: 2 Level Prefix: 0'
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Sending generic initial state update, broadcast on, view ID 'SceneID: 1 Level Prefix: 0'
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Sending generic initial state update, broadcast on, view ID 'SceneID: 3 Level Prefix: 0'
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Sent host update to master server with identifier 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Sent batch 3 of size 50 to 1
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 50'
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 51'
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Relay RPC - name: __RPCNetworkInstantiate - mode 2 - sender 192.168.56.1:63083
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Added RPC '__RPCNetworkInstantiate' to buffer.
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Received state update for view ID AllocatedID: 51
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Received state update for view ID AllocatedID: 50
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Zone Entered by 
-	Player Ship (UnityEngine.GameObject)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:108)
- 
-(Filename: C Line: 0)
-
-Waking neighbor zones of: (0.0, 0.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:200)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (0.0, 200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (0.0, -200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (-200.0, 0.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (200.0, 0.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (200.0, 200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (-200.0, 200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (200.0, -200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (-200.0, -200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Received identifier 0 from master server
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-A client has disconnected from this server. Player ID 1, IP 192.168.56.1:63083
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Sent host update to master server with identifier 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Received identifier 0 from master server
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-New connection established (192.168.56.1:60157)
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Network protocol version 0 connected
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Initial state being sent to index 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Scope index 0 is now in scope for SceneID: 2 Level Prefix: 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Initial state being sent to index 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Scope index 0 is now in scope for SceneID: 1 Level Prefix: 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Initial state being sent to index 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Scope index 0 is now in scope for SceneID: 3 Level Prefix: 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-New scope index 0 is now in scope for AllocatedID: 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-New scope index 0 is now in scope for AllocatedID: 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Scope index 0 is now in scope for AllocatedID: 50
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Scope index 0 is now in scope for AllocatedID: 51
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Allocated 2 batches of size 50 for player 2
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Sent initalization to player 2
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Initial state being sent to index 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Sending generic initial state update, broadcast on, view ID 'SceneID: 2 Level Prefix: 0'
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Initial state being sent to index 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Sending generic initial state update, broadcast on, view ID 'SceneID: 1 Level Prefix: 0'
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Initial state being sent to index 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Sending generic initial state update, broadcast on, view ID 'SceneID: 3 Level Prefix: 0'
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Sending generic initial state update, broadcast on, view ID 'AllocatedID: 50'
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Sending generic initial state update, broadcast on, view ID 'AllocatedID: 51'
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Sent batch 6 of size 50 to 2
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 200'
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Assigning a view ID: old view ID 'AllocatedID: 0', new view ID 'AllocatedID: 201'
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Relay RPC - name: __RPCNetworkInstantiate - mode 2 - sender 192.168.56.1:60157
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Added RPC '__RPCNetworkInstantiate' to buffer.
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Received state update for view ID AllocatedID: 201
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Zone Entered by 
-	Player Ship (UnityEngine.GameObject)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:108)
- 
-(Filename: C Line: 0)
-
-Waking neighbor zones of: (0.0, 0.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:200)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (0.0, 200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (0.0, -200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (-200.0, 0.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (200.0, 0.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (200.0, 200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (-200.0, 200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (200.0, -200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Waking zone with center at: (-200.0, -200.0, 0.0)
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-Zone:WakeZones(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:204)
-Zone:OnTriggerEnter(Collider) (at C:\Users\Ian Small\git\gravoid-unity_project\Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs:112)
- 
-(Filename: C Line: 0)
-
-Received state update for view ID AllocatedID: 200
-
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2494)
-
-Sent host update to master server with identifier 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Received identifier 0 from master server
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-A client has disconnected from this server. Player ID 2, IP 192.168.56.1:60157
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Sent host update to master server with identifier 0
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
-
-Received identifier 0 from master server
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 2484)
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Network/NetworkManager.cpp Line: 745)
 
 Waiting for finish
