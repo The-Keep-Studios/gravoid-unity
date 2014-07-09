@@ -41,7 +41,7 @@ namespace PathologicalGames
     ///		    This 
     /// </description>
     [AddComponentMenu("Path-o-logical/PoolManager/SpawnPool")]
-    public sealed class SpawnPool : MonoBehaviour, IList<Transform>
+    public class SpawnPool : MonoBehaviour, IList<Transform>
     {
         #region Inspector Parameters
         /// <summary>
@@ -1676,7 +1676,8 @@ namespace PathologicalGames
             if (pos == Vector3.zero) pos = this.spawnPool.group.position;
             if (rot == Quaternion.identity) rot = this.spawnPool.group.rotation;
 
-            var inst = (Transform)Object.Instantiate(this.prefab, pos, rot);
+			var inst = (Transform)Network.Instantiate(this.prefab, pos, rot, 0);
+				
             this.nameInstance(inst);  // Adds the number to the end
 
             if (!this.spawnPool.dontReparent)
@@ -1699,6 +1700,7 @@ namespace PathologicalGames
 
             return inst;
         }
+
 
 
         /// <summary>
