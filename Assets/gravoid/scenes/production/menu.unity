@@ -86,7 +86,7 @@ GameObject:
   - 148: {fileID: 244454707}
   m_Layer: 0
   m_Name: ClientManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1383f61ae1c164891dc9d8cc12e720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 100014, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
-  playerSpawnGroup: 0
+  clientPrefab: {fileID: 100014, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
+  clientSpawnGroup: 0
 --- !u!4 &244454706
 Transform:
   m_ObjectHideFlags: 0
@@ -1216,6 +1216,14 @@ Prefab:
     - target: {fileID: 14800000, guid: dcfde27784d7f014b8ffb9275a06b652, type: 2}
       propertyPath: m_ViewID.m_Type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: dcfde27784d7f014b8ffb9275a06b652, type: 2}
+      propertyPath: clientPrefab
+      value: 
+      objectReference: {fileID: 100014, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
+    - target: {fileID: 100000, guid: dcfde27784d7f014b8ffb9275a06b652, type: 2}
+      propertyPath: m_TagString
+      value: GameController
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcfde27784d7f014b8ffb9275a06b652, type: 2}

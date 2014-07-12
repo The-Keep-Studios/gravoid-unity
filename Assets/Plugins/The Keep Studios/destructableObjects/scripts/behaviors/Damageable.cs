@@ -40,7 +40,7 @@ public class Damageable : MonoBehaviour {
 		
 		//TODO Expand on this as it is a dumb and simple algorithm
 		//TODO Enhance for player ship improvements and special features
-		this.Level += Mathf.FloorToInt(col.impactForceSum.sqrMagnitude * this.impactVulnerabiliy);
+		this.Level += Mathf.FloorToInt(col.relativeVelocity.sqrMagnitude * this.impactVulnerabiliy);
 		
 	}
 	

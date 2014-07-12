@@ -17,7 +17,7 @@ public class CameraScrolling : MonoBehaviour
 	/// This also is very slightly more performant, but it's mostly just convenient.
 	//private LevelAttributes levelAttributes;
 	private Rect levelBounds;
-	private bool targetLock = false;
+	//private bool targetLock = false;
 
 	/// This is for setting interpolation on our target, but making sure we don't permanently
 	/// alter the target's interpolation setting.  This is used in the SetTarget () function.
@@ -25,9 +25,24 @@ public class CameraScrolling : MonoBehaviour
 
 	void  Awake ()
 	{
-		// Set up our convenience references.
-		//levelAttributes = LevelAttributes.GetInstance ();
-		//levelBounds = levelAttributes.bounds;
+		if(this.target == null){
+			//default to following the locally owned player
+			GameObject[] players = GameObject.FindGameObjectsWithTag("player");
+			if(players.Length == 1){
+				//only one player, so we are going to use that
+				SetTarget(players[0].transform, true);
+			}
+			else{
+				//multiple players, so we must assume that this
+				foreach(GameObject player in players){
+					NetworkView netview = player.GetComponent<NetworkView>();
+					if((netview != null && netview.isMine) || player){
+						SetTarget(player.transform, true);
+					}
+				}
+			}
+			Debug.LogWarning("No players found for camera scrolling to target");
+		}
 	}
 
 	public void  SetTarget (Transform newTarget, bool snap)

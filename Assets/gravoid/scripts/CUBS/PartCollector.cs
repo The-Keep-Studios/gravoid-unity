@@ -5,7 +5,7 @@ namespace TheKeepStudios.Gravoid
 {
 	public class PartCollector : MonoBehaviour
 	{
-		[SerializeField] private InventoryBehavior inventory;
+		public InventoryBehavior inventory;
 
 
 		//FIXME this needs find CollectableParts (via collider as trigger) and store it in this inventory

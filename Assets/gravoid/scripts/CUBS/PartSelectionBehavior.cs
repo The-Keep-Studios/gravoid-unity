@@ -5,17 +5,12 @@ namespace TheKeepStudios.Gravoid
 {
 	public class PartSelectionBehavior : MonoBehaviour
 	{
-		
-		#region PRIVATE PROPERTIES
-		[SerializeField]
-		private ProjectilePartBehavior
-			m_projectilePartPrefab;
-		[SerializeField]
-		private PartSelectionBehavior
-			m_prefab;
-		private const string m_poolName = "PartSelections";
-		
-		#endregion
+		public ProjectilePartBehavior m_projectilePartPrefab;
+
+		public PartSelectionBehavior m_prefab;
+
+		public const string m_poolName = "PartSelections";
+
 		#region PUBLIC METHODS
 	
 		public static PartSelectionBehavior Spawn (PartSelectionBehavior _prefab)
