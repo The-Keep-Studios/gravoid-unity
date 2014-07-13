@@ -16,7 +16,7 @@ namespace TheKeepStudios.events.listeners {
 		private void InitializeServer(object requestSource,  EventArgs e){ 
 			Debug.Log("Initializing Server Single Player" );
 			//Need below line to happen when player clicks "New Game"
-			Network.InitializeServer ( 0, -1);
+			Network.InitializeServer ( 0, -1, true);
 
 		}
 	}

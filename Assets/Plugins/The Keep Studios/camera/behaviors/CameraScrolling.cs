@@ -12,12 +12,13 @@ public class CameraScrolling : MonoBehaviour
 	/// How strict should the camera follow the target?  Lower values make the camera more lazy.
 	public float springiness = 4.0f;
 	private Vector3 lastGoalPosition = Vector3.zero;
+	[SerializeField] private string defaultTargetTag = "Player";
 
 	/// Keep handy reference sto our level's attributes.  We set up these references in the Awake () function.
 	/// This also is very slightly more performant, but it's mostly just convenient.
 	//private LevelAttributes levelAttributes;
 	private Rect levelBounds;
-	private bool targetLock = false;
+	//private bool targetLock = false;
 
 	/// This is for setting interpolation on our target, but making sure we don't permanently
 	/// alter the target's interpolation setting.  This is used in the SetTarget () function.
@@ -25,9 +26,25 @@ public class CameraScrolling : MonoBehaviour
 
 	void  Awake ()
 	{
-		// Set up our convenience references.
-		//levelAttributes = LevelAttributes.GetInstance ();
-		//levelBounds = levelAttributes.bounds;
+		if(this.target == null){
+			Debug.LogWarning("No target set for the camera scrolling, so seeking one with the default tag now");
+			//default to following the locally owned player
+			GameObject[] players = GameObject.FindGameObjectsWithTag (defaultTargetTag);
+			if(players.Length == 1){
+				//only one player, so we are going to use that
+				SetTarget(players[0].transform, true);
+			}
+			else{
+				//multiple players, so we must assume that this
+				foreach(GameObject player in players){
+					NetworkView netview = player.GetComponent<NetworkView>();
+					if((netview != null && netview.isMine) || player){
+						SetTarget(player.transform, true);
+					}
+				}
+			}
+			Debug.LogError("No default tagged target found for camera scrolling to target");
+		}
 	}
 
 	public void  SetTarget (Transform newTarget, bool snap)
