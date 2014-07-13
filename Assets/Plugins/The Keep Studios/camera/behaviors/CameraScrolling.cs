@@ -12,6 +12,7 @@ public class CameraScrolling : MonoBehaviour
 	/// How strict should the camera follow the target?  Lower values make the camera more lazy.
 	public float springiness = 4.0f;
 	private Vector3 lastGoalPosition = Vector3.zero;
+	[SerializeField] private string defaultTargetTag = "Player";
 
 	/// Keep handy reference sto our level's attributes.  We set up these references in the Awake () function.
 	/// This also is very slightly more performant, but it's mostly just convenient.
@@ -26,8 +27,9 @@ public class CameraScrolling : MonoBehaviour
 	void  Awake ()
 	{
 		if(this.target == null){
+			Debug.LogWarning("No target set for the camera scrolling, so seeking one with the default tag now");
 			//default to following the locally owned player
-			GameObject[] players = GameObject.FindGameObjectsWithTag("player");
+			GameObject[] players = GameObject.FindGameObjectsWithTag (defaultTargetTag);
 			if(players.Length == 1){
 				//only one player, so we are going to use that
 				SetTarget(players[0].transform, true);
@@ -41,7 +43,7 @@ public class CameraScrolling : MonoBehaviour
 					}
 				}
 			}
-			Debug.LogWarning("No players found for camera scrolling to target");
+			Debug.LogError("No default tagged target found for camera scrolling to target");
 		}
 	}
 

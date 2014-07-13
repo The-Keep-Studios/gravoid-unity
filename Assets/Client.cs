@@ -6,7 +6,7 @@ public class Client : MonoBehaviour {
 
 	public List<GameObject> clientSideOnlyObjectsToSpawn;
 
-	[SerializeField] List<GameObject> clientSideOnlyObjects;
+	[SerializeField, HideInInspector] List<GameObject> clientSideOnlyObjects;
 
 	// Use this for initialization
 	void Start () {

@@ -636,7 +636,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836b0ec296c66854a840b522dda05690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientSideOnlyObjectsToSpawn: []
+  clientSideOnlyObjectsToSpawn:
+  - {fileID: 100006, guid: c6cbd8eabc000df4fafafdfe86cdeba2, type: 2}
+  - {fileID: 100008, guid: e6f594eb4f276c94ebf77be78da71e70, type: 2}
   clientSideOnlyObjects: []
 --- !u!135 &13500000
 SphereCollider:

@@ -10,11 +10,9 @@ namespace TheKeepStudios.network
 
 		private bool isRefreshingHostList = false;
 
-		[SerializeField]
-		private  GameObject clientPrefab;
+		public  GameObject clientPrefab;
 
-		[SerializeField]
-		private int clientSpawnGroup;
+		public int clientSpawnGroup;
 		
 		public HostData[] HostList {
 			get {
@@ -43,6 +41,20 @@ namespace TheKeepStudios.network
 			Debug.Log ("Spawning 'player' object");
 			Network.Instantiate (clientPrefab, Vector3.zero, Quaternion.identity, clientSpawnGroup);
 		}
+
+		#region Message Listeners
+
+		/// <summary>
+		/// Raises the connect internal client event.
+		/// </summary>
+		/// When this message is recieved we create a new client for the local player.
+		/// This is done so that we maintain the client/server logic of the game consistantly with externally connecting players and the local hosting player.
+		public void OnConnectInternal(){
+			//local client has 
+			SpawnClient();
+		}
+
+		#endregion
 
 		#region Remote Procedures
 		[RPC]
