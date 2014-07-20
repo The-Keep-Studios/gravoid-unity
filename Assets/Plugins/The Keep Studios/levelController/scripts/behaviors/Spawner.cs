@@ -37,9 +37,14 @@ public class Spawner : MonoBehaviour {
 	}
 	
 	protected IEnumerator Spawn () {
-		
+
+		//Current hacked in way to make sure that only the server "spawns things"
+		if (!Network.isClient)
+		{
+
 		thingsSpawned.Clear();
-		
+				
+
 		yield return new WaitForFixedUpdate(); //wait until the fixed (physics) update frame
 		
 		bool spawningPossible = true;
@@ -82,7 +87,7 @@ public class Spawner : MonoBehaviour {
 		}
 		
 		//print ( "Halting spawning ..." + this.ToString () );
-		
+		}
 	}
 
 	
