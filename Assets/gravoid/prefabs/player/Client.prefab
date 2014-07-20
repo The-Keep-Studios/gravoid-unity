@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a1c2cbf3574454990ca2fa6eb12112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mySpecialEffects: {fileID: 0}
+  mySpecialEffects: {fileID: 11400092}
   canControl: 1
   inputVal: 0
   inputAxisName: Horizontal

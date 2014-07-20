@@ -23,7 +23,6 @@ public class BaseShipMovementController : MonoBehaviour
 	protected string inputAxisName;
 
 
-
 	public SpecialEffects specialEffects {
 		get {
 			
@@ -74,21 +73,63 @@ public class BaseShipMovementController : MonoBehaviour
 			
 		}
 		
-	}	
-	
+	}
 	
 	/* All physics work should occur in FixedUpdate, as this is called during the physics frame. */
 	virtual public void FixedUpdate ()
 	{
-		
-		inputVal = CanControl ? Input.GetAxis (inputAxisName) : 0.0f;
-		
+		ReadInput ();
+	}
+
+	private void ReadInput ()
+	{
+		NetworkView netView = this.gameObject.GetComponent<NetworkView> ();
+		if (netView == null || netView.isMine) {
+			inputVal = CanControl ? Input.GetAxis (inputAxisName) : 0.0f;
+		}
 	}
 	
 	// This function allows us to SendMessage to an object to set whether or not the player can control it
 	void SetControllable (bool controllable)
 	{
 		canControl = controllable;
+	}
+	
+	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info) {
+		if (stream.isWriting) {
+
+			//inform of the lenght of the incoming string variable
+			int inputNameLen = inputAxisName.Length;
+			stream.Serialize(ref inputNameLen);
+
+			//append each character of the string variable one by one
+			foreach(char nextChar in inputAxisName){
+				char serChar = nextChar;
+				stream.Serialize(ref serChar);
+			}
+
+			stream.Serialize(ref inputVal);
+			stream.Serialize(ref canControl);
+		} else {
+
+			//serialize the input name character by character (no string support)
+			int inputNameLen = 0;//get the lenght of the input name
+			stream.Serialize(ref inputNameLen);
+			inputAxisName = ""; //clear the inputAxisName
+			for(int inputNameCharIdx = 0; inputNameCharIdx < inputNameLen; ++inputNameCharIdx){
+				//append every incoming character
+				char inputChar = ' ';
+				stream.Serialize(ref inputChar);
+				inputAxisName += inputChar;
+			}
+
+			stream.Serialize(ref inputVal);
+
+			//always update control value through SetControllable method
+			bool newCanControl = false;
+			stream.Serialize(ref newCanControl);
+			this.SetControllable(newCanControl);
+		}
 	}
 	
 	/* Storage for movement settings GameObjects */

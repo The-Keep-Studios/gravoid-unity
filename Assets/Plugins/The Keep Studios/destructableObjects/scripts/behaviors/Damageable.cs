@@ -44,6 +44,24 @@ public class Damageable : MonoBehaviour {
 		
 	}
 	
+	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info) {
+		if (stream.isWriting) {
+			stream.Serialize(ref minLevel);
+			stream.Serialize(ref maxLevel);
+			stream.Serialize(ref impactVulnerabiliy);
+			stream.Serialize(ref currentLevel);
+		} else {
+			stream.Serialize(ref minLevel);
+			stream.Serialize(ref maxLevel);
+			stream.Serialize(ref impactVulnerabiliy);
+
+			//make sure to always update the level through the property
+			int newCurrentLevel = 0;
+			stream.Serialize(ref newCurrentLevel);
+			this.Level = newCurrentLevel; 
+		}
+	}
+	
 	[System.Serializable]
 	public class Trigger: System.IComparable<Trigger> {
 		
