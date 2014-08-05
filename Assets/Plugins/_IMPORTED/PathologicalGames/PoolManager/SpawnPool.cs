@@ -102,7 +102,12 @@ namespace PathologicalGames
         /// <summary>
         /// Used by the inspector to store this instances foldout states.
         /// </summary>
-        public Dictionary<object, bool> prefabsFoldOutStates = new Dictionary<object, bool>();
+		public Dictionary<object, bool> prefabsFoldOutStates = new Dictionary<object, bool>();
+		
+		/// <summary>
+		/// Flags the pool as spawning networked objects
+		/// </summary>
+		public bool spawnOnNetwork;
         #endregion Inspector Parameters
 
 
@@ -1317,7 +1322,12 @@ namespace PathologicalGames
         /// Used internally to reference back to the owner spawnPool for things like
         /// anchoring co-routines.
         /// </summary>
-        public SpawnPool spawnPool;
+		public SpawnPool spawnPool;
+		
+		/// <summary>
+		/// Flags the pool as spawning networked objects
+		/// </summary>
+		public bool spawnOnNetwork;
         #endregion Public Properties Available in the Editor
 
 
@@ -1676,7 +1686,15 @@ namespace PathologicalGames
             if (pos == Vector3.zero) pos = this.spawnPool.group.position;
             if (rot == Quaternion.identity) rot = this.spawnPool.group.rotation;
 
-			var inst = (Transform)Network.Instantiate(this.prefab, pos, rot, 0);
+			bool isNetworkSpawner = 
+				(spawnOnNetwork || this.spawnPool.spawnOnNetwork) 
+					&& (!Application.isEditor || Network.isClient || Network.isServer);
+
+			var inst = (Transform) (
+				isNetworkSpawner
+					? Network.Instantiate (this.prefab, pos, rot, 0) 
+					: MonoBehaviour.Instantiate (this.prefab, pos, rot)
+				);
 				
             this.nameInstance(inst);  // Adds the number to the end
 

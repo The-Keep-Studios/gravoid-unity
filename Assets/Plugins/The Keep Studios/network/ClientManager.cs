@@ -56,18 +56,6 @@ namespace TheKeepStudios.network
 
 		#endregion
 
-		#region Remote Procedures
-		[RPC]
-		public void NetworkLoadLevel (int levelIdx)
-		{
-			Debug.Log ("NetworkLoadLevel called to load level " + levelIdx);
-			if (Network.isClient) {
-				Debug.Log ("Loading level " + levelIdx);
-				Application.LoadLevel (levelIdx);
-			}
-		}
-		#endregion
-
 		#region Unity Event Handlers
 		
 		void Awake ()
@@ -87,15 +75,9 @@ namespace TheKeepStudios.network
 		void OnConnectedToServer ()
 		{
 			Debug.Log ("Connected to the server");
+
 			SpawnClient ();
-		}
-		
-		void OnLevelWasLoaded (int level)
-		{
-			if (Network.isServer) {
-				Network.RemoveRPCs (this.networkView.viewID);
-				this.networkView.RPC ("NetworkLoadLevel", RPCMode.OthersBuffered, Application.loadedLevel);
-			}
+
 		}
 		
 		void OnPlayerConnected (NetworkPlayer player)

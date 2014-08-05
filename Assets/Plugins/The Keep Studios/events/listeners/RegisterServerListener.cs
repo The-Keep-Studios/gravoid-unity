@@ -11,14 +11,12 @@ namespace TheKeepStudios.events.listeners {
 				return RegisterServer;
 			}
 		}
-		
 
 		private void RegisterServer(object requestSource,  EventArgs e){ 
 			eventArgs.CreateServerEventArgs csEventArgs = (eventArgs.CreateServerEventArgs) e;
 			Debug.Log("Starting Server " + csEventArgs.hostName);
-			//Need below line to happen when player clicks "New Game"
-			Network.InitializeServer ( csEventArgs.connectionsAllowed,  csEventArgs.portNumber, !Network.HavePublicAddress ());
 			MasterServer.RegisterHost (ApplicationValues.Name, csEventArgs.hostName);
+			Network.maxConnections = csEventArgs.connectionsAllowed;
 		}
 	}
 }

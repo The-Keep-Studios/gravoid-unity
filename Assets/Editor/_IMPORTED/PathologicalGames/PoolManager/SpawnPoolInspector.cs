@@ -36,7 +36,9 @@ public class SpawnPoolInspector : Editor
 
         script._dontDestroyOnLoad = EditorGUILayout.Toggle("Don't Destroy On Load", script._dontDestroyOnLoad);
         
-        script.logMessages = EditorGUILayout.Toggle("Log Messages", script.logMessages);
+		script.logMessages = EditorGUILayout.Toggle("Log Messages", script.logMessages);
+		
+		script.spawnOnNetwork = EditorGUILayout.Toggle("Spawn Networked Objects", script.spawnOnNetwork);
 
         this.expandPrefabs = PGEditorUtils.SerializedObjFoldOutList<PrefabPool>
                             (
