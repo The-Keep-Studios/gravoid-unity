@@ -12,6 +12,7 @@ GameObject:
   - 199: {fileID: 19900000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400018}
   m_Layer: 0
   m_Name: GravityWell
   m_TagString: Untagged
@@ -133,6 +134,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400014}
   - 114: {fileID: 11400120}
+  - 114: {fileID: 11400016}
   m_Layer: 0
   m_Name: Client
   m_TagString: Player
@@ -162,6 +164,7 @@ GameObject:
   - 114: {fileID: 11400106}
   - 114: {fileID: 11400102}
   - 114: {fileID: 11400104}
+  - 114: {fileID: 11400014}
   m_Layer: 0
   m_Name: Player Ship
   m_TagString: Player
@@ -260,7 +263,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 15.7880001, y: .288080007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400026}
@@ -422,6 +425,39 @@ MonoBehaviour:
   density: 100
   length: 2
   soundEffectName: Player_Ship_Thrusters
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6008bc4163c78d1498e85c854a04f9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6008bc4163c78d1498e85c854a04f9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6008bc4163c78d1498e85c854a04f9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1
