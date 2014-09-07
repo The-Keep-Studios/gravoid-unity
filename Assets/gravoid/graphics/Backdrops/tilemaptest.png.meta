@@ -1,6 +1,18 @@
 fileFormatVersion: 2
 guid: b41bcdc335004eb4ca77b9c30d8234bd
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: tilemaptest_0
+    21300002: tilemaptest_1
+    21300004: tilemaptest_2
+    21300006: tilemaptest_3
+    21300008: tilemaptest_4
+    21300010: tilemaptest_5
+    21300012: tilemaptest_6
+    21300014: tilemaptest_7
+    21300016: tilemaptest_8
+    21300018: tilemaptest_9
+    21300020: tilemaptest_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,6 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 10
   alphaIsTransparency: 1
   textureType: 8
@@ -50,6 +63,7 @@ TextureImporter:
         height: 39
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: tilemaptest_1
       rect:
         serializedVersion: 2
@@ -59,6 +73,7 @@ TextureImporter:
         height: 50
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: tilemaptest_2
       rect:
         serializedVersion: 2
@@ -68,6 +83,7 @@ TextureImporter:
         height: 15
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: tilemaptest_3
       rect:
         serializedVersion: 2
@@ -77,6 +93,7 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: tilemaptest_4
       rect:
         serializedVersion: 2
@@ -86,6 +103,7 @@ TextureImporter:
         height: 80
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: tilemaptest_5
       rect:
         serializedVersion: 2
@@ -95,6 +113,7 @@ TextureImporter:
         height: 47
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: tilemaptest_6
       rect:
         serializedVersion: 2
@@ -104,6 +123,7 @@ TextureImporter:
         height: 52
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: tilemaptest_7
       rect:
         serializedVersion: 2
@@ -113,6 +133,7 @@ TextureImporter:
         height: 19
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: tilemaptest_8
       rect:
         serializedVersion: 2
@@ -122,6 +143,7 @@ TextureImporter:
         height: 93
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: tilemaptest_9
       rect:
         serializedVersion: 2
@@ -131,6 +153,7 @@ TextureImporter:
         height: 165
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: tilemaptest_10
       rect:
         serializedVersion: 2
@@ -140,5 +163,6 @@ TextureImporter:
         height: 174
       alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
