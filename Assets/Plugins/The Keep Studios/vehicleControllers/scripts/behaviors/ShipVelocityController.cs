@@ -8,17 +8,14 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
-using Fabric;
 
-public class ShipVelocityController : BaseShipMovementController
-{
+public class ShipVelocityController : BaseShipMovementController{
 	public float lastDrag = 0.0f;
 	public Vector3 lastForce;
 	public MovementSettings positionalMovement;/* Helper for translational (position) movement.*/
 	
 	/* Use this for construction */
-	void Awake ()
-	{
+	void Awake(){
 		
 		inputVal = 0.0f;
 				
@@ -26,8 +23,7 @@ public class ShipVelocityController : BaseShipMovementController
 	
 	
 	/* Use this for initialization */
-	void Start ()
-	{
+	void Start(){
 		
 		inputVal = 0.0f;
 
@@ -35,12 +31,11 @@ public class ShipVelocityController : BaseShipMovementController
 	
 	
 	/* All physics work should occur in FixedUpdate, as this is called during the physics frame. */
-	override public void FixedUpdate ()
-	{		
+	override public void FixedUpdate(){		
 		
-		base.FixedUpdate ();
+		base.FixedUpdate();
 		
-		rigidbody.drag = positionalMovement.ComputeDrag (inputVal, rigidbody.velocity);
+		rigidbody.drag = positionalMovement.ComputeDrag(inputVal, rigidbody.velocity);
 		
 		lastDrag = rigidbody.drag;
 			
@@ -54,39 +49,37 @@ public class ShipVelocityController : BaseShipMovementController
 		
 		lastForce = force;
 
-		rigidbody.AddRelativeForce (force, ForceMode.Acceleration);
+		rigidbody.AddRelativeForce(force, ForceMode.Acceleration);
 		
 	}
 	
 
 	/* The Update () function only serves to provide special effects in this case. */
-	override public void Update ()
-	{
+	override public void Update(){
 		
-		base.Update ();
+		base.Update();
 		
-		UpdateSpecialEffect (specialEffects.positiveThrustEffect, inputVal);
+		UpdateSpecialEffect(specialEffects.positiveThrustEffect, inputVal);
 		
-		UpdateSpecialEffect (specialEffects.negativeThrustEffect, inputVal * -1);
+		UpdateSpecialEffect(specialEffects.negativeThrustEffect, inputVal * -1);
 
 
 	}
 
 
-	private void UpdateSpecialEffect ( List<ThrusterSpecialEffect> thrusters, float val)
-	{
+	private void UpdateSpecialEffect(List<ThrusterSpecialEffect> thrusters, float val){
 		
-		foreach (ThrusterSpecialEffect thruster in thrusters) {
+		foreach(ThrusterSpecialEffect thruster in thrusters){
 		
-			if (thruster == null) {
+			if(thruster == null){
 			
 				return;
 			
-			} else if (val > 0.01f) {
+			} else if(val > 0.01f){
 			
 				thruster.ThrustRatio = val;
 			
-			} else {
+			} else{
 			
 				thruster.ThrustRatio = 0;
 			
@@ -97,13 +90,12 @@ public class ShipVelocityController : BaseShipMovementController
 	}
 
 	/* The Reset () function is called by Unity when you first add a script, and when you choose Reset on the gear popup menu for the script. */
-	void Reset ()
-	{
+	void Reset(){
 		/*
 			* Set some nice default values for our MovementSettings.
 		*/		// Set some nice default values for our MovementSettings.
-		if (positionalMovement == null) {
-			positionalMovement = new MovementSettings ();
+		if(positionalMovement == null){
+			positionalMovement = new MovementSettings();
 		}
 		
 		positionalMovement.maxSpeed = 3.0f;

@@ -2,78 +2,66 @@ using UnityEngine;
 using System.Collections.Generic;
 
 //Need to make it 1 particle system which creates all 4 engine particles. Group them into Left and Right so that turning can be accomplished.
-public class ThrusterSpecialEffect : MonoBehaviour
-{
+public class ThrusterSpecialEffect : MonoBehaviour{
 
 	private float r1;
+
 	private float r2;
+
 	private int currentDensity;
+
 	public int density;
+
 	private ParticleSystem.Particle[] points;
+
 	public int length;
+
 	public string soundEffectName = "Player_Ship_Thrusters";
 
-	public float ThrustRatio {
+	public float ThrustRatio{
 		get{ return r1; }
-		set { r1 = Mathf.Clamp (value, 0, 1); }
+		set { r1 = Mathf.Clamp(value, 0, 1); }
 	}
 
-	public float TurnRatio {
+	public float TurnRatio{
 		get { return r2; }
-		set { r2 = Mathf.Clamp (value, 0, 1); }
+		set { r2 = Mathf.Clamp(value, 0, 1); }
 	}
 
-	public bool IsActive {
+	public bool IsActive{
 		get { return (ThrustRatio + TurnRatio) > 0; }
 	}
 	
 	// Use this for initialization
-	void Start ()
-	{
+	void Start(){
 		ThrustRatio = 0;
 		TurnRatio = 0;
-		CreatePoints ();
+		CreatePoints();
 	}
 	
-	void Reset ()
-	{
+	void Reset(){
 		
 		length = 2;
 		
 	}
 	
-	void Update ()
-	{
+	void Update(){
 		
-		CreatePoints ();
+		CreatePoints();
 		
-		particleSystem.SetParticles (points, points.Length);
+		particleSystem.SetParticles(points, points.Length);
 
-		Fabric.EventManager soundEventManager = Fabric.EventManager.Instance;
+		bool soundUpdateSuccessful = IsActive ? PlaySound() : StopSound();
 
-		if (soundEventManager) {
+		if(!soundUpdateSuccessful){
 
-			if (IsActive) {
+			Debug.LogWarning("Unable to update the thruster sound effect", this);
 
-				soundEventManager.PostEvent (soundEffectName, Fabric.EventAction.PlaySound, null, gameObject);
-
-			} else {
-
-				soundEventManager.PostEvent (soundEffectName, Fabric.EventAction.StopSound, null, gameObject);
-
-			}
-
-		}
-		else{
-			
-			Debug.LogError( "No valid Sound Event Manager was found" ,this.gameObject);
-			
 		}
 
 	}
 
-	private void CreatePoints ()
-	{
+	private void CreatePoints(){
 		
 		currentDensity = density;
 		
@@ -83,18 +71,27 @@ public class ThrusterSpecialEffect : MonoBehaviour
 		
 		float increment = currentLength / density; //Particles start at 0 and end at 2
 
-		for (int i = 0; i < density; i++) {
+		for(int i = 0; i < density; i++){
 			
 			float y = i * increment;
 			
-			points [i].position = new Vector3 (0f, y, 0f);
+			points[i].position = new Vector3(0f, y, 0f);
 			
-			points [i].color = new Color (0f, 1f, 0f);
+			points[i].color = new Color(0f, 1f, 0f);
 			
-			points [i].size = 1f;
+			points[i].size = 1f;
 			
 		}
 		
 	}
 	
+	bool PlaySound(){
+		// TODO play the Thruster sound (actually, perhaps this should be handled a bit more dynamically?)
+		return false;
+	}
+
+	bool StopSound(){
+		// TODO stop the Thruster sound (@see ThrusterSpecialEffect:PlaySound)
+		return false;
+	}
 }
