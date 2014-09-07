@@ -66,24 +66,9 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &100008
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 400010}
-  m_Layer: 0
-  m_Name: Regions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &100010
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -159,8 +144,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 400010}
   - {fileID: 400014}
+  - {fileID: 400012}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &400002
@@ -211,19 +196,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400014}
   m_RootOrder: 0
---- !u!4 &400010
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100008}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 400012}
-  m_Father: {fileID: 400000}
-  m_RootOrder: 0
 --- !u!4 &400012
 Transform:
   m_ObjectHideFlags: 1
@@ -234,8 +206,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 400010}
-  m_RootOrder: 0
+  m_Father: {fileID: 400000}
+  m_RootOrder: 1
 --- !u!4 &400014
 Transform:
   m_ObjectHideFlags: 1
@@ -252,7 +224,7 @@ Transform:
   - {fileID: 400002}
   - {fileID: 400016}
   m_Father: {fileID: 400000}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &400016
 Transform:
   m_ObjectHideFlags: 1
@@ -328,8 +300,20 @@ MonoBehaviour:
   maxInitVelocity: {x: 0, y: 0, z: 0}
   minInitVelocity: {x: 0, y: 0, z: 0}
   spawnables:
-  - {fileID: 400000, guid: 223c493d5f5158f4d92fbc440983b2ce, type: 2}
-  - {fileID: 400034, guid: 9bfe5044ce6d13d4ba02f14997ba60d3, type: 2}
+  - {fileID: 400002, guid: 1fa3901e043e63f4da3dc58b83097ba5, type: 2}
+  - {fileID: 400002, guid: 1fa3901e043e63f4da3dc58b83097ba5, type: 2}
+  - {fileID: 400002, guid: 1fa3901e043e63f4da3dc58b83097ba5, type: 2}
+  - {fileID: 400002, guid: 1fa3901e043e63f4da3dc58b83097ba5, type: 2}
+  - {fileID: 400002, guid: 1fa3901e043e63f4da3dc58b83097ba5, type: 2}
+  - {fileID: 400002, guid: 1fa3901e043e63f4da3dc58b83097ba5, type: 2}
+  - {fileID: 400002, guid: 229d03d2aa2b4764b85f796913fadb20, type: 2}
+  - {fileID: 400002, guid: 229d03d2aa2b4764b85f796913fadb20, type: 2}
+  - {fileID: 400002, guid: 229d03d2aa2b4764b85f796913fadb20, type: 2}
+  - {fileID: 400008, guid: abf4abfe0bc84874b977a54dbb5e7c04, type: 2}
+  - {fileID: 400008, guid: abf4abfe0bc84874b977a54dbb5e7c04, type: 2}
+  - {fileID: 400008, guid: abf4abfe0bc84874b977a54dbb5e7c04, type: 2}
+  - {fileID: 400002, guid: dc5cd1d1c04f1e349b2f14cd7e53e542, type: 2}
+  - {fileID: 400008, guid: c2e7e03c642decc4280f445561337ec9, type: 2}
   spawnerSize: {x: 100, y: 100, z: 100}
   repopulates: 0
 --- !u!114 &11400008
@@ -420,8 +404,8 @@ MonoBehaviour:
   _dontDestroyOnLoad: 0
   logMessages: 0
   _perPrefabPoolOptions:
-  - prefab: {fileID: 400000, guid: a47b1273ac420be4a8c4c173816398d1, type: 2}
-    preloadAmount: 100
+  - prefab: {fileID: 400002, guid: 1fa3901e043e63f4da3dc58b83097ba5, type: 2}
+    preloadAmount: 1
     preloadTime: 0
     preloadFrames: 2
     preloadDelay: 0
@@ -435,8 +419,8 @@ MonoBehaviour:
     _logMessages: 0
     spawnPool: {fileID: 0}
     spawnOnNetwork: 0
-  - prefab: {fileID: 400000, guid: f4ce570b360d5684797befcb4102c383, type: 2}
-    preloadAmount: 100
+  - prefab: {fileID: 400008, guid: c2e7e03c642decc4280f445561337ec9, type: 2}
+    preloadAmount: 1
     preloadTime: 0
     preloadFrames: 2
     preloadDelay: 0
@@ -450,8 +434,8 @@ MonoBehaviour:
     _logMessages: 0
     spawnPool: {fileID: 0}
     spawnOnNetwork: 0
-  - prefab: {fileID: 400000, guid: 903e93ab0e8f364488e2e446b7d7ea15, type: 2}
-    preloadAmount: 100
+  - prefab: {fileID: 400008, guid: abf4abfe0bc84874b977a54dbb5e7c04, type: 2}
+    preloadAmount: 1
     preloadTime: 0
     preloadFrames: 2
     preloadDelay: 0
@@ -465,8 +449,23 @@ MonoBehaviour:
     _logMessages: 0
     spawnPool: {fileID: 0}
     spawnOnNetwork: 0
-  - prefab: {fileID: 400000, guid: 223c493d5f5158f4d92fbc440983b2ce, type: 2}
-    preloadAmount: 100
+  - prefab: {fileID: 400002, guid: dc5cd1d1c04f1e349b2f14cd7e53e542, type: 2}
+    preloadAmount: 1
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 0
+    limitAmount: 100
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 50
+    cullDelay: 60
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
+    spawnOnNetwork: 0
+  - prefab: {fileID: 400002, guid: 229d03d2aa2b4764b85f796913fadb20, type: 2}
+    preloadAmount: 1
     preloadTime: 0
     preloadFrames: 2
     preloadDelay: 0
