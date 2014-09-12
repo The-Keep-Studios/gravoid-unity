@@ -2,15 +2,30 @@
 using System.Collections;
 
 namespace TheKeepStudios.network{
+
+	[RequireComponent(typeof(NetworkView))]
 	public class NetsyncedMovement : MonoBehaviour{
+		
+		public enum SerializationAuthorityType{
+			Server,
+			NetworkViewOwner,
+			NoAuthority
+		} 
+		
+		public SerializationAuthorityType whoControlsThisObjectsPosition;
 
 		private delegate void NetStreamHandler(BitStream stream,NetworkMessageInfo info);
 
 		NetStreamHandler writeRidgidbodyPhysics;
+
 		NetStreamHandler readRidgidbodyPhysics;
+
 		NetStreamHandler write2dRidgidbodyPhysics;
+
 		NetStreamHandler read2dRidgidbodyPhysics;
+
 		NetStreamHandler writeTransform;
+
 		NetStreamHandler readTransform;
 	
 		void Start(){
@@ -23,8 +38,29 @@ namespace TheKeepStudios.network{
 		}
 				
 		void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info){
-			NetStreamHandler handler = GetStreamHandler(stream.isWriting);
-			handler(stream, info);
+			if(ShouldSerialize(stream, info)){
+				NetStreamHandler handler = GetStreamHandler(stream.isWriting);
+				handler(stream, info);
+			}
+		}
+
+		/// <summary>
+		/// Shoulds the serialize.
+		/// </summary>
+		/// <returns><c>true</c>, if we have the authority to serialize at this time, <c>false</c> otherwise.</returns>
+		/// <param name="stream">Stream.</param>
+		/// <param name="info">Info.</param>
+		bool ShouldSerialize(BitStream stream, NetworkMessageInfo info){
+			switch(whoControlsThisObjectsPosition){
+			case(SerializationAuthorityType.Server):
+				return Network.isServer == stream.isWriting;
+			case(SerializationAuthorityType.NetworkViewOwner):
+				return this.networkView.isMine == stream.isWriting;
+			case(SerializationAuthorityType.NoAuthority):
+				return true;
+			default:
+				throw new System.Exception("Undefined serialization authority set");
+			}
 		}
 	
 		/// <summary>

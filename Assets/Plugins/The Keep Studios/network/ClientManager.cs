@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace TheKeepStudios.network
-{
-	public class ClientManager : MonoBehaviour
-	{
+namespace TheKeepStudios.network{
+	public class ClientManager : MonoBehaviour{
 
 		private HostData[] hostList = new HostData[0];
 
@@ -13,33 +11,32 @@ namespace TheKeepStudios.network
 		public  GameObject clientPrefab;
 
 		public int clientSpawnGroup;
+
+		public string gameTypeName;
 		
-		public HostData[] HostList {
-			get {
+		public HostData[] HostList{
+			get{
 				//never return a null array
 				return hostList == null ? new HostData[0] : hostList;
 			}
 		}
 	
-		public void RefreshHostList ()
-		{
-			if (!isRefreshingHostList) {
-				Debug.Log ("Refreshing the host list");
+		public void RefreshHostList(){
+			if(!isRefreshingHostList){
+				Debug.Log("Refreshing the host list");
 				isRefreshingHostList = true;
 				hostList = null;
-				MasterServer.RequestHostList (ApplicationValues.Name);
+				MasterServer.RequestHostList(gameTypeName);
 			}
 		}
 	
-		public void JoinServer (HostData hostData)
-		{
-			Network.Connect (hostData);
+		public void JoinServer(HostData hostData){
+			Network.Connect(hostData);
 		}
 		
-		private void SpawnClient ()
-		{
-			Debug.Log ("Spawning 'player' object");
-			Network.Instantiate (clientPrefab, Vector3.zero, Quaternion.identity, clientSpawnGroup);
+		private void SpawnClient(){
+			Debug.Log("Spawning 'player' object");
+			Network.Instantiate(clientPrefab, Vector3.zero, Quaternion.identity, clientSpawnGroup);
 		}
 
 		#region Message Listeners
@@ -58,39 +55,34 @@ namespace TheKeepStudios.network
 
 		#region Unity Event Handlers
 		
-		void Awake ()
-		{
-			DontDestroyOnLoad (this.gameObject);
+		void Awake(){
+			DontDestroyOnLoad(this.gameObject);
 		}
 		
-		void Update ()
-		{
-			if (isRefreshingHostList) {
-				hostList = MasterServer.PollHostList ();
-				isRefreshingHostList = hostList.Length == 0;
-				Debug.Log ("Retrieved host list of size " + hostList.Length);
+		void Update(){
+			if(isRefreshingHostList){
+				hostList = MasterServer.PollHostList();
+				isRefreshingHostList = false;
+				Debug.Log("Retrieved host list of size " + hostList.Length);
 			}
 		}
 		
-		void OnConnectedToServer ()
-		{
-			Debug.Log ("Connected to the server");
+		void OnConnectedToServer(){
+			Debug.Log("Connected to the server");
 
-			SpawnClient ();
+			SpawnClient();
 
 		}
 		
-		void OnPlayerConnected (NetworkPlayer player)
-		{
-			Debug.Log ("Setup the newly connected player " + player);
+		void OnPlayerConnected(NetworkPlayer player){
+			Debug.Log("Setup the newly connected player " + player);
 		}
 		
-		void OnPlayerDisconnected (NetworkPlayer player)
-		{
+		void OnPlayerDisconnected(NetworkPlayer player){
 			//FIXME this isn't nearly enough but we better put it in for now
-			Debug.Log ("Clean up after player " + player);
-			Network.RemoveRPCs (player);
-			Network.DestroyPlayerObjects (player);
+			Debug.Log("Clean up after player " + player);
+			Network.RemoveRPCs(player);
+			Network.DestroyPlayerObjects(player);
 		}
 
 		#endregion
