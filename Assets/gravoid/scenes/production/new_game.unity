@@ -127,6 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initializeOnAwake: 1
-  allowedConnections: 0
+  allowedConnections: 10
   listeningPort: 29864
-  natStuffThingy: 1
+  useNAT: 1
+  gameType: Gravoid
+  gameName: Gravoid 1.0.0
+  registerWithMasterServerOnInitialize: 0
