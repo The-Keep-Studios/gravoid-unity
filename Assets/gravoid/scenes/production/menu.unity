@@ -1906,6 +1906,11 @@ Prefab:
       propertyPath: clientManager
       value: 
       objectReference: {fileID: 244454705}
+    - target: {fileID: 11400016, guid: 1f8d86c3963dcd14980efaba47747754, type: 2}
+      propertyPath: serverDisplayPrefab
+      value: 
+      objectReference: {fileID: 11400002, guid: 11f9d1d150f0393429b9fa789172e47e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f8d86c3963dcd14980efaba47747754, type: 2}
   m_RootGameObject: {fileID: 405347528}

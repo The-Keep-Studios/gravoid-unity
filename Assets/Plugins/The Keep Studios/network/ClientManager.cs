@@ -25,8 +25,8 @@ namespace TheKeepStudios.network{
 			if(!isRefreshingHostList){
 				Debug.Log("Refreshing the host list");
 				isRefreshingHostList = true;
-				hostList = null;
 				MasterServer.RequestHostList(gameTypeName);
+				hostList = MasterServer.PollHostList();
 			}
 		}
 	

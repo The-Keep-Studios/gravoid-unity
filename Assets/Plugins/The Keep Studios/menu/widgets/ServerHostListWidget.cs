@@ -25,11 +25,20 @@ namespace TheKeepStudios.menu.widgets{
 			HostData[] hosts = this.clientManager.HostList;
 			for(int hostIdx = 0; hostIdx < hosts.Length || hostIdx < displays.Length; ++hostIdx){
 				HostData host = hostIdx < hosts.Length ? hosts[hostIdx] : null; //get the host data if it exists
-				ServerHostListLineWidget widget = hostIdx < displays.Length ? displays[hostIdx] : ((GameObject)Instantiate(serverDisplayPrefab)).GetComponent<ServerHostListLineWidget>(); //get or make the matching widget
+				ServerHostListLineWidget widget = GetDisplayWidget(hostIdx, displays); 
 				widget.transform.SetParent(this.gameObject.transform, false); //set ourselves as the parent object for the new widget
 				widget.Host = host;//update the widget host
 			}
 		}
 
+		ServerHostListLineWidget GetDisplayWidget(int hostIdx, ServerHostListLineWidget[] displays){
+			ServerHostListLineWidget widget = hostIdx < displays.Length ? displays[hostIdx] : null;
+			if(widget == null){
+				GameObject gObj = (Instantiate(serverDisplayPrefab.gameObject) as GameObject);
+				widget = gObj.GetComponent<ServerHostListLineWidget>();
+				//get or make the matching widget
+			}
+			return widget;
+		}
 	}
 }
