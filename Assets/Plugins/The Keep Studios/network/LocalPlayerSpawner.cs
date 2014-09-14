@@ -2,18 +2,18 @@
 using System.Collections;
 using PathologicalGames;
 
-public class LocalPlayerSpawner : MonoBehaviour {
+public class LocalPlayerSpawner : MonoBehaviour{
 
 	public GameObject playerPrefab;
 
 	public string playerSpawnPoolName;
 
 	// Use this for initialization
-	void Start () {
+	void Start(){
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update(){
 		//possibly overkill? We'll see
 		SpawnPlayerIfNeeded();
 	}
@@ -22,9 +22,12 @@ public class LocalPlayerSpawner : MonoBehaviour {
 		SpawnPlayerIfNeeded();
 	}
 
-	bool IsLocalPlayerSpawned () {
-		foreach (GameObject obj in GameObject.FindGameObjectsWithTag ("Player")) {
-			if(obj.networkView == null || obj.networkView.isMine){
+	bool IsLocalPlayerSpawned(){
+		foreach(GameObject obj in GameObject.FindGameObjectsWithTag ("Player")){
+			if(!Network.isServer 
+				|| !Network.isClient 
+				|| obj.networkView == null 
+				|| obj.networkView.isMine){
 				return true;
 			}
 		}
@@ -32,11 +35,23 @@ public class LocalPlayerSpawner : MonoBehaviour {
 	}
 
 	void SpawnPlayerIfNeeded(){
-		if(!IsLocalPlayerSpawned ()){
+		if(!IsLocalPlayerSpawned()){
 			try{
-				Network.Instantiate(playerPrefab, this.transform.position, this.transform.rotation, Application.loadedLevel);
-			}
-			catch(System.Exception e){
+				// Create a variable which will be set in TryGetValue() below
+				PathologicalGames.SpawnPool pool;
+
+				/* 
+				 * TryGetValue() returns the same as Containts() but also offers and out value
+				 * @see documentation for TryGetValue()
+				 * Note the '!' here as well. Also note the 'out' keyword is needed in C#
+				 */
+				if(!PathologicalGames.PoolManager.Pools.TryGetValue(playerSpawnPoolName, out pool)){
+					throw new System.Exception("PoolManager does not contain a pool named " + playerSpawnPoolName);
+				}
+
+				Transform player = pool.Spawn(playerPrefab.transform, this.transform.position, this.transform.rotation);
+
+			} catch(System.Exception e){
 				Debug.LogException(e);
 			}
 		}

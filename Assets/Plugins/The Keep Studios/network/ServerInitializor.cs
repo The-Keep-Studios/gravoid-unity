@@ -18,6 +18,15 @@ namespace TheKeepStudios.events.listeners{
 		public string gameName;
 
 		public bool registerWithMasterServerOnInitialize;
+
+		public string GameName{
+			get{
+				return gameName;
+			}
+			set{
+				gameName = value;
+			}
+		}
 		 
 		void Awake(){
 
@@ -25,6 +34,11 @@ namespace TheKeepStudios.events.listeners{
 				InitializeServer();
 			}
 
+		}
+		
+		public void InitializeServer(string serverName){
+			gameName = serverName;
+			InitializeServer();
 		}
 		
 		public void InitializeServer(){
@@ -38,9 +52,13 @@ namespace TheKeepStudios.events.listeners{
 		public void InitializeServer(int _allowedConnections, int _listeningPort, bool _useNAT){ 
 			Debug.Log("Initializing Server Single Player");
 			if(registerWithMasterServerOnInitialize){
-				MasterServer.RegisterHost(this.gameType, this.gameName);
+				RegisterWithMasterServer();
 			}
 			Network.InitializeServer(_allowedConnections, _listeningPort, _useNAT);
+		}
+
+		public void RegisterWithMasterServer(){
+			MasterServer.RegisterHost(this.gameType, this.gameName);
 		}
 	}
 }
