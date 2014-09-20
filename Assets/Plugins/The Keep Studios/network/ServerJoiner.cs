@@ -5,7 +5,16 @@ namespace TheKeepStudios.network{
 
 	public class ServerJoiner : MonoBehaviour{
 
-		public HostData hostToJoin;
+		private HostData hostToJoin;
+
+		public HostData HostToJoin{
+			get{
+				return hostToJoin;
+			}
+			set{
+				hostToJoin = value;
+			}
+		}
 
 		// Use this for initialization
 		void Start(){

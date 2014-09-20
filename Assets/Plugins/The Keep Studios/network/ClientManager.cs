@@ -2,17 +2,14 @@
 using System.Collections;
 
 namespace TheKeepStudios.network{
+	[RequireComponent(typeof(ServerJoiner))]
 	public class ClientManager : MonoBehaviour{
 
 		private HostData[] hostList = new HostData[0];
-
-		private bool isRefreshingHostList = false;
-
-		public  GameObject clientPrefab;
-
-		public int clientSpawnGroup;
-
+		
 		public string gameTypeName;
+		
+		private bool isRefreshingHostList = false;
 		
 		public HostData[] HostList{
 			get{
@@ -31,27 +28,10 @@ namespace TheKeepStudios.network{
 		}
 	
 		public void JoinServer(HostData hostData){
-			Network.Connect(hostData);
+			ServerJoiner sj = this.GetComponent<ServerJoiner>();
+			sj.HostToJoin = hostData;
+			sj.JoinServer();
 		}
-		
-		private void SpawnClient(){
-			Debug.Log("Spawning 'player' object");
-			Network.Instantiate(clientPrefab, Vector3.zero, Quaternion.identity, clientSpawnGroup);
-		}
-
-		#region Message Listeners
-
-		/// <summary>
-		/// Raises the connect internal client event.
-		/// </summary>
-		/// When this message is recieved we create a new client for the local player.
-		/// This is done so that we maintain the client/server logic of the game consistantly with externally connecting players and the local hosting player.
-		public void OnConnectInternal(){
-			//local client has 
-			SpawnClient();
-		}
-
-		#endregion
 
 		#region Unity Event Handlers
 		
@@ -69,9 +49,6 @@ namespace TheKeepStudios.network{
 		
 		void OnConnectedToServer(){
 			Debug.Log("Connected to the server");
-
-			SpawnClient();
-
 		}
 		
 		void OnPlayerConnected(NetworkPlayer player){

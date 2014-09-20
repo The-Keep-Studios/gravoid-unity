@@ -2,11 +2,13 @@
 using System.Collections;
 
 [RequireComponent(typeof(NetworkView))]
-public class ClientLevelLoader : MonoBehaviour{
+public class LevelLoader : MonoBehaviour{
 
 	public const int gameLevelNetworkDataGroup = 1;
 	public int disconnectedLevel = -1;
 	private int lastLevelPrefix = 0;
+
+	public string[] networkLoadableLevels;
 
 	
 	void Awake(){
@@ -22,14 +24,34 @@ public class ClientLevelLoader : MonoBehaviour{
 	void OnDisconnectedFromServer(){
 		Application.LoadLevel(disconnectedLevel);
 	}
+
+	public void LoadLevel(string levelToLoad){
+
+		//try to load the level via network loading
+		for(int netLvlIdx = 0; netLvlIdx<networkLoadableLevels.Length; ++netLvlIdx){
+			if(networkLoadableLevels[netLvlIdx] == levelToLoad){
+				Network.RemoveRPCsInGroup(0);
+				Network.RemoveRPCsInGroup(gameLevelNetworkDataGroup);
+				StartCoroutine(NetworkLoadLevel(levelToLoad, netLvlIdx));
+				return; //exit the function
+			}
+		}
+
+		//no net enabled level found, instead load the level locally
+		StartCoroutine(LocalLoadLevel(levelToLoad));
+
+	}
+
+	IEnumerator LocalLoadLevel(string levelName){
+		yield return null;
+		Application.LoadLevel(levelName);
+	}
 	
 	#region Remote Procedures
 	[RPC]
-	IEnumerable NetworkLoadLevel(int levelIdx){
+	IEnumerator NetworkLoadLevel(string levelName, int levelPrefix){
 	
-		Debug.Log("NetworkLoadLevel called to load level " + levelIdx);
-
-		int levelPrefix = levelIdx;
+		Debug.Log("NetworkLoadLevel called to load level " + levelName);
 
 		lastLevelPrefix = levelPrefix;
 		
@@ -44,7 +66,7 @@ public class ClientLevelLoader : MonoBehaviour{
 		// All network views loaded from a level will get a prefix into their NetworkViewID.
 		// This will prevent old updates from clients leaking into a newly created scene.
 		Network.SetLevelPrefix(levelPrefix);
-		Application.LoadLevel(levelIdx);
+		Application.LoadLevel(levelName);
 		yield return null;
 		yield return null;
 		

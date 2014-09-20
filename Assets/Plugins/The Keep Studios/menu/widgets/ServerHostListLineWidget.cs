@@ -9,10 +9,10 @@ namespace TheKeepStudios.menu.widgets{
 
 		public HostData Host{
 			get{
-				return serverJoiner.hostToJoin;
+				return serverJoiner.HostToJoin;
 			}
 			set{
-				serverJoiner.hostToJoin = value;
+				serverJoiner.HostToJoin = value;
 				gameObject.SetActive(Host != null);//widget is active iff we have a host
 				if(Host != null){
 					UpdateGUIElements();
