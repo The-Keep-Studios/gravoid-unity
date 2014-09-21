@@ -247,7 +247,7 @@ MonoBehaviour:
   logMessages: 0
   _perPrefabPoolOptions:
   - prefab: {fileID: 400000, guid: fb4cda53b58f1e34395d89494407e444, type: 2}
-    preloadAmount: 64
+    preloadAmount: 0
     preloadTime: 0
     preloadFrames: 2
     preloadDelay: 0
@@ -282,7 +282,7 @@ MonoBehaviour:
   logMessages: 0
   _perPrefabPoolOptions:
   - prefab: {fileID: 400000, guid: 24cef785ecaa2bc4199958e3ff082a84, type: 2}
-    preloadAmount: 1
+    preloadAmount: 0
     preloadTime: 0
     preloadFrames: 2
     preloadDelay: 0
@@ -317,7 +317,7 @@ MonoBehaviour:
   logMessages: 0
   _perPrefabPoolOptions:
   - prefab: {fileID: 400002, guid: 1fa3901e043e63f4da3dc58b83097ba5, type: 2}
-    preloadAmount: 1
+    preloadAmount: 0
     preloadTime: 0
     preloadFrames: 2
     preloadDelay: 0
@@ -332,7 +332,7 @@ MonoBehaviour:
     spawnPool: {fileID: 0}
     spawnOnNetwork: 0
   - prefab: {fileID: 400008, guid: c2e7e03c642decc4280f445561337ec9, type: 2}
-    preloadAmount: 1
+    preloadAmount: 0
     preloadTime: 0
     preloadFrames: 2
     preloadDelay: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
     spawnPool: {fileID: 0}
     spawnOnNetwork: 0
   - prefab: {fileID: 400008, guid: abf4abfe0bc84874b977a54dbb5e7c04, type: 2}
-    preloadAmount: 1
+    preloadAmount: 0
     preloadTime: 0
     preloadFrames: 2
     preloadDelay: 0
@@ -362,7 +362,7 @@ MonoBehaviour:
     spawnPool: {fileID: 0}
     spawnOnNetwork: 0
   - prefab: {fileID: 400002, guid: dc5cd1d1c04f1e349b2f14cd7e53e542, type: 2}
-    preloadAmount: 1
+    preloadAmount: 0
     preloadTime: 0
     preloadFrames: 2
     preloadDelay: 0
@@ -377,7 +377,7 @@ MonoBehaviour:
     spawnPool: {fileID: 0}
     spawnOnNetwork: 0
   - prefab: {fileID: 400002, guid: 229d03d2aa2b4764b85f796913fadb20, type: 2}
-    preloadAmount: 1
+    preloadAmount: 0
     preloadTime: 0
     preloadFrames: 2
     preloadDelay: 0

@@ -32,7 +32,10 @@ public class LevelLoader : MonoBehaviour{
 			if(networkLoadableLevels[netLvlIdx] == levelToLoad){
 				Network.RemoveRPCsInGroup(0);
 				Network.RemoveRPCsInGroup(gameLevelNetworkDataGroup);
-				StartCoroutine(NetworkLoadLevel(levelToLoad, netLvlIdx));
+				this.networkView.RPC("NetworkLoadLevel", RPCMode.All, new object[] {
+					levelToLoad,
+					netLvlIdx
+				});
 				return; //exit the function
 			}
 		}
@@ -43,8 +46,10 @@ public class LevelLoader : MonoBehaviour{
 	}
 
 	IEnumerator LocalLoadLevel(string levelName){
-		yield return null;
+		Debug.Log("LocalLoadLevel called to load level " + levelName);
 		Application.LoadLevel(levelName);
+		yield return null;
+		yield return null;
 	}
 	
 	#region Remote Procedures

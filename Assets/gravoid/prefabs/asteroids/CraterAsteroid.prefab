@@ -114,7 +114,6 @@ GameObject:
   - 33: {fileID: 3300010}
   - 135: {fileID: 13500010}
   - 23: {fileID: 2300010}
-  - 114: {fileID: 11400012}
   - 148: {fileID: 14800008}
   m_Layer: 0
   m_Name: Crater B
@@ -485,18 +484,6 @@ MonoBehaviour:
   - threshold: 100
     type: 0
     eventMessage: OnBreak
---- !u!114 &11400012
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6008bc4163c78d1498e85c854a04f9fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whoControlsThisObjectsPosition: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

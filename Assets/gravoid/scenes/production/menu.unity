@@ -350,11 +350,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 244454706}
-  - 114: {fileID: 244454705}
   - 148: {fileID: 244454707}
+  - 114: {fileID: 244454705}
   - 114: {fileID: 244454709}
-  - 114: {fileID: 244454711}
   - 114: {fileID: 244454708}
+  - 114: {fileID: 244454711}
   m_Layer: 0
   m_Name: ClientManager
   m_TagString: GameController
@@ -2417,7 +2417,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1120614131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1094302402}
@@ -3382,7 +3382,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22400038, guid: 9cc9aee47b7b655459684ac744fbfd98, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 22400038, guid: 9cc9aee47b7b655459684ac744fbfd98, type: 2}
       propertyPath: m_AnchoredPosition.x

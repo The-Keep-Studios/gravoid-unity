@@ -612,7 +612,7 @@ NetworkView:
   m_GameObject: {fileID: 100006}
   m_Enabled: 1
   m_StateSynchronization: 2
-  m_Observed: {fileID: 14800008}
+  m_Observed: {fileID: 5400008}
   m_ViewID:
     m_ID: 0
     m_Type: 0
