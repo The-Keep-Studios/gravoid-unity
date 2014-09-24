@@ -1,42 +1,31 @@
 using UnityEngine;
 using System.Collections;
 
-public class Breakable : ObjectCluster {
+namespace TheKeepStudios.Destructable{
+
+	[RequireComponent(typeof(Spawned))]
+	public class Breakable : ObjectCluster{
 	
-	public override void OnSpawned(){
+		public void OnBreak(){
 		
-		this.detachChildrenImmediately = false; //prevent breaking apart too early
+			StartCoroutine(BreakApart());
 		
-		base.OnSpawned();
-		
-	}
-	
-	public void OnBreak(){
-		
-		BreakApart();
-		
-	}
-	
-	public void BreakApart(){
-		
-		this.despawnAfterDetach = true;
-		
-		this.detachChildrenImmediately = true;
-		
-		StartCoroutine( CreateCluster() );
-		
-	}
-	
-	override protected void DetachChild(Transform child, float angularRotSpeed, float bodyRadius){
-		base.DetachChild(child,angularRotSpeed,bodyRadius);
-		
-		if( child.rigidbody && this.rigidbody ){
-			
-			//note that we are assuming said centrifugalForce is non-directional, 
-			child.rigidbody.AddExplosionForce(angularRotSpeed, this.transform.position, bodyRadius, 0, ForceMode.VelocityChange); 
-			
 		}
-		
-	}
 	
+		public IEnumerator BreakApart(){
+			
+			yield return new WaitForFixedUpdate(); //wait until the fixed (physics) update frame
+			
+			foreach(Detachable child in this.GetComponentsInChildren<Detachable>(true)){
+				
+				child.Detach();
+				
+			}
+			
+			this.GetComponent<Spawned>().Despawn();
+		
+		}
+	
+	}
+
 }

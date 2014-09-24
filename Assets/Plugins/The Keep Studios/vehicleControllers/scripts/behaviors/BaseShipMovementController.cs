@@ -81,7 +81,7 @@ public class BaseShipMovementController : MonoBehaviour{
 
 	private void ReadInput(){
 		NetworkView netView = this.gameObject.GetComponent<NetworkView>();
-		if(netView == null || netView.isMine){
+		if(!(Network.isClient || Network.isServer) || (netView == null || netView.isMine)){
 			inputVal = CanControl ? Input.GetAxis(inputAxisName) : 0.0f;
 		}
 	}

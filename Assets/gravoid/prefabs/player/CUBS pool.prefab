@@ -48,7 +48,37 @@ MonoBehaviour:
   dontReparent: 0
   _dontDestroyOnLoad: 0
   logMessages: 0
-  _perPrefabPoolOptions: []
+  _perPrefabPoolOptions:
+  - prefab: {fileID: 400000, guid: 06e3b1f04be32644e9520132f0312e4b, type: 2}
+    preloadAmount: 1
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 0
+    limitAmount: 100
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 50
+    cullDelay: 60
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
+    spawnOnNetwork: 0
+  - prefab: {fileID: 400000, guid: 6ba4ca7abeda4844599a3e6b38d57e99, type: 2}
+    preloadAmount: 1
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 0
+    limitAmount: 100
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 50
+    cullDelay: 60
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
+    spawnOnNetwork: 0
   spawnOnNetwork: 0
   maxParticleDespawnTime: 60
 --- !u!114 &11400002
@@ -68,7 +98,22 @@ MonoBehaviour:
   dontReparent: 0
   _dontDestroyOnLoad: 0
   logMessages: 0
-  _perPrefabPoolOptions: []
+  _perPrefabPoolOptions:
+  - prefab: {fileID: 400000, guid: 5f79c8216d608424c90d6b119a9c0043, type: 2}
+    preloadAmount: 1
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 0
+    limitAmount: 100
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 50
+    cullDelay: 60
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
+    spawnOnNetwork: 0
   spawnOnNetwork: 0
   maxParticleDespawnTime: 60
 --- !u!114 &11400004
@@ -89,7 +134,22 @@ MonoBehaviour:
   _dontDestroyOnLoad: 0
   logMessages: 0
   _perPrefabPoolOptions:
-  - prefab: {fileID: 0}
+  - prefab: {fileID: 400000, guid: dcf4215d72a78454e9e703e5e3b14921, type: 2}
+    preloadAmount: 1
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 0
+    limitAmount: 100
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 50
+    cullDelay: 60
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
+    spawnOnNetwork: 0
+  - prefab: {fileID: 400000, guid: f9aa7bf6985feb24b869194c6ccf4d6a, type: 2}
     preloadAmount: 1
     preloadTime: 0
     preloadFrames: 2

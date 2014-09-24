@@ -16,8 +16,6 @@ public class ThrusterSpecialEffect : MonoBehaviour{
 
 	public int length;
 
-	public string soundEffectName = "Player_Ship_Thrusters";
-
 	public float ThrustRatio{
 		get{ return r1; }
 		set { r1 = Mathf.Clamp(value, 0, 1); }
@@ -28,8 +26,12 @@ public class ThrusterSpecialEffect : MonoBehaviour{
 		set { r2 = Mathf.Clamp(value, 0, 1); }
 	}
 
+	public float ThrottleRatio{
+		get { return (ThrustRatio + TurnRatio) / 2; }
+	}
+
 	public bool IsActive{
-		get { return (ThrustRatio + TurnRatio) > 0; }
+		get { return !Mathf.Approximately(ThrustRatio + TurnRatio, 0); }
 	}
 	
 	// Use this for initialization
@@ -86,12 +88,21 @@ public class ThrusterSpecialEffect : MonoBehaviour{
 	}
 	
 	bool PlaySound(){
-		// TODO play the Thruster sound (actually, perhaps this should be handled a bit more dynamically?)
-		return false;
+		if(this.audio){
+			if(!this.audio.isPlaying){
+				this.audio.Play();
+			}
+			this.audio.volume = ThrottleRatio;
+			return true;
+		} else{
+			return false;
+		}
 	}
 
 	bool StopSound(){
-		// TODO stop the Thruster sound (@see ThrusterSpecialEffect:PlaySound)
-		return false;
+		if(this.audio && this.audio.isPlaying){
+			this.audio.Stop();
+		}
+		return true;
 	}
 }

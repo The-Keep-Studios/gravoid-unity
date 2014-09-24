@@ -13,6 +13,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 54: {fileID: 5400002}
   - 148: {fileID: 14800002}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: Rocky A
   m_TagString: Untagged
@@ -35,6 +36,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 148: {fileID: 14800000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: RockyAsteroid
   m_TagString: Untagged
@@ -55,6 +57,7 @@ GameObject:
   - 23: {fileID: 2300004}
   - 54: {fileID: 5400008}
   - 148: {fileID: 14800008}
+  - 114: {fileID: 11400012}
   m_Layer: 0
   m_Name: Rocky Large
   m_TagString: Untagged
@@ -75,6 +78,7 @@ GameObject:
   - 23: {fileID: 2300006}
   - 54: {fileID: 5400010}
   - 148: {fileID: 14800010}
+  - 114: {fileID: 11400014}
   m_Layer: 0
   m_Name: Rocky Medium
   m_TagString: Untagged
@@ -95,6 +99,7 @@ GameObject:
   - 23: {fileID: 2300008}
   - 54: {fileID: 5400006}
   - 148: {fileID: 14800006}
+  - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: Rocky C
   m_TagString: Untagged
@@ -115,6 +120,7 @@ GameObject:
   - 23: {fileID: 2300010}
   - 54: {fileID: 5400004}
   - 148: {fileID: 14800004}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: Rocky B
   m_TagString: Untagged
@@ -462,9 +468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8489e0e8a960a44392b89c180f6ca07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detachChildrenImmediately: 0
-  despawnAfterDetach: 1
-  originSpawnPoolName: 
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -484,6 +487,73 @@ MonoBehaviour:
   - threshold: 100
     type: 0
     eventMessage: OnBreak
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e7c83419f520b46aa96def42cb8b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originSpawnPoolName: 
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f1b12580d252a44902955e075824f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f1b12580d252a44902955e075824f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f1b12580d252a44902955e075824f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f1b12580d252a44902955e075824f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f1b12580d252a44902955e075824f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

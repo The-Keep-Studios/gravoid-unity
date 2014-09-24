@@ -17,7 +17,7 @@ namespace TheKeepStudios.network{
 				return hostList == null ? new HostData[0] : hostList;
 			}
 		}
-	
+		
 		public void RefreshHostList(){
 			if(!isRefreshingHostList){
 				Debug.Log("Refreshing the host list");
@@ -26,7 +26,7 @@ namespace TheKeepStudios.network{
 				hostList = MasterServer.PollHostList();
 			}
 		}
-	
+		
 		public void JoinServer(HostData hostData){
 			ServerJoiner sj = this.GetComponent<ServerJoiner>();
 			sj.HostToJoin = hostData;
