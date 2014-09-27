@@ -23,11 +23,10 @@ public class LocalPlayerSpawner : MonoBehaviour{
 	}
 
 	bool IsLocalPlayerSpawned(){
-		foreach(GameObject obj in GameObject.FindGameObjectsWithTag ("Player")){
-			if(!Network.isServer 
-				|| !Network.isClient 
-				|| obj.networkView == null 
-				|| obj.networkView.isMine){
+		foreach(GameObject player in GameObject.FindGameObjectsWithTag ("Player")){
+			bool networkConnected = Network.isServer || Network.isClient;
+			bool networkOwned = player.networkView != null && player.networkView.isMine;
+			if(!networkConnected || networkOwned){
 				return true;
 			}
 		}
