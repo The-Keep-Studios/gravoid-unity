@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(NetworkView))]
 public class LevelLoader : MonoBehaviour{
 
+	public const int defaultNetworkDataGroup = 0;
 	public const int gameLevelNetworkDataGroup = 1;
 	public int disconnectedLevel = -1;
 	private int lastLevelPrefix = 0;
@@ -30,9 +31,9 @@ public class LevelLoader : MonoBehaviour{
 		//try to load the level via network loading
 		for(int netLvlIdx = 0; netLvlIdx<networkLoadableLevels.Length; ++netLvlIdx){
 			if(networkLoadableLevels[netLvlIdx] == levelToLoad){
-				Network.RemoveRPCsInGroup(0);
+				Network.RemoveRPCsInGroup(defaultNetworkDataGroup);
 				Network.RemoveRPCsInGroup(gameLevelNetworkDataGroup);
-				this.networkView.RPC("NetworkLoadLevel", RPCMode.All, new object[] {
+				this.networkView.RPC("NetworkLoadLevel", RPCMode.AllBuffered, new object[] {
 					levelToLoad,
 					netLvlIdx
 				});
@@ -62,7 +63,7 @@ public class LevelLoader : MonoBehaviour{
 		
 		// There is no reason to send any more data over the network on the default channel,
 		// because we are about to load the level, thus all those objects will get deleted anyway
-		Network.SetSendingEnabled(0, false);    
+		Network.SetSendingEnabled(defaultNetworkDataGroup, false);    
 		
 		// We need to stop receiving because first the level must be loaded first.
 		// Once the level is loaded, rpc's and other state update attached to objects in the level are allowed to fire
@@ -78,7 +79,7 @@ public class LevelLoader : MonoBehaviour{
 		// Allow receiving data again
 		Network.isMessageQueueRunning = true;
 		// Now the level has been loaded and we can start sending out data to clients
-		Network.SetSendingEnabled(0, true);
+		Network.SetSendingEnabled(defaultNetworkDataGroup, true);
 		
 		//unsure if this is really necessary... -Ian T Small
 		foreach(GameObject gObj in FindObjectsOfType<GameObject>()){
