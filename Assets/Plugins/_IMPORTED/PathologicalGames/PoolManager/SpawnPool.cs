@@ -1661,7 +1661,7 @@ namespace PathologicalGames{
 				(spawnOnNetwork || this.spawnPool.spawnOnNetwork) 
 				&& (!Application.isEditor || Network.isClient || Network.isServer);
 			
-			var inst = (Transform)(
+			Transform inst = (Transform)(
 				isNetworkSpawner
 				? Network.Instantiate(this.prefab, pos, rot, TheKeepStudios.network.LevelLoader.DefaultNetworkDataGroup) 
 				: MonoBehaviour.Instantiate(this.prefab, pos, rot)

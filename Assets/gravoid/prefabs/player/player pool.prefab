@@ -10,6 +10,8 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   - 148: {fileID: 14800000}
+  - 114: {fileID: 11400004}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: player pool
   m_TagString: Untagged
@@ -48,22 +50,50 @@ MonoBehaviour:
   logMessages: 0
   _perPrefabPoolOptions:
   - prefab: {fileID: 400014, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
-    preloadAmount: 8
-    preloadTime: 1
+    preloadAmount: 0
+    preloadTime: 0
     preloadFrames: 2
     preloadDelay: 0
     limitInstances: 0
     limitAmount: 100
     limitFIFO: 0
-    cullDespawned: 0
-    cullAbove: 50
-    cullDelay: 60
-    cullMaxPerPass: 5
+    cullDespawned: 1
+    cullAbove: 0
+    cullDelay: 5
+    cullMaxPerPass: 50
     _logMessages: 1
     spawnPool: {fileID: 0}
     spawnOnNetwork: 1
   spawnOnNetwork: 1
   maxParticleDespawnTime: 300
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852181ad4e584d1409e242a4d2c66538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 100014, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
+  playerSpawnPoolName: player clients
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5db8cea698a0c40b146ac761ee61b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serverOnlyObjects:
+  - {fileID: 0}
+  clientOnlyObjects: []
+  anyMachineObjects: []
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1
