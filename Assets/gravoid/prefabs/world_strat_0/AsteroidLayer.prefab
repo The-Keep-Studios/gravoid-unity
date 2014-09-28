@@ -8,14 +8,14 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400002}
-  - 114: {fileID: 11400010}
+  - 114: {fileID: 11400008}
   m_Layer: 0
-  m_Name: Pool_SpawnArea
+  m_Name: Pool_Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,14 +24,14 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400004}
-  - 114: {fileID: 11400012}
+  - 114: {fileID: 11400010}
   m_Layer: 0
-  m_Name: Pool_Object
+  m_Name: Pool_Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,14 +40,14 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400006}
-  - 114: {fileID: 11400008}
+  - 114: {fileID: 11400012}
   m_Layer: 0
-  m_Name: Pool_Zone
+  m_Name: Pool_SpawnArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100010
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,15 +76,13 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
-  - 148: {fileID: 14800000}
-  - 114: {fileID: 11400024}
   m_Layer: 0
   m_Name: AsteroidLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -96,9 +94,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400012}
-  - {fileID: 400006}
   - {fileID: 400004}
   - {fileID: 400002}
+  - {fileID: 400006}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &400002
@@ -112,7 +110,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!4 &400004
 Transform:
   m_ObjectHideFlags: 1
@@ -124,7 +122,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!4 &400006
 Transform:
   m_ObjectHideFlags: 1
@@ -136,7 +134,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!4 &400012
 Transform:
   m_ObjectHideFlags: 1
@@ -233,77 +231,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59dfbc0f4f3a98b4ebf4ad40fc3f43aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolName: zones
-  matchPoolScale: 0
-  matchPoolLayer: 0
-  dontReparent: 0
-  _dontDestroyOnLoad: 0
-  logMessages: 0
-  _perPrefabPoolOptions:
-  - prefab: {fileID: 400000, guid: fb4cda53b58f1e34395d89494407e444, type: 2}
-    preloadAmount: 0
-    preloadTime: 0
-    preloadFrames: 2
-    preloadDelay: 0
-    limitInstances: 0
-    limitAmount: 100
-    limitFIFO: 0
-    cullDespawned: 0
-    cullAbove: 50
-    cullDelay: 60
-    cullMaxPerPass: 5
-    _logMessages: 0
-    spawnPool: {fileID: 0}
-    spawnOnNetwork: 0
-  spawnOnNetwork: 1
-  maxParticleDespawnTime: 60
---- !u!114 &11400010
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59dfbc0f4f3a98b4ebf4ad40fc3f43aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolName: spawnAreas
-  matchPoolScale: 0
-  matchPoolLayer: 0
-  dontReparent: 0
-  _dontDestroyOnLoad: 0
-  logMessages: 0
-  _perPrefabPoolOptions:
-  - prefab: {fileID: 400000, guid: 24cef785ecaa2bc4199958e3ff082a84, type: 2}
-    preloadAmount: 0
-    preloadTime: 0
-    preloadFrames: 2
-    preloadDelay: 0
-    limitInstances: 0
-    limitAmount: 100
-    limitFIFO: 0
-    cullDespawned: 0
-    cullAbove: 50
-    cullDelay: 60
-    cullMaxPerPass: 5
-    _logMessages: 0
-    spawnPool: {fileID: 0}
-    spawnOnNetwork: 0
-  spawnOnNetwork: 1
-  maxParticleDespawnTime: 60
---- !u!114 &11400012
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59dfbc0f4f3a98b4ebf4ad40fc3f43aa, type: 3}
@@ -393,6 +321,76 @@ MonoBehaviour:
     spawnOnNetwork: 0
   spawnOnNetwork: 1
   maxParticleDespawnTime: 60
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dfbc0f4f3a98b4ebf4ad40fc3f43aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolName: zones
+  matchPoolScale: 0
+  matchPoolLayer: 0
+  dontReparent: 0
+  _dontDestroyOnLoad: 0
+  logMessages: 0
+  _perPrefabPoolOptions:
+  - prefab: {fileID: 400000, guid: fb4cda53b58f1e34395d89494407e444, type: 2}
+    preloadAmount: 0
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 0
+    limitAmount: 100
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 50
+    cullDelay: 60
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
+    spawnOnNetwork: 0
+  spawnOnNetwork: 0
+  maxParticleDespawnTime: 60
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59dfbc0f4f3a98b4ebf4ad40fc3f43aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolName: spawnAreas
+  matchPoolScale: 0
+  matchPoolLayer: 0
+  dontReparent: 0
+  _dontDestroyOnLoad: 0
+  logMessages: 0
+  _perPrefabPoolOptions:
+  - prefab: {fileID: 400000, guid: 24cef785ecaa2bc4199958e3ff082a84, type: 2}
+    preloadAmount: 0
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 0
+    limitAmount: 100
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 50
+    cullDelay: 60
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
+    spawnOnNetwork: 0
+  spawnOnNetwork: 0
+  maxParticleDespawnTime: 60
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -406,34 +404,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoneTemplate: {fileID: 11400002, guid: fb4cda53b58f1e34395d89494407e444, type: 2}
   zones: []
-  zonePool: {fileID: 11400008}
-  objectPool: {fileID: 11400012}
-  spawnAreaPool: {fileID: 11400010}
---- !u!114 &11400024
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 852181ad4e584d1409e242a4d2c66538, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 100014, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
-  playerSpawnPoolName: player clients
---- !u!148 &14800000
-NetworkView:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100012}
-  m_Enabled: 1
-  m_StateSynchronization: 1
-  m_Observed: {fileID: 400000}
-  m_ViewID:
-    m_ID: 0
-    m_Type: 0
+  zonePool: {fileID: 11400010}
+  objectPool: {fileID: 11400008}
+  spawnAreaPool: {fileID: 11400012}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
