@@ -4,9 +4,18 @@ using System.Collections.Generic;
 
 namespace TheKeepStudios{
 	
-	public class Spawned : MonoBehaviour{
+	public class Spawned : MonoBehaviour, IOriginPoolAwareSpawnable{
 		
 		public string originSpawnPoolName;
+
+		public string OriginSpawnPoolName{
+			get{
+				return originSpawnPoolName;
+			}
+			set{
+				originSpawnPoolName = value;
+			}
+		}
 		
 		public void Despawn(){
 			
