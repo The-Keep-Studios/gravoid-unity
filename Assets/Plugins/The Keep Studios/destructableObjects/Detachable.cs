@@ -6,7 +6,7 @@ namespace TheKeepStudios.Destructable{
 	
 	public class Detachable : MonoBehaviour{
 		
-		public void Detach(){
+		virtual public void Detach(){
 			
 			this.gameObject.SetActive(true);
 
