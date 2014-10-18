@@ -8,8 +8,6 @@ public class ThrusterSpecialEffect : MonoBehaviour{
 
 	private float r2;
 
-	private int currentDensity;
-
 	public int density;
 
 	private ParticleSystem.Particle[] points;
@@ -64,8 +62,6 @@ public class ThrusterSpecialEffect : MonoBehaviour{
 	}
 
 	private void CreatePoints(){
-		
-		currentDensity = density;
 		
 		points = new ParticleSystem.Particle[density];
 

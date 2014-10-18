@@ -4,18 +4,21 @@ using System.Collections;
 namespace TheKeepStudios.Destructable{
 
 	[RequireComponent(typeof(Spawned))]
-	public class Breakable : ObjectCluster{
+	public class Breakable : MonoBehaviour{
 	
 		public void OnBreak(){
-		
+			Break();
+		}
+
+		protected void Break(){
 			StartCoroutine(BreakApart());
-		
 		}
 	
-		public IEnumerator BreakApart(){
+		private IEnumerator BreakApart(){
 			
 			yield return new WaitForFixedUpdate(); //wait until the fixed (physics) update frame
-			
+
+			//TODO Consider using BrokenRemnant instead of Detachable here
 			foreach(Detachable child in this.GetComponentsInChildren<Detachable>(true)){
 				
 				child.Detach();
