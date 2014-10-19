@@ -18,18 +18,24 @@ namespace TheKeepStudios{
 		}
 		
 		public void Despawn(){
-			
-			if(PathologicalGames.PoolManager.Pools.ContainsKey(originSpawnPoolName)){
-				
-				PathologicalGames.PoolManager.Pools[originSpawnPoolName].Despawn(this.transform);
-				
+			NetworkView nview = this.networkView;
+			if(nview != null){
+				if(nview.isMine){ //only the owner can cause despawning
+					nview.RPC("_Despawn", RPCMode.AllBuffered);
+				}
 			} else{
-				
-				Destroy(this.gameObject);
-				
+				_Despawn();
 			}
 			
 		}
 		
+		private void _Despawn(){
+			if(PathologicalGames.PoolManager.Pools.ContainsKey(originSpawnPoolName)){
+				PathologicalGames.PoolManager.Pools[originSpawnPoolName].Despawn(this.transform);
+			} else{
+				Debug.LogWarning("Object spawned with pool; unable to despawn, so destroying object instead.", this.gameObject);
+				Destroy(this.gameObject);
+			}
+		}
 	}
 }

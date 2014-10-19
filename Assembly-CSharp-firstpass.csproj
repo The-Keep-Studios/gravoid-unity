@@ -74,7 +74,6 @@
     <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\QualityLevelChanger.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\QuitApplication.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\RegisterServerListener.cs" />
-    <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\SceneLoader.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\SelfRegisteringEventListener.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\events\producers\EventProducer.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\events\producers\KeyEventProducer.cs" />
@@ -112,14 +111,9 @@
     <Compile Include="Assets\Plugins\The Keep Studios\menu\widgets\ToolBox.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\menu\widgets\Widget.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\network\Client.cs" />
-    <Compile Include="Assets\Plugins\The Keep Studios\network\ClientLevelLoader.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\network\ClientManager.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\network\LocalPlayerSpawner.cs" />
-    <Compile Include="Assets\Plugins\The Keep Studios\network\NetsyncedMovement.cs" />
-    <Compile Include="Assets\Plugins\The Keep Studios\network\NetworkManager.cs" />
-    <Compile Include="Assets\Plugins\The Keep Studios\network\NewGameInitialzor.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\network\ServerInitializor.cs" />
-    <Compile Include="Assets\Plugins\The Keep Studios\network\ServerLevelSyncronizer.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\ActivatableBehavior.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\BaseShipMovementController.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\CursorFollower.cs" />
@@ -159,6 +153,13 @@
     <Compile Include="Assets\Plugins\The Keep Studios\destructableObjects\Damageable.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\destructableObjects\Detachable.cs" />
     <Compile Include="Assets\Plugins\The Keep Studios\destructableObjects\ObjectCluster.cs" />
+    <Compile Include="Assets\Plugins\The Keep Studios\menu\widgets\ServerHostListLineWidget.cs" />
+    <Compile Include="Assets\Plugins\The Keep Studios\network\LevelLoader.cs" />
+    <Compile Include="Assets\Plugins\The Keep Studios\network\NetworkLevelLoadActivator.cs" />
+    <Compile Include="Assets\Plugins\The Keep Studios\network\ServerJoiner.cs" />
+    <Compile Include="Assets\Plugins\The Keep Studios\spawning\IOriginPoolAwareSpawnable.cs" />
+    <Compile Include="Assets\Plugins\The Keep Studios\spawning\Spawnable.cs" />
+    <Compile Include="Assets\Plugins\The Keep Studios\spawning\Spawned.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
