@@ -15,7 +15,7 @@ GameObject:
   - 136: {fileID: 13600000}
   - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: Rocky Large
+  m_Name: AsteroidRemnant_Porus A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.83512211, y: -2.316154, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -45,7 +45,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: e71249e5109ad4e4ca1f48d7140ff8a3, type: 2}
+  - {fileID: 2100000, guid: 78b33802f20c2124fb6bc4aba19fdec1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -59,7 +59,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300000, guid: 3b55afe3a46ed4047addb62d1c6c2c2a, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 5d4805cfe88503a48b4ad5d6022ab63c, type: 3}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -96,10 +96,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 5.04443789
-  m_Height: 13.8874912
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 3.05409002
+  m_Height: 9.03192806
+  m_Direction: 0
+  m_Center: {x: 0, y: -4.76837158e-07, z: 0}
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1

@@ -19,7 +19,7 @@ namespace TheKeepStudios{
 		
 		public void Despawn(){
 			NetworkView nview = this.networkView;
-			if(nview != null){
+			if((Network.isClient || Network.isServer) && nview != null){
 				if(nview.isMine){ //only the owner can cause despawning
 					nview.RPC("_Despawn", RPCMode.AllBuffered);
 				}
@@ -30,12 +30,20 @@ namespace TheKeepStudios{
 		}
 		
 		private void _Despawn(){
-			if(PathologicalGames.PoolManager.Pools.ContainsKey(originSpawnPoolName)){
-				PathologicalGames.PoolManager.Pools[originSpawnPoolName].Despawn(this.transform);
+			PathologicalGames.SpawnPool pool = 
+				PathologicalGames.PoolManager.Pools.ContainsKey(originSpawnPoolName)
+				? PathologicalGames.PoolManager.Pools[originSpawnPoolName]
+				: null;
+			if(pool != null && pool.IsSpawned(this.transform)){
+				pool.Despawn(this.transform);
 			} else{
-				Debug.LogWarning("Object spawned with pool; unable to despawn, so destroying object instead.", this.gameObject);
+				Debug.LogWarning("Object spawned outside of pool; unable to despawn, so destroying object instead.", this.gameObject);
 				Destroy(this.gameObject);
 			}
+		}
+
+		public void OnSpawned(Component originSpawnPool){
+			this.OriginSpawnPoolName = originSpawnPool.name;
 		}
 	}
 }

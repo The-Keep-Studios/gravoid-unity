@@ -395,9 +395,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6554a5390db5054190c3b82737d41ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 400026, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
   distance: 15
   springiness: 4
+  defaultTargetTag: Player
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

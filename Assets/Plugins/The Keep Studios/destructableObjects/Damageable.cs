@@ -5,16 +5,20 @@ using System.Collections.Generic;
 public class Damageable : MonoBehaviour{
 	
 	[UnityEngine.SerializeField]
-	private int currentLevel;
+	private int
+		currentLevel;
 	
 	[UnityEngine.SerializeField]
-	private int minLevel;
+	private int
+		minLevel;
 	
 	[UnityEngine.SerializeField]
-	private int maxLevel;
+	private int
+		maxLevel;
 	
 	[UnityEngine.SerializeField]
-	public float impactVulnerabiliy;
+	public float
+		impactVulnerabiliy;
 	
 	public List<Trigger> triggers;
 
@@ -41,10 +45,10 @@ public class Damageable : MonoBehaviour{
 	}
 	
 	void OnCollisionEnter(Collision col){
-		
-		//TODO Expand on this as it is a dumb and simple algorithm
-		//TODO Enhance for player ship improvements and special features
-		this.Level += Mathf.FloorToInt(col.relativeVelocity.sqrMagnitude * this.impactVulnerabiliy);
+
+		float recievedForce = (col.rigidbody.mass * col.relativeVelocity.magnitude);
+
+		this.Level += Mathf.FloorToInt(recievedForce * this.impactVulnerabiliy);
 		
 	}
 	
@@ -97,14 +101,24 @@ public class Damageable : MonoBehaviour{
 		public string eventMessage = "";
 			
 		public void Signal(Paramters param){
+
+			int newLevel = param.objectHealth.Level;
+
+			int oldLevel = param.oldHealthLevel;
 			
-			int comparison = param.objectHealth.Level.CompareTo(param.oldHealthLevel);
+			//compare the levels to each other (this finds directionality of the change
+			int changeDirection = newLevel.CompareTo(newLevel);
+
+			bool triggerTypeMatchesChangeDirection =
+				(this.type == EType.onAnyChange)
+				|| (this.type == EType.onIncreasing && changeDirection > 0)
+				|| (this.type == EType.onDecreasing && changeDirection < 0);
+
+			//check if we have crossed the threshold (shortcut this by first checking that the direction counts as crossing the threshold)
+			bool thresholdCrossed = triggerTypeMatchesChangeDirection 
+				&& threshold.CompareTo(newLevel) != threshold.CompareTo(oldLevel);
 			
-			bool shouldTrigger = (this.type == EType.onAnyChange && comparison != 0)
-				|| (this.type == EType.onIncreasing && comparison > 0)
-				|| (this.type == EType.onDecreasing && comparison < 0);
-			
-			if(shouldTrigger){
+			if(thresholdCrossed){
 				param.objectHealth.SendMessage(eventMessage);
 			}
 			

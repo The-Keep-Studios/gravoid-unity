@@ -9,13 +9,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
+  - 135: {fileID: 13500000}
   - 23: {fileID: 2300000}
   - 54: {fileID: 5400000}
   - 148: {fileID: 14800000}
-  - 136: {fileID: 13600000}
   - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: Porus Medium
+  m_Name: AsteroidRemnant_Porus C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: da965ca7528d4a045a986b20fbb2eb53, type: 2}
+  - {fileID: 2100000, guid: 6690bbe877ead3c47acc59c51d4a99d0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -59,7 +59,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300000, guid: 4ea44190106e68d4ebdec8dd772e87a5, type: 3}
+  m_Mesh: {fileID: 4300000, guid: c7445cead66e1da45bb6a59e76ee74b6, type: 3}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -87,8 +87,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originSpawnPoolName: objects
---- !u!136 &13600000
-CapsuleCollider:
+--- !u!135 &13500000
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -96,10 +96,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 2.71118546
-  m_Height: 13.0683956
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 4.76837158e-07}
+  serializedVersion: 2
+  m_Radius: 3.28510284
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1

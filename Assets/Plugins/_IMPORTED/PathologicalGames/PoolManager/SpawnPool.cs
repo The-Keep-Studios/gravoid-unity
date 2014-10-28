@@ -448,7 +448,13 @@ namespace PathologicalGames{
 					// 	 This isn't needed for Pool functionality. It is just done 
 					//	 as a user-friendly feature which has been needed before.
 					this._spawned.Add(inst);
-					
+
+					//Add a Spawned behavior to make despawning these assets simplier
+					TheKeepStudios.Spawned spawnedBehavior = inst.GetComponent<TheKeepStudios.Spawned>();
+					if(spawnedBehavior == null){
+						spawnedBehavior = inst.gameObject.AddComponent<TheKeepStudios.Spawned>();
+					}
+
 					// Notify instance it was spawned so it can manage it's state
 					inst.gameObject.BroadcastMessage(
 						"OnSpawned",

@@ -8,14 +8,15 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
+  - 54: {fileID: 5400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 54: {fileID: 5400000}
   - 148: {fileID: 14800000}
-  - 136: {fileID: 13600000}
   - 114: {fileID: 11400000}
+  - 136: {fileID: 13600000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: Iron Large
+  m_Name: AsteroidRemnant_Crater Medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.6263962, y: 12.1748877, z: 0}
+  m_LocalPosition: {x: -3.0532999, y: -.982720017, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -45,7 +46,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: c435339107ace664b853b34bd4f2bd51, type: 2}
+  - {fileID: 2100000, guid: 15031b5e013d715499709144484f2cba, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -59,7 +60,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300000, guid: f65c27445c8701e4989c4dee8d78e27a, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 87ff4f34257fc47409e1251c116066b5, type: 3}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -83,6 +84,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f1b12580d252a44902955e075824f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e11533c4bd15d76418f2624fcf9d8efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -96,8 +108,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 4.42630529
-  m_Height: 12.9796743
+  m_Radius: 2.4041307
+  m_Height: 11.7389698
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!148 &14800000
@@ -108,7 +120,7 @@ NetworkView:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_StateSynchronization: 2
-  m_Observed: {fileID: 5400000}
+  m_Observed: {fileID: 400000}
   m_ViewID:
     m_ID: 0
     m_Type: 0

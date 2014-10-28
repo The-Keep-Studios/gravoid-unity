@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400016}
+  - 114: {fileID: 11400006}
   m_Layer: 0
-  m_Name: Rocky A
+  m_Name: Crater A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,8 +31,9 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 148: {fileID: 14800000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
-  m_Name: RockyAsteroid
+  m_Name: Asteroid_Crater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,9 +47,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400004}
-  - 114: {fileID: 11400022}
+  - 114: {fileID: 11400012}
   m_Layer: 0
-  m_Name: Rocky Large
+  m_Name: Crater Large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,9 +63,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400006}
-  - 114: {fileID: 11400024}
+  - 114: {fileID: 11400014}
   m_Layer: 0
-  m_Name: Rocky Medium
+  m_Name: Crater Medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,9 +79,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400008}
-  - 114: {fileID: 11400020}
+  - 114: {fileID: 11400010}
   m_Layer: 0
-  m_Name: Rocky C
+  m_Name: Crater C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,9 +95,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400010}
-  - 114: {fileID: 11400018}
+  - 114: {fileID: 11400008}
   m_Layer: 0
-  m_Name: Rocky B
+  m_Name: Crater B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +110,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.08579993, y: 4.43130016, z: 0}
+  m_LocalPosition: {x: 3.06890011, y: 5.53830004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -138,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5266, y: -1.34570003, z: 0}
+  m_LocalPosition: {x: 3.62899995, y: -1.24670005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -150,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.60449982, y: -2.08969998, z: 0}
+  m_LocalPosition: {x: -3.0532999, y: -.982720017, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -162,7 +163,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9934001, y: -5.2507, z: 0}
+  m_LocalPosition: {x: -2.41569996, y: 1.00829995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -174,7 +175,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.75020003, y: 5.27729988, z: 0}
+  m_LocalPosition: {x: -2.00959992, y: 6.21229982, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -191,7 +192,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: d3ac9c491480fa64eb31ac814db7277a, type: 2}
+  - {fileID: 2100000, guid: 49330ea4828a4814da37754811aa4fd0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -205,7 +206,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Mesh: {fileID: 4300000, guid: 1a61bcf2ba649e04cb79bdb419dc6e87, type: 3}
+  m_Mesh: {fileID: 4300000, guid: e667e34bbfabe8d45b534a6ec1bb4881, type: 3}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -213,7 +214,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   serializedVersion: 2
-  m_Mass: 50
+  m_Mass: 5000
   m_Drag: 0
   m_AngularDrag: .0599999987
   m_UseGravity: 1
@@ -246,12 +247,24 @@ MonoBehaviour:
   currentLevel: 0
   minLevel: 0
   maxLevel: 100
-  impactVulnerabiliy: 1
+  impactVulnerabiliy: .100000001
   triggers:
-  - threshold: 100
+  - threshold: 10000
     type: 0
     eventMessage: OnBreak
---- !u!114 &11400016
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae71ee207869eab41a76837da373142e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originSpawnPoolName: 
+--- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -262,8 +275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a30e0b1ba0a5b443a71b9a0cc46f215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remnantToSpawn: {fileID: 11400002, guid: 6578205a093cdd046bb8524622338ec2, type: 2}
---- !u!114 &11400018
+  remnantToSpawn: {fileID: 11400002, guid: ff0335459c9a35e44bea1e5e149739c8, type: 2}
+--- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -274,8 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a30e0b1ba0a5b443a71b9a0cc46f215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remnantToSpawn: {fileID: 11400002, guid: 579dca9ff436943498534558a9c0ab73, type: 2}
---- !u!114 &11400020
+  remnantToSpawn: {fileID: 11400002, guid: a41cdef80ee86b74ebb9ab768c01018c, type: 2}
+--- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -286,8 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a30e0b1ba0a5b443a71b9a0cc46f215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remnantToSpawn: {fileID: 11400002, guid: 1a2bb82f43dbfe743a036539a395d665, type: 2}
---- !u!114 &11400022
+  remnantToSpawn: {fileID: 11400002, guid: 987a3b46d9231ab4b9c077cd8d163098, type: 2}
+--- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -298,8 +311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a30e0b1ba0a5b443a71b9a0cc46f215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remnantToSpawn: {fileID: 11400002, guid: 9a6a62001b6e5cf47a722c412f37b310, type: 2}
---- !u!114 &11400024
+  remnantToSpawn: {fileID: 11400002, guid: 202f105315145204d8b1cb9ce9f39603, type: 2}
+--- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -310,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a30e0b1ba0a5b443a71b9a0cc46f215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remnantToSpawn: {fileID: 11400002, guid: 976458fbe87e1d84296c1b8826ded40e, type: 2}
+  remnantToSpawn: {fileID: 11400002, guid: a319668d7201efc4b8a3829ae96c2e0e, type: 2}
 --- !u!135 &13500002
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -321,7 +334,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 8.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!148 &14800000
 NetworkView:
