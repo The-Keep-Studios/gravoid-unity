@@ -121,7 +121,9 @@ namespace TheKeepStudios
 			spritesNeedPositionUpdate = false;
 			for (int tiles_idx = 0; tiles_idx < this.tiles.Count; ++tiles_idx) {
 				Transform tile = this.tiles [tiles_idx];
-				tile.transform.localPosition = getTilePosition (tiles_idx);
+				if(tile != null){
+					tile.transform.localPosition = getTilePosition (tiles_idx);
+				}
 			}
 			spritesNeedPositionUpdate = false;
 		}
