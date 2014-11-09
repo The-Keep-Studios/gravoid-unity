@@ -1,0 +1,223 @@
+fileFormatVersion: 2
+guid: 99be02bae2dc31b48b537db83b835385
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: crystaltiles_0
+    21300002: crystaltiles_1
+    21300004: crystaltiles_2
+    21300006: crystaltiles_3
+    21300008: crystaltiles_4
+    21300010: crystaltiles_5
+    21300012: crystaltiles_6
+    21300014: crystaltiles_7
+    21300016: crystaltiles_8
+    21300018: crystaltiles_9
+    21300020: crystaltiles_10
+    21300022: crystaltiles_11
+    21300024: crystaltiles_12
+    21300026: crystaltiles_13
+    21300028: crystaltiles_14
+    21300030: crystaltiles_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: crystaltiles_0
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1520
+        width: 198
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_1
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 1501
+        width: 226
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_2
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1469
+        width: 216
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_3
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 1461
+        width: 182
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_4
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1145
+        width: 242
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_5
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 1144
+        width: 234
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_6
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 1181
+        width: 244
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_7
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 825
+        width: 206
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_8
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 837
+        width: 214
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_9
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 549
+        width: 144
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_10
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 560
+        width: 152
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_11
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 559
+        width: 146
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_12
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 215
+        width: 197
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_13
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 267
+        width: 186
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_14
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 245
+        width: 156
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: crystaltiles_15
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 280
+        width: 198
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

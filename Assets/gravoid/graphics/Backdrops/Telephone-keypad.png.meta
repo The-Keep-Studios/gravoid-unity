@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 6abe4940c2d91964f94bc934bf961f0a
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Telephone-keypad_0
+    21300002: Telephone-keypad_1
+    21300004: Telephone-keypad_2
+    21300006: Telephone-keypad_3
+    21300008: Telephone-keypad_4
+    21300010: Telephone-keypad_5
+    21300012: Telephone-keypad_6
+    21300014: Telephone-keypad_7
+    21300016: Telephone-keypad_8
+    21300018: Telephone-keypad_9
+    21300020: Telephone-keypad_10
+    21300022: Telephone-keypad_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Telephone-keypad_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 664
+        width: 208
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Telephone-keypad_1
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 664
+        width: 208
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Telephone-keypad_2
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 664
+        width: 208
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Telephone-keypad_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 442
+        width: 208
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Telephone-keypad_4
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 442
+        width: 208
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Telephone-keypad_5
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 442
+        width: 208
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Telephone-keypad_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 221
+        width: 208
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Telephone-keypad_7
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 221
+        width: 208
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Telephone-keypad_8
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 221
+        width: 208
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Telephone-keypad_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 208
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Telephone-keypad_10
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 208
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Telephone-keypad_11
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 208
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

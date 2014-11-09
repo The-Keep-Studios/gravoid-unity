@@ -55,12 +55,12 @@ TextureImporter:
     - name: testplanet_0
       rect:
         serializedVersion: 2
-        x: 1648
-        y: 1648
-        width: 1024
-        height: 1024
+        x: 1738
+        y: 1774
+        width: 825
+        height: 827
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
