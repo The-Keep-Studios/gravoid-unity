@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using PathologicalGames;
 
 namespace TheKeepStudios.Gravoid
 {
@@ -8,12 +9,18 @@ namespace TheKeepStudios.Gravoid
 
 		public PartSelectionBehavior part;
 
+		public SpawnPool origin;
+
 		public void OnCollected(){
 			Despawn();
 		}
 
 		public void Despawn(){
-			Destroy(this.gameObject);
+			origin.Despawn(this.gameObject.transform);
+		}
+
+		void OnSpawned(SpawnPool pool){
+			this.origin = pool;
 		}
 
 	}

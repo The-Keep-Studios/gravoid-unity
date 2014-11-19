@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace TheKeepStudios.Gravoid
 {
-	public class CollectableResource : TheKeepStudios.CollectableItem
+	public class CollectableResource : CollectableItem
 	{
 		void OnCollected()
 		{

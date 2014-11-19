@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{09770D6E-455C-3229-F2E6-BD73CBDEAE65}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;Player</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Plugins\The Keep Studios\ApplicationValues.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\SplashScreen.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\camera\behaviors\BackgroundScroller.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\camera\behaviors\CameraFocus.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\camera\behaviors\CameraScrolling.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\camera\behaviors\CameraTargetAttributes.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\camera\behaviors\MousePointerFollower.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\camera\behaviors\SpriteGrid.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\camera\behaviors\TileSprite.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\camera\behaviors\TilesSpriteParallaxer.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\camera\behaviors\Zoom.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\camera\behaviors\ZoomController2d.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\containers\DataMap.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\containers\DataMapUseExample.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\containers\SerializableDictionary.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\destructableObjects\Breakable.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\destructableObjects\BrokenRemnant.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\destructableObjects\Damageable.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\destructableObjects\Detachable.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\destructableObjects\ObjectCluster.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\EventRegistrationManager.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\eventArgs\CreateServerEventArgs.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\eventArgs\FloatValueChageEventArgs.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\eventArgs\IntValueChageEventArgs.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\eventArgs\KeyPressedEventArgs.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\eventArgs\ServerJoinRequestEventArgs.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\EventListener.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\GameObjectActivator.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\GameObjectDeactivator.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\GamePauser.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\InitalizeServerListener.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\QualityLevelChanger.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\QuitApplication.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\RegisterServerListener.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\listeners\SelfRegisteringEventListener.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\producers\EventProducer.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\producers\KeyEventProducer.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\events\producers\MessageEventProducer.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\examples\scripts\ZoneDemo.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\EventSignaler.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\Randomizer.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\SpawnProperties.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\ZoneId.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Asteroid.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\EventListener.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelAttributes.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\LevelController.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\PickyLevelController.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\PickyRegionSelector.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Region.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\RegionAttributes.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\RegionSelector.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\SpawnArea.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Spawner.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Stratum.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\TriggerEventRelayer.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\Zone.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\ZoneAnchor.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\levelController\scripts\behaviors\ZoneRegister.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\math\IntVector2.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\math\VectorOperators.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\menu\containers\Window.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\menu\widgets\Box.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\menu\widgets\Button.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\menu\widgets\GraphicalQualitySelectionBox.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\menu\widgets\OpenServerWidget.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\menu\widgets\ServerHostListLineWidget.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\menu\widgets\ServerHostListWidget.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\menu\widgets\Slider.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\menu\widgets\ToolBox.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\menu\widgets\Widget.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\network\Client.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\network\ClientManager.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\network\LevelLoader.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\network\LocalPlayerSpawner.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\network\NetworkLevelLoadActivator.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\network\ServerInitializor.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\network\ServerJoiner.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\spawning\IOriginPoolAwareSpawnable.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\spawning\Spawnable.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\spawning\Spawned.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\ActivatableBehavior.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\BaseShipMovementController.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\CursorFollower.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\Gravity.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\GravityWell.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\ShipGravitationalVelocityController.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\ShipRotationController.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\ShipVelocityController.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\SpecialEffects.cs" />
+     <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\ThrusterSpecialEffect.cs" />
+     <Compile Include="Assets\Plugins\_IMPORTED\PathologicalGames\PoolManager\PoolManager.cs" />
+     <Compile Include="Assets\Plugins\_IMPORTED\PathologicalGames\PoolManager\PreRuntimePoolItem.cs" />
+     <Compile Include="Assets\Plugins\_IMPORTED\PathologicalGames\PoolManager\SpawnPool.cs" />
+     <Compile Include="Assets\Plugins\_IMPORTED\PathologicalGames\PoolManagerExampleFiles\Scripts\CreationExample.cs" />
+     <Compile Include="Assets\Plugins\_IMPORTED\PathologicalGames\PoolManagerExampleFiles\Scripts\OnCreatedDelegateExample.cs" />
+     <Compile Include="Assets\Plugins\_IMPORTED\PathologicalGames\PoolManagerExampleFiles\Scripts\OnSpawnedExample.cs" />
+     <Compile Include="Assets\Plugins\_IMPORTED\PathologicalGames\PoolManagerExampleFiles\Scripts\ParticleWaitTest.cs" />
+     <Compile Include="Assets\Plugins\_IMPORTED\PathologicalGames\PoolManagerExampleFiles\Scripts\ReallySimpleAudioSpawner.cs" />
+     <Compile Include="Assets\Plugins\_IMPORTED\PathologicalGames\PoolManagerExampleFiles\Scripts\ReallySimpleParticleSpawner.cs" />
+     <Compile Include="Assets\Plugins\_IMPORTED\PathologicalGames\PoolManagerExampleFiles\Scripts\SimpleSpawner.cs" />
+     <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Utility Scripts\CombineChildren.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Utility Scripts\MeshCombineUtility.cs" />
+     <Compile Include="Assets\Standard Assets\Water (Basic)\Sources\Scripts\WaterSimple.cs" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\gravoid\graphics\Shaders\Shobatha-shader.shader" />
+     <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
+     <None Include="Assets\gravoid\graphics\Shaders\Asteroid-shader.shader" />
+     <None Include="Assets\gravoid\graphics\Shaders\Player-shader.shader" />
+     <None Include="Assets\Plugins\_IMPORTED\PathologicalGames\readme.txt" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

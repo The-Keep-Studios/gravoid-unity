@@ -52,8 +52,7 @@ public class GravityWell : Gravity {
 		return force * offset.normalized;
 		
 	}
-	
-	
+
 	void Reset(){
 		
 		range = 1000;
@@ -64,6 +63,14 @@ public class GravityWell : Gravity {
 		
 		minimumEffectIncreaseRange = range/1000;
 		
+	}
+
+	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info) {
+		if (stream.isWriting) {
+			stream.Serialize(ref createGravityForces);
+		} else {
+			stream.Serialize(ref createGravityForces);
+		}
 	}
 	
 }
