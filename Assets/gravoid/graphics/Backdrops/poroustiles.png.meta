@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 77f1f8ea923b0464aac6d9c5b7f2aed2
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: poroustiles_0
+    21300002: poroustiles_1
+    21300004: poroustiles_2
+    21300006: poroustiles_3
+    21300008: poroustiles_4
+    21300010: poroustiles_5
+    21300012: poroustiles_6
+    21300014: poroustiles_7
+    21300016: poroustiles_8
+    21300018: poroustiles_9
+    21300020: poroustiles_10
+    21300022: poroustiles_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: poroustiles_0
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1664
+        width: 163
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poroustiles_1
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1704
+        width: 176
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poroustiles_2
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 1665
+        width: 221
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poroustiles_3
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 1645
+        width: 219
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poroustiles_4
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 1637
+        width: 196
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poroustiles_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 969
+        width: 233
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poroustiles_6
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 968
+        width: 254
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poroustiles_7
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 815
+        width: 364
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poroustiles_8
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 161
+        width: 274
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poroustiles_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 445
+        width: 263
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poroustiles_10
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 264
+        width: 320
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: poroustiles_11
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 173
+        width: 355
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
