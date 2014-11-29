@@ -2,10 +2,8 @@
 using System.Collections;
 using PathologicalGames;
 
-namespace TheKeepStudios.Gravoid
-{
-	public class CollectablePart : CollectableResource
-	{
+namespace TheKeepStudios.Gravoid.CUBS{
+	public class CollectablePart : CollectableResource{
 
 		public PartSelectionBehavior part;
 

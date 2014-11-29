@@ -12024,22 +12024,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6a014b59c66144c9e067937a659b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectionType: 2
-  selectionOptionToTypeMaps:
-    valueWhenKeyIsMissing: []
-    keyValuePairs:
-    - m_presetType: 0
-      m_presetContents:
-      - {fileID: 11400000, guid: f9aa7bf6985feb24b869194c6ccf4d6a, type: 2}
-    - m_presetType: 1
-      m_presetContents:
-      - {fileID: 11400000, guid: dcf4215d72a78454e9e703e5e3b14921, type: 2}
-    - m_presetType: 2
-      m_presetContents:
-      - {fileID: 11400000, guid: f9aa7bf6985feb24b869194c6ccf4d6a, type: 2}
-      - {fileID: 11400000, guid: dcf4215d72a78454e9e703e5e3b14921, type: 2}
-      - {fileID: 11400000, guid: f9aa7bf6985feb24b869194c6ccf4d6a, type: 2}
-      - {fileID: 11400000, guid: f9aa7bf6985feb24b869194c6ccf4d6a, type: 2}
 --- !u!114 &1771666534
 MonoBehaviour:
   m_ObjectHideFlags: 0

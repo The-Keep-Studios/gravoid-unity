@@ -1,12 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace TheKeepStudios.Gravoid
-{
-	public class CollectableResource : CollectableItem
-	{
-		void OnCollected()
-		{
+namespace TheKeepStudios.Gravoid.CUBS{
+	public class CollectableResource : CollectableItem{
+		void OnCollected(){
 			Destroy(gameObject);
 		}
 	}
