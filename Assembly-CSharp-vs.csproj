@@ -48,18 +48,20 @@
   <ItemGroup>
      <Compile Include="Assets\ApplicationExiter.cs" />
      <Compile Include="Assets\AudioVolumeAdjuster.cs" />
-     <Compile Include="Assets\gravoid\CollectableItem.cs" />
      <Compile Include="Assets\gravoid\scenes\dev\mpAsteroidTest\LocalServerConnector.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\CUBSBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\CUBSConfigWidgetController.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\CollectablePart.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\CollectableResource.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\ComponentSelectorBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\ICUBSConfiguration.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\InventoryBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\LauncherBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\PartCollector.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\PartSelectionBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\ProjectileBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\ProjectilePartBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CollectableItem.cs" />
      <Compile Include="Assets\gravoid\scripts\PlayerControlToggler.cs" />
      <Compile Include="Assets\gravoid\scripts\physics\AutoPilot.cs" />
      <Compile Include="Assets\gravoid\scripts\player\PlayerController.cs" />
