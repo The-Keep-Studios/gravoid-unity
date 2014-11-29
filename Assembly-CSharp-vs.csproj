@@ -54,6 +54,7 @@
      <Compile Include="Assets\gravoid\scripts\CUBS\CollectablePart.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\CollectableResource.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\ComponentSelectorBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\ICUBSConfiguration.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\InventoryBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\LauncherBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\PartCollector.cs" />

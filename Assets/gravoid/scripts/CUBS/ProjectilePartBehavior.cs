@@ -1,30 +1,25 @@
 using UnityEngine;
 using System.Collections;
 
-namespace TheKeepStudios.Gravoid
-{
-	public class ProjectilePartBehavior : MonoBehaviour
-	{
+namespace TheKeepStudios.Gravoid.CUBS{
+	public class ProjectilePartBehavior : MonoBehaviour{
 		[SerializeField]
 		private float
 			lengthInAxisY = 0.0F;
 		
 		#region MonoBehaviour Overrides
 		// Use this for initialization
-		void Start ()
-		{
+		void Start(){
 			
 		}
 		
 		// Update is called once per frame
-		void Update ()
-		{
+		void Update(){
 			
 		}
 		#endregion
 		
-		virtual public void JoinToLaunchedObject (Transform _parent, Vector3 _relativePosition)
-		{
+		virtual public void JoinToLaunchedObject(Transform _parent, Vector3 _relativePosition){
 			
 			this.transform.parent = _parent;
 			
@@ -33,7 +28,7 @@ namespace TheKeepStudios.Gravoid
 		}
 	
 	
-		virtual public float offset {
+		virtual public float offset{
 			get { return this.lengthInAxisY; }
 		}
 		

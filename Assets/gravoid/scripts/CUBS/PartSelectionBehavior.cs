@@ -1,63 +1,33 @@
 using UnityEngine;
 using System.Collections;
 
-namespace TheKeepStudios.Gravoid 
-{
-	public class PartSelectionBehavior : MonoBehaviour
-	{
-		public ProjectilePartBehavior m_projectilePartPrefab;
+namespace TheKeepStudios.Gravoid.CUBS{
 
-		public PartSelectionBehavior m_prefab;
+	public class PartSelectionBehavior : MonoBehaviour{
 
-		public const string m_poolName = "PartSelections";
+		[SerializeField]
+		private ProjectilePartBehavior
+			partPrefab;
 
-		#region PUBLIC METHODS
-	
-		public static PartSelectionBehavior Spawn (PartSelectionBehavior _prefab)
-		{
-				
-			Transform newParentObject = PathologicalGames.PoolManager.Pools [m_poolName].Spawn (_prefab.transform);
-				
-			if (newParentObject != null) {
-					
-				return newParentObject.GetComponent<PartSelectionBehavior> ();
-					
-			} else {
-				
-				return null;
-				
+		[SerializeField]
+		private Sprite
+			icon;
+		
+		public ProjectilePartBehavior ProjectilePartPrefab{
+			get{
+				return partPrefab;
 			}
-			
 		}
-	
-		
-		public PartSelectionBehavior GetPartType ()
-		{
-			return m_prefab;
+
+		public Sprite Icon{
+			get{
+				return icon;
+			}
 		}
-	
-	
-		public ProjectilePartBehavior GetPartPrefab ()
-		{
-			return m_projectilePartPrefab;
+
+		static public ProjectilePartBehavior GetPartPrefabFromSelection(PartSelectionBehavior _selection){
+			return _selection.ProjectilePartPrefab;
 		}
-	
-	
-		public void Despawn ()
-		{
-				
-			PathologicalGames.PoolManager.Pools [m_poolName].Despawn (this.transform);
-		}
-	
-		
-		static public ProjectilePartBehavior GetPartPrefabFromSelection (PartSelectionBehavior _selection)
-		{
-			
-			return _selection.GetPartPrefab ();
-			
-		}
-		#endregion
-		#region PRIVATE METHODS
-		#endregion
+
 	}
 }

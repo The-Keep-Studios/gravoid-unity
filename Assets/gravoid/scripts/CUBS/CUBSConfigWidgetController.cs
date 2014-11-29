@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace TheKeepStudios.Gravoid{
+namespace TheKeepStudios.Gravoid.CUBS{
 
 	public class CUBSConfigWidgetController : MonoBehaviour{
 
@@ -14,6 +14,10 @@ namespace TheKeepStudios.Gravoid{
 		// Update is called once per frame
 		void Update(){
 	
+		}
+
+		void OnChangeConfiguration(ICUBSConfiguration config){
+			//TODO Handle this
 		}
 	}
 }
