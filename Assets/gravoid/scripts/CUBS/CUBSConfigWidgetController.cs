@@ -3,21 +3,13 @@ using System.Collections.Generic;
 using System;
 
 namespace TheKeepStudios.Gravoid.CUBS{
-
 	public class CUBSConfigWidgetController : MonoBehaviour{
 
-		// Use this for initialization
-		void Start(){
-	
-		}
-	
-		// Update is called once per frame
-		void Update(){
-	
+		public CUBSPartSelectionWidget selectionDisplayWidget;
+
+		public void OnChangeConfiguration(ICUBSConfiguration config){
+			selectionDisplayWidget.SetSelection(config);
 		}
 
-		void OnChangeConfiguration(ICUBSConfiguration config){
-			//TODO Handle this
-		}
 	}
 }
