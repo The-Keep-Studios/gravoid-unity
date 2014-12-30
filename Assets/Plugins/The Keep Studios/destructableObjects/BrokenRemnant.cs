@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TheKeepStudios.spawning;
 
 namespace TheKeepStudios.Destructable{
 
 	public class BrokenRemnant : Detachable{
 
-		public Spawnable remnantToSpawn;
+		public TheKeepStudios.spawning.Spawnable remnantToSpawn;
 
 		// Use this for initialization
 		void Start(){

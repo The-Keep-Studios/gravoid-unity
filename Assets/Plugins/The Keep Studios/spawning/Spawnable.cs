@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace TheKeepStudios{
+namespace TheKeepStudios.spawning{
 	public class Spawnable: MonoBehaviour{
 			
 		public string originSpawnPoolName;

@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using TheKeepStudios.Gravoid.CUBS.Ballistics;
+using TheKeepStudios.Gravoid.CUBS.Inventory;
 
 namespace TheKeepStudios.Gravoid.CUBS{
 /**
@@ -65,7 +67,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 		public class SubSystemLink{
 			public string launchKeyName = "";
 			public LauncherBehavior m_launcher;
-			public ComponentSelectorBehavior m_componentSelector;
+			public ConfigurationSelectorBehavior m_componentSelector;
 			public InventoryBehavior m_inventory;
 			private ProjectileBehavior m_projectilePrefab;
 			private GameObject m_parent;
@@ -74,7 +76,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 				get { return this.m_launcher; }
 			}
 
-			public ComponentSelectorBehavior componentSelector{
+			public ConfigurationSelectorBehavior componentSelector{
 				get { return this.m_componentSelector; }
 			}
 
@@ -92,7 +94,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 			
 				if(this.m_componentSelector == null){
 				
-					this.m_componentSelector = _parent.GetComponent<ComponentSelectorBehavior>();
+					this.m_componentSelector = _parent.GetComponent<ConfigurationSelectorBehavior>();
 				
 				}
 			
@@ -130,7 +132,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 		
 			private void Launch(){
 
-				ICUBSConfiguration selection = this.componentSelector.GetCurrentSelection();
+				Ballistics.IProjectileConfiguration selection = this.componentSelector.GetCurrentSelection();
 			
 				ProjectileBehavior launchable = this.inventory.GetProjectile(selection, this.m_projectilePrefab);
 

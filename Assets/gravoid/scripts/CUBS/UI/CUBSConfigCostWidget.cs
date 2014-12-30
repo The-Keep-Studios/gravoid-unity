@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 
-namespace TheKeepStudios.Gravoid.CUBS{
+namespace TheKeepStudios.Gravoid.CUBS.UI{
 
 	public class CUBSConfigCostWidget : MonoBehaviour{
 
@@ -23,7 +23,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 			text2;
 		
 		[SerializeField]
-		private ICUBSConfiguration
+		private Ballistics.IProjectileConfiguration
 			currentConfig;
 
 		public string CostLabel{
@@ -44,7 +44,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 			}
 		}
 		
-		public ICUBSConfiguration CurrentConfig{
+		public Ballistics.IProjectileConfiguration CurrentConfig{
 			get{
 				return currentConfig;
 			}
@@ -60,13 +60,13 @@ namespace TheKeepStudios.Gravoid.CUBS{
 			text2 = text2 != null ? text2 : gameObject.GetComponentInChildren<UnityEngine.UI.Text>();
 		}
 
-		public void OnChangeConfiguration(ICUBSConfiguration config){
+		public void OnChangeConfiguration(Ballistics.IProjectileConfiguration config){
 			CurrentConfig = config;
 		}
 
 		private void UpdateConfigDisplay(){
-			text1.text = this.CostLabel + CurrentConfig.GetCost();
-			text2.text = this.ReloadTimeLabel + CurrentConfig.GetReloadTime(); 
+			text1.text = this.CostLabel + CurrentConfig.Cost;
+			text2.text = this.ReloadTimeLabel + CurrentConfig.ReloadTime; 
 		}
 
 	}

@@ -1,89 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.20506</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8441EC33-B71D-4AB0-2C46-2E4E8AABD702}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <BaseDirectory>Assets</BaseDirectory>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{8441EC33-B71D-4AB0-2C46-2E4E8AABD702}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>True</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>False</Optimize>
-    <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;Player</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>0169</NoWarn>
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;Player</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>True</Optimize>
-    <OutputPath>Temp\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>0169</NoWarn>
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="UnityEngine">
-      <HintPath>C:\Program Files %28x86%29\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor">
-      <HintPath>C:\Program Files %28x86%29\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml" />
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ApplicationExiter.cs" />
-    <Compile Include="Assets\AudioVolumeAdjuster.cs" />
-    <Compile Include="Assets\gravoid\scenes\dev\mpAsteroidTest\LocalServerConnector.cs" />
-    <Compile Include="Assets\gravoid\scripts\CUBS\CUBSBehavior.cs" />
-    <Compile Include="Assets\gravoid\scripts\CUBS\CUBSConfigWidgetController.cs" />
-    <Compile Include="Assets\gravoid\scripts\CUBS\CollectablePart.cs" />
-    <Compile Include="Assets\gravoid\scripts\CUBS\CollectableResource.cs" />
-    <Compile Include="Assets\gravoid\scripts\CUBS\ComponentSelectorBehavior.cs" />
-    <Compile Include="Assets\gravoid\scripts\CUBS\ICUBSConfiguration.cs" />
-    <Compile Include="Assets\gravoid\scripts\CUBS\InventoryBehavior.cs" />
-    <Compile Include="Assets\gravoid\scripts\CUBS\LauncherBehavior.cs" />
-    <Compile Include="Assets\gravoid\scripts\CUBS\PartCollector.cs" />
-    <Compile Include="Assets\gravoid\scripts\CUBS\PartSelectionBehavior.cs" />
-    <Compile Include="Assets\gravoid\scripts\CUBS\ProjectileBehavior.cs" />
-    <Compile Include="Assets\gravoid\scripts\CUBS\ProjectilePartBehavior.cs" />
-    <Compile Include="Assets\gravoid\scripts\CollectableItem.cs" />
-    <Compile Include="Assets\gravoid\scripts\PlayerControlToggler.cs" />
-    <Compile Include="Assets\gravoid\scripts\physics\AutoPilot.cs" />
-    <Compile Include="Assets\gravoid\scripts\player\PlayerController.cs" />
-    <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
-    <None Include="Assets\gravoid\graphics\Shaders\Shobatha-shader.shader" />
-    <None Include="Assets\gravoid\graphics\Shaders\Asteroid-shader.shader" />
-    <None Include="Assets\gravoid\graphics\Shaders\Player-shader.shader" />
-    <None Include="Assets\Plugins\_IMPORTED\PathologicalGames\readme.txt" />
-    <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Program Files %28x86%29\Unity\Editor\Data\UnityExtensions\Unity\GUISystem\4.6.0\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend %28Queue +100%29.shader" />
-    <None Include="Assets\Standard Assets\Water %28Basic%29\Sources\Shaders\FX-Water Simple.shader" />
+     <Compile Include="Assets\ApplicationExiter.cs" />
+     <Compile Include="Assets\AudioVolumeAdjuster.cs" />
+     <Compile Include="Assets\PartDisplayButtonWidget.cs" />
+     <Compile Include="Assets\gravoid\scenes\dev\mpAsteroidTest\LocalServerConnector.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\IProjectileConfiguration.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\PartSelectionBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\ProjectileBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\ProjectileConfiguration.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\ProjectilePartBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\CUBSBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\ConfigurationSelectorBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Inventory\CollectablePart.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Inventory\CollectableResource.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Inventory\InventoryBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Inventory\PartCollector.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Launcher\LauncherBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSBodyPartsWidget.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSConfigCostWidget.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSConfigWidgetController.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSPartDisplayWidget.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSPartSelectionWidget.cs" />
+     <Compile Include="Assets\gravoid\scripts\CollectableItem.cs" />
+     <Compile Include="Assets\gravoid\scripts\PlayerControlToggler.cs" />
+     <Compile Include="Assets\gravoid\scripts\physics\AutoPilot.cs" />
+     <Compile Include="Assets\gravoid\scripts\player\PlayerController.cs" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\gravoid\graphics\Shaders\Shobatha-shader.shader" />
+     <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
+     <None Include="Assets\gravoid\graphics\Shaders\Asteroid-shader.shader" />
+     <None Include="Assets\gravoid\graphics\Shaders\Player-shader.shader" />
+     <None Include="Assets\Plugins\_IMPORTED\PathologicalGames\readme.txt" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{09770D6E-455C-3229-F2E6-BD73CBDEAE65}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
+      <Project>{09770D6E-455C-3229-F2E6-BD73CBDEAE65}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{983BF82F-874E-7FDC-178A-A54641427ADD}</Project>
-      <Name>Assembly-UnityScript-firstpass</Name>
-    </ProjectReference>
+      <Project>{983BF82F-874E-7FDC-178A-A54641427ADD}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -93,4 +96,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  
 </Project>

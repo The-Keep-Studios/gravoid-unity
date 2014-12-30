@@ -1,33 +1,30 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TheKeepStudios.spawning;
 
-namespace TheKeepStudios.Destructable
-{
+namespace TheKeepStudios.Destructable{
 
 	[RequireComponent(typeof(Spawned))]
-	public class ObjectCluster : MonoBehaviour
-	{
+	public class ObjectCluster : MonoBehaviour{
 
-		public void OnSpawned ()
-		{
+		public void OnSpawned(){
 		
-			StartCoroutine (CreateCluster ());
+			StartCoroutine(CreateCluster());
 		
 		}
 
-		protected IEnumerator CreateCluster ()
-		{
+		protected IEnumerator CreateCluster(){
 		
-			yield return new WaitForFixedUpdate (); //wait until the fixed (physics) update frame
+			yield return new WaitForFixedUpdate(); //wait until the fixed (physics) update frame
 		
-			foreach (Detachable child in this.GetComponentsInChildren<Detachable>(true)) {
+			foreach(Detachable child in this.GetComponentsInChildren<Detachable>(true)){
 				
-				child.Detach ();
+				child.Detach();
 				
 			}
 			
-			this.GetComponent<Spawned> ().Despawn ();
+			this.GetComponent<Spawned>().Despawn();
 		
 		}
 	

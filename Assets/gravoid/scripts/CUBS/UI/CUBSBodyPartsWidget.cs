@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System;
+using TheKeepStudios.Gravoid.CUBS.Ballistics;
 
-namespace TheKeepStudios.Gravoid.CUBS{
+namespace TheKeepStudios.Gravoid.CUBS.UI{
 	public class CUBSBodyPartsWidget : MonoBehaviour{
 
 		public void setParts(System.Collections.Generic.List<PartSelectionBehavior> list){

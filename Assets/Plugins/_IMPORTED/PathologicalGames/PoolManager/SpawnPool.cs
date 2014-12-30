@@ -450,9 +450,9 @@ namespace PathologicalGames{
 					this._spawned.Add(inst);
 
 					//Add a Spawned behavior to make despawning these assets simplier
-					TheKeepStudios.Spawned spawnedBehavior = inst.GetComponent<TheKeepStudios.Spawned>();
+					TheKeepStudios.spawning.Spawned spawnedBehavior = inst.GetComponent<TheKeepStudios.spawning.Spawned>();
 					if(spawnedBehavior == null){
-						spawnedBehavior = inst.gameObject.AddComponent<TheKeepStudios.Spawned>();
+						spawnedBehavior = inst.gameObject.AddComponent<TheKeepStudios.spawning.Spawned>();
 					}
 
 					// Notify instance it was spawned so it can manage it's state

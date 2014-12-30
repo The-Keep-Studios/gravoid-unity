@@ -1,13 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-namespace TheKeepStudios.Gravoid.CUBS{
+namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 
+	[RequireComponent(typeof(ProjectilePartBehavior))]
 	public class PartSelectionBehavior : MonoBehaviour{
-
-		[SerializeField]
-		private ProjectilePartBehavior
-			partPrefab;
 
 		[SerializeField]
 		private Sprite
@@ -15,7 +12,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 		
 		public ProjectilePartBehavior ProjectilePartPrefab{
 			get{
-				return partPrefab;
+				return this.GetComponent<ProjectilePartBehavior>();
 			}
 		}
 
@@ -23,10 +20,6 @@ namespace TheKeepStudios.Gravoid.CUBS{
 			get{
 				return icon;
 			}
-		}
-
-		static public ProjectilePartBehavior GetPartPrefabFromSelection(PartSelectionBehavior _selection){
-			return _selection.ProjectilePartPrefab;
 		}
 
 	}

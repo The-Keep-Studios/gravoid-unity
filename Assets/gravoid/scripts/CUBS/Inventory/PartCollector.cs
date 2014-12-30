@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace TheKeepStudios.Gravoid.CUBS{
+namespace TheKeepStudios.Gravoid.CUBS.Inventory{
 	public class PartCollector : MonoBehaviour{
 		public InventoryBehavior inventory;
 

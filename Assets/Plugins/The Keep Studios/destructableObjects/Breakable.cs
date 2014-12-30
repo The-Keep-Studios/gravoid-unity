@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace TheKeepStudios.Destructable{
 
-	[RequireComponent(typeof(Spawned))]
+	[RequireComponent(typeof(TheKeepStudios.spawning.Spawned))]
 	public class Breakable : MonoBehaviour{
 	
 		public void OnBreak(){
@@ -25,7 +25,7 @@ namespace TheKeepStudios.Destructable{
 				
 			}
 			
-			this.GetComponent<Spawned>().Despawn();
+			this.GetComponent<TheKeepStudios.spawning.Spawned>().Despawn();
 		
 		}
 	
