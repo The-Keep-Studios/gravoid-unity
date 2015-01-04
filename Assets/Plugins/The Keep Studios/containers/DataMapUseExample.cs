@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[System.Serializable]
+
 public class DataMapUseExample : MonoBehaviour
 {
 	[SerializeField]
@@ -12,7 +12,7 @@ public class DataMapUseExample : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		GameObject obj = new GameObject();
+	
 	}
 
 	// Update is called once per frame
