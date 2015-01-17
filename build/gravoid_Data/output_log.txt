@@ -17,7 +17,7 @@ Platform assembly: C:\Users\Ian Small\git\gravoid-unity_project\build\gravoid_Da
 Loading C:\Users\Ian Small\git\gravoid-unity_project\build\gravoid_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Ian Small\git\gravoid-unity_project\build\gravoid_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Ian Small\git\gravoid-unity_project\build\gravoid_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.193 seconds
+- Completed reload, in  0.644 seconds
 desktop: 1920x1080 60Hz; virtual: 3600x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
