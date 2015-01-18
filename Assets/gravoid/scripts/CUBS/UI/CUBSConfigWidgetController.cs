@@ -63,10 +63,13 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 		}
 		
 		private void UpdateLayout(List<CUBSPartDisplayWidget> widgets){
-			foreach(CUBSPartDisplayWidget nextWidget in widgets){
-				nextWidget.transform.SetParent(widgetContainerTranform);
+			for(int idx = 0; idx <= widgets.Count; ++idx){
+				CUBSPartDisplayWidget nextWidget = widgets[idx];
+				RectTransform rt = nextWidget.transform as RectTransform;
+				rt.SetParent(widgetContainerTranform);
+				float inset = (idx * widgetHeight) + borderHeight;
+				rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, inset, widgetHeight);
 			}
-			throw new NotImplementedException("Required for completion of GRA-306");
 		}
 		
 		private void SetHeight(int numberOfParts){
