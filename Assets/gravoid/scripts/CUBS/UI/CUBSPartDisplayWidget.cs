@@ -4,7 +4,7 @@ using System;
 using TheKeepStudios.Gravoid.CUBS.Ballistics;
 
 namespace TheKeepStudios.Gravoid.CUBS.UI{
-	public class CUBSPartDisplayWidget : UnityEngine.UI.Button{
+	public class CUBSPartDisplayWidget : MonoBehaviour{
 
 		[SerializeField]
 		private PartSelectionBehavior

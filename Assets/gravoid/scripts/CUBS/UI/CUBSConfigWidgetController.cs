@@ -6,15 +6,33 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 	public class CUBSConfigWidgetController : MonoBehaviour{
 	
 		[SerializeField]
-		private CUBSPartDisplayWidget
+		CUBSPartDisplayWidget
 			partDisplayButtonPrefab;
+			
+		float widgetHeight;
 		
-		public float widgetCenterDistance;
+		[SerializeField]
+		float
+			borderHeight;
 		
-		void Start(){
+		[SerializeField]
+		RectTransform
+			widgetContainerTranform;
+		
+		[SerializeField]
+		RectTransform
+			widgetPrefabTranform;
+		
+		void Awake(){
 			if(partDisplayButtonPrefab == null){
-				throw new Exception("Invalid setup, partDisplayButtonPrefab cannot be null");
+				Debug.LogWarning("Invalid setup, partDisplayButtonPrefab cannot be null");
+			} else{
+				widgetPrefabTranform = partDisplayButtonPrefab.transform as RectTransform;
+				widgetHeight = widgetPrefabTranform.sizeDelta.y;
 			}
+			List<CUBSPartDisplayWidget> widgets = new List<CUBSPartDisplayWidget>(GetComponentsInChildren<CUBSPartDisplayWidget>());
+			SetHeight(widgets.Count);
+			UpdateLayout(widgets);
 		}
 
 		public void OnChangeConfiguration(Ballistics.IProjectileConfiguration config){
@@ -38,19 +56,24 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 			for(int idx = config.Parts.Count; idx<=widgets.Count; ++idx){
 				widgets[idx].Part = null;
 			}
-			if(isWidgetLayoutChanged){
-				UpdateLayout();
-			}
 			SetHeight(config.Parts.Count);
+			if(isWidgetLayoutChanged){
+				UpdateLayout(widgets);
+			}
 		}
 		
-		private void UpdateLayout(){
-			throw new NotImplementedException();
+		private void UpdateLayout(List<CUBSPartDisplayWidget> widgets){
+			foreach(CUBSPartDisplayWidget nextWidget in widgets){
+				nextWidget.transform.SetParent(widgetContainerTranform);
+			}
+			throw new NotImplementedException("Required for completion of GRA-306");
 		}
 		
 		private void SetHeight(int numberOfParts){
-			RectTransform rt = GetComponent<RectTransform>();
-			throw new NotImplementedException("Required for completion of GRA-306");
+			Vector2 sizeDelta = widgetContainerTranform.sizeDelta;
+			//our RectTransform must fit each widget vertically in the 
+			sizeDelta.y = (widgetHeight * numberOfParts) + (borderHeight * 2);
+			widgetContainerTranform.sizeDelta = sizeDelta;
 		}
 
 	}

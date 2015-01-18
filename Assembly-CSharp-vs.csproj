@@ -51,6 +51,7 @@
      <Compile Include="Assets\PartDisplayButtonWidget.cs" />
      <Compile Include="Assets\gravoid\scenes\dev\mpAsteroidTest\LocalServerConnector.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\IProjectileConfiguration.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\MassProjectileBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\PartSelectionBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\ProjectileBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\ProjectileConfiguration.cs" />
