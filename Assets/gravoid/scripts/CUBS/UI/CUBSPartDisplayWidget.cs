@@ -5,19 +5,36 @@ using TheKeepStudios.Gravoid.CUBS.Ballistics;
 
 namespace TheKeepStudios.Gravoid.CUBS.UI{
 	public class CUBSPartDisplayWidget : MonoBehaviour{
+	
+		[Serializable]
+		public class PartChangeRequestEventArgs{
+			CUBSPartDisplayWidget partWidget;
+		}
+	
+		[Serializable]
+		public delegate void PartChangeRequestEventHandler(object sender,PartChangeRequestEventArgs e);
 
 		[SerializeField]
 		private PartSelectionBehavior
 			currentPart;
+			
 		[SerializeField]
 		private UnityEngine.UI.Text
 			partNameText;
+			
 		[SerializeField]
 		private UnityEngine.UI.Image
 			partIcon;
+			
 		[SerializeField]
 		private int
 			currentPosition;
+			
+		[SerializeField]
+		private event PartChangeRequestEventHandler
+			pcrEvent;
+			
+		private PartChangeRequestEventArgs args = new PartChangeRequestEventArgs();
 		
 		public PartSelectionBehavior Part{
 			get{ return currentPart;} 
@@ -50,9 +67,20 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 			Part = Part; //initializes the current part according to it's current value
 		}
 		
-		public void ActivateConfigurationSelector(){
-			throw new NotImplementedException("Required for completion of GRA-335");
+		public virtual void OnPartChangeRequest(){
+			if(pcrEvent != null){
+				pcrEvent(this, args);
+			}
+		}
+		
+		virtual public void RegisterPartChangeRequestListener(PartChangeRequestEventHandler onEvent){
+			pcrEvent += onEvent;
+		}
+		
+		virtual public void DeregisterPartChangeRequestListener(PartChangeRequestEventHandler onEvent){
+			pcrEvent -= onEvent;
 		}
 		
 	}
+	
 }

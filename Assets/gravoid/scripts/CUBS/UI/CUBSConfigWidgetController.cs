@@ -23,6 +23,10 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 		RectTransform
 			widgetPrefabTranform;
 		
+		[SerializeField]
+		GameObject
+			configurationAltertionWidget;
+		
 		void Awake(){
 			if(partDisplayButtonPrefab == null){
 				Debug.LogWarning("Invalid setup, partDisplayButtonPrefab cannot be null");
@@ -69,6 +73,7 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 				rt.SetParent(widgetContainerTranform);
 				float inset = (idx * widgetHeight) + borderHeight;
 				rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, inset, widgetHeight);
+				nextWidget.RegisterPartChangeRequestListener(this.PartChangeRequestEventHandler);
 			}
 		}
 		
@@ -77,6 +82,10 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 			//our RectTransform must fit each widget vertically in the 
 			sizeDelta.y = (widgetHeight * numberOfParts) + (borderHeight * 2);
 			widgetContainerTranform.sizeDelta = sizeDelta;
+		}
+		
+		void PartChangeRequestEventHandler(object sender, CUBSPartDisplayWidget.PartChangeRequestEventArgs e){
+			configurationAltertionWidget.SetActive(true);
 		}
 
 	}
