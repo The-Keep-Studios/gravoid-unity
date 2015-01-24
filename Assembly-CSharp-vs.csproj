@@ -51,6 +51,7 @@
      <Compile Include="Assets\PartDisplayButtonWidget.cs" />
      <Compile Include="Assets\gravoid\scenes\dev\mpAsteroidTest\LocalServerConnector.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\IProjectileConfiguration.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\MassProjectileBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\PartSelectionBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\ProjectileBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\ProjectileConfiguration.cs" />
@@ -62,11 +63,9 @@
      <Compile Include="Assets\gravoid\scripts\CUBS\Inventory\InventoryBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Inventory\PartCollector.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Launcher\LauncherBehavior.cs" />
-     <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSBodyPartsWidget.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSConfigCostWidget.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSConfigWidgetController.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSPartDisplayWidget.cs" />
-     <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSPartSelectionWidget.cs" />
      <Compile Include="Assets\gravoid\scripts\CollectableItem.cs" />
      <Compile Include="Assets\gravoid\scripts\PlayerControlToggler.cs" />
      <Compile Include="Assets\gravoid\scripts\physics\AutoPilot.cs" />

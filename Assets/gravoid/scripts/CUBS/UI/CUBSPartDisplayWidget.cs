@@ -5,21 +5,82 @@ using TheKeepStudios.Gravoid.CUBS.Ballistics;
 
 namespace TheKeepStudios.Gravoid.CUBS.UI{
 	public class CUBSPartDisplayWidget : MonoBehaviour{
+	
+		[Serializable]
+		public class PartChangeRequestEventArgs{
+			CUBSPartDisplayWidget partWidget;
+		}
+	
+		[Serializable]
+		public delegate void PartChangeRequestEventHandler(object sender,PartChangeRequestEventArgs e);
 
-		UnityEngine.UI.Text text;
-		UnityEngine.UI.Image image;
+		[SerializeField]
+		private PartSelectionBehavior
+			currentPart;
+			
+		[SerializeField]
+		private UnityEngine.UI.Text
+			partNameText;
+			
+		[SerializeField]
+		private UnityEngine.UI.Image
+			partIcon;
+			
+		[SerializeField]
+		private int
+			currentPosition;
+			
+		[SerializeField]
+		private event PartChangeRequestEventHandler
+			pcrEvent;
+			
+		private PartChangeRequestEventArgs args = new PartChangeRequestEventArgs();
+		
+		public PartSelectionBehavior Part{
+			get{ return currentPart;} 
+			set{
+				if(currentPart == null){
+					currentPart = null;
+					if(partIcon != null){
+						partIcon.sprite = null;
+					}
+					if(partNameText != null){
+						partNameText.text = null;
+					}
+					this.gameObject.SetActive(false);
+				} else{
+					currentPart = value;
+					if(partIcon != null){
+						partIcon.sprite = currentPart.Icon;
+					}
+					if(partNameText != null){
+						partNameText.text = currentPart.name;
+					}
+					this.gameObject.SetActive(true);
+				}
+			}
+		}
 
 		void Start(){
-			//Warning: Assumes one and only one of each of these components in our children and that they will remain constant
-			text = text != null ? text : gameObject.GetComponentInChildren<UnityEngine.UI.Text>();
-			image = image != null ? image : gameObject.GetComponentInChildren<UnityEngine.UI.Image>();
+			partIcon = (partIcon == null) ? (GetComponentInChildren<UnityEngine.UI.Image>()) : (partIcon);
+			partNameText = (partNameText == null) ? (GetComponentInChildren<UnityEngine.UI.Text>()) : (partNameText);
+			Part = Part; //initializes the current part according to it's current value
 		}
-
-		public void setPart(PartSelectionBehavior partSelectionBehavior){
-			// TODO get name of part in a more planned fashion (this is just the name of the object I believe
-			text.text = partSelectionBehavior.name;
-			image.sprite = partSelectionBehavior.Icon;
+		
+		public virtual void OnPartChangeRequest(){
+			if(pcrEvent != null){
+				pcrEvent(this, args);
+			}
 		}
-
+		
+		virtual public void RegisterPartChangeRequestListener(PartChangeRequestEventHandler onEvent){
+			pcrEvent += onEvent;
+		}
+		
+		virtual public void DeregisterPartChangeRequestListener(PartChangeRequestEventHandler onEvent){
+			pcrEvent -= onEvent;
+		}
+		
 	}
+	
 }
