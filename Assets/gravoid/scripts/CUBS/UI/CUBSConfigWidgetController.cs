@@ -67,7 +67,7 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 		}
 		
 		private void UpdateLayout(List<CUBSPartDisplayWidget> widgets){
-			for(int idx = 0; idx <= widgets.Count; ++idx){
+			for(int idx = 0; idx < widgets.Count; ++idx){
 				CUBSPartDisplayWidget nextWidget = widgets[idx];
 				RectTransform rt = nextWidget.transform as RectTransform;
 				rt.SetParent(widgetContainerTranform);
