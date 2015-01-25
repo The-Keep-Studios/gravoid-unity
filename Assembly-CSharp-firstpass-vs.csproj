@@ -137,6 +137,10 @@
      <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\ShipVelocityController.cs" />
      <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\SpecialEffects.cs" />
      <Compile Include="Assets\Plugins\The Keep Studios\vehicleControllers\scripts\behaviors\ThrusterSpecialEffect.cs" />
+     <Compile Include="Assets\Plugins\UnityPatterns\ObjectPool\Demo\Scripts\Bullet.cs" />
+     <Compile Include="Assets\Plugins\UnityPatterns\ObjectPool\Demo\Scripts\Explosion.cs" />
+     <Compile Include="Assets\Plugins\UnityPatterns\ObjectPool\Demo\Scripts\Turret.cs" />
+     <Compile Include="Assets\Plugins\UnityPatterns\ObjectPool\Scripts\ObjectPool.cs" />
      <Compile Include="Assets\Plugins\_IMPORTED\PathologicalGames\PoolManager\PoolManager.cs" />
      <Compile Include="Assets\Plugins\_IMPORTED\PathologicalGames\PoolManager\PreRuntimePoolItem.cs" />
      <Compile Include="Assets\Plugins\_IMPORTED\PathologicalGames\PoolManager\SpawnPool.cs" />
