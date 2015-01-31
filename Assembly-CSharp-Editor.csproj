@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{C9EB94A3-F93C-70A7-9F93-3A450582A1AE}</ProjectGuid>
+	<ProjectGuid>{5080780B-92D6-FDC4-7AD3-884F4D374637}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Editor\CUBSComponentEditor.cs" />
      <Compile Include="Assets\Editor\_IMPORTED\PathologicalGames\Common\PGEditorUtils.cs" />
      <Compile Include="Assets\Editor\_IMPORTED\PathologicalGames\PoolManager\PreRuntimePoolItemInspector.cs" />
      <Compile Include="Assets\Editor\_IMPORTED\PathologicalGames\PoolManager\SpawnPoolInspector.cs" />
@@ -68,11 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{09770D6E-455C-3229-F2E6-BD73CBDEAE65}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{46355272-6092-D093-F5E5-03F6C0D0F9B3}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{983BF82F-874E-7FDC-178A-A54641427ADD}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+      <Project>{6FABB9EF-126C-C667-45DB-782905FFF76D}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{8441EC33-B71D-4AB0-2C46-2E4E8AABD702}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{C5D5B0D2-B3E5-B2D9-539A-E9C97AD23A60}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
