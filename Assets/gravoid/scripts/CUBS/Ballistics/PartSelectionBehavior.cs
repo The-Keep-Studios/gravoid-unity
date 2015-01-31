@@ -11,11 +11,17 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		private Sprite
 			icon;
 		
-		private string title = "";
+		[SerializeField]
+		private string
+			title;
 
-		private string description = "";
+		[SerializeField]
+		private string
+			description;
 
-		private string flavor = "";
+		[SerializeField]
+		private string
+			flavor;
 		
 		public ProjectilePartBehavior ProjectilePartPrefab{
 			get{
