@@ -310,7 +310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100034
 GameObject:
   m_ObjectHideFlags: 1
@@ -1858,7 +1858,7 @@ MonoBehaviour:
   borderHeight: 5
   widgetContainerTranform: {fileID: 22400038}
   widgetPrefabTranform: {fileID: 22400002}
-  configurationAltertionWidget: {fileID: 0}
+  configurationAltertionWidget: {fileID: 11421530}
   partToChange: {fileID: 0}
 --- !u!114 &11400058
 MonoBehaviour:
