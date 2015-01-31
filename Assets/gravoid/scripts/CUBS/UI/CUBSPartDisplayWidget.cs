@@ -80,9 +80,5 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 		virtual public void DeregisterPartChangeRequestListener(PartChangeRequestEventHandler onEvent){
 			pcrEvent -= onEvent;
 		}
-
-
-		
 	}
-	
 }

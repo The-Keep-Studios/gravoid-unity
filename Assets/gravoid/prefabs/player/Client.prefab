@@ -310,7 +310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100034
 GameObject:
   m_ObjectHideFlags: 1
@@ -1859,6 +1859,7 @@ MonoBehaviour:
   widgetContainerTranform: {fileID: 22400038}
   widgetPrefabTranform: {fileID: 22400002}
   configurationAltertionWidget: {fileID: 100032}
+  partToChange: {fileID: 0}
 --- !u!114 &11400058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1948,6 +1949,18 @@ MonoBehaviour:
       - m_Target: {fileID: 100032}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 11400056}
+        m_MethodName: BroadcastMessage
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
@@ -2684,12 +2697,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4aa647fa768997478453c4104b4c9d4, type: 3}
+  m_Script: {fileID: 11500000, guid: d4279648fe0882840948f152cffeb4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   partName: {fileID: 11400058}
   partMechanics: {fileID: 11400024}
   partFlavor: {fileID: 11400046}
+  currentlyDisplayedPart: {fileID: 0}
 --- !u!114 &11434108
 MonoBehaviour:
   m_ObjectHideFlags: 1
