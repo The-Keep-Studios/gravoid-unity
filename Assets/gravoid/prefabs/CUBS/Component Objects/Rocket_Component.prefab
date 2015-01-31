@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
   - 114: {fileID: 11413680}
+  - 114: {fileID: 11439750}
   m_Layer: 0
   m_Name: Rocket_Component
   m_TagString: Untagged
@@ -70,6 +71,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originSpawnPoolName: 
   lengthInAxisY: 0
+--- !u!114 &11439750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2cb55d7c096aae4c8961b747f03d609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: cd0d7259fe8801147b45567a0d16594b, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
