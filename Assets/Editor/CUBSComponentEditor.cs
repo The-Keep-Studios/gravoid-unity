@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEditor;
+using TheKeepStudios.Gravoid.CUBS.Ballistics;
 
-[CustomEditor(typeof(TheKeepStudios.Gravoid.CUBS.Ballistics.PartSelectionBehavior))]
+[CustomEditor(typeof(PartSelectionBehavior))]
 public class CUBSComponentEditor : Editor {
 	public override void OnInspectorGUI()
 	{
-		TheKeepStudios.Gravoid.CUBS.Ballistics.PartSelectionBehavior myPartSelectionBehavior = (TheKeepStudios.Gravoid.CUBS.Ballistics.PartSelectionBehavior)target;
+		PartSelectionBehavior myPartSelectionBehavior = (PartSelectionBehavior)target;
 
 		myPartSelectionBehavior.Icon = (Sprite)EditorGUILayout.ObjectField("Icon Sprite", myPartSelectionBehavior.Icon, typeof(GameObject), false);
 		myPartSelectionBehavior.Title = EditorGUILayout.TextField("Object Name", myPartSelectionBehavior.Title);

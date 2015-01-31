@@ -210,7 +210,7 @@ GameObject:
   - 222: {fileID: 22200006}
   - 114: {fileID: 11400024}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Part Mechanics Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,13 +303,14 @@ GameObject:
   - 224: {fileID: 22400014}
   - 222: {fileID: 22200010}
   - 114: {fileID: 11400030}
+  - 114: {fileID: 11421530}
   m_Layer: 5
   m_Name: Config Builder Widget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &100034
 GameObject:
   m_ObjectHideFlags: 1
@@ -407,7 +408,7 @@ GameObject:
   - 222: {fileID: 22200020}
   - 114: {fileID: 11400046}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Part Flavor Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -477,7 +478,7 @@ GameObject:
   - 222: {fileID: 22200026}
   - 114: {fileID: 11400058}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Part Name Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -765,6 +766,7 @@ GameObject:
   - 222: {fileID: 22200056}
   - 114: {fileID: 11400114}
   - 114: {fileID: 11400116}
+  - 114: {fileID: 11421528}
   m_Layer: 5
   m_Name: Part Display Button
   m_TagString: Untagged
@@ -1730,7 +1732,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -2013,7 +2014,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Explosive Charge
+  m_Text: Test Text
 --- !u!114 &11400074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2060,7 +2061,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_HighlightedColor: {r: .155925617, g: .38405323, b: .757352948, a: 1}
     m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
@@ -2504,7 +2505,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_HighlightedColor: {r: .75, g: .336397052, b: .336397052, a: 1}
     m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
@@ -2522,7 +2523,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11400114}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11421530}
+        m_MethodName: PartSelect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400002, guid: e65b126e4b058eb42ad87a49d3a01f55,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: TheKeepStudios.Gravoid.CUBS.Ballistics.PartSelectionBehavior,
+            Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11400120
@@ -2538,6 +2552,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clientSideOnlyObjectsToSpawn: []
   clientSideOnlyObjects: []
+--- !u!114 &11421528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 143d19a9ac816ad4d977c9cba7b9f048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partInfo: {fileID: 11400002, guid: e65b126e4b058eb42ad87a49d3a01f55, type: 2}
+  partIcon: {fileID: 11400050}
+  buttonLabel: {fileID: 11400072}
+--- !u!114 &11421530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4aa647fa768997478453c4104b4c9d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: {fileID: 11400058}
+  partMechanics: {fileID: 11400024}
+  partFlavor: {fileID: 11400046}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

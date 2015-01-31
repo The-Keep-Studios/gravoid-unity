@@ -50,6 +50,7 @@
      <Compile Include="Assets\AudioVolumeAdjuster.cs" />
      <Compile Include="Assets\PartDisplayButtonWidget.cs" />
      <Compile Include="Assets\gravoid\scenes\dev\mpAsteroidTest\LocalServerConnector.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\BallisticComponentButton.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\IProjectileConfiguration.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\MassProjectileBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\PartSelectionBehavior.cs" />
@@ -64,6 +65,7 @@
      <Compile Include="Assets\gravoid\scripts\CUBS\Inventory\InventoryBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Inventory\PartCollector.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Launcher\LauncherBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\UI\BallisticsPartSelectorFlyout.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSConfigCostWidget.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSConfigWidgetController.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSPartDisplayWidget.cs" />
