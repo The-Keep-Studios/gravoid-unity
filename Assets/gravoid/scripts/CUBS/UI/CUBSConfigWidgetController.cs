@@ -74,6 +74,7 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 				float inset = (idx * widgetHeight) + borderHeight;
 				rt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, inset, widgetHeight);
 				nextWidget.RegisterPartChangeRequestListener(this.PartChangeRequestEventHandler);
+				nextWidget.RegisterPartChangeRequestListener(configurationAltertionWidget.GetComponent<BallisticsInfoChanger>().PartChangeRequestEventHandler);
 			}
 		}
 		

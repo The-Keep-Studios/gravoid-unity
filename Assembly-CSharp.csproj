@@ -65,7 +65,7 @@
      <Compile Include="Assets\gravoid\scripts\CUBS\Inventory\InventoryBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Inventory\PartCollector.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Launcher\LauncherBehavior.cs" />
-     <Compile Include="Assets\gravoid\scripts\CUBS\UI\BallisticsPartSelectorFlyout.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\UI\BallisticsInfoChanger.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSConfigCostWidget.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSConfigWidgetController.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSPartDisplayWidget.cs" />

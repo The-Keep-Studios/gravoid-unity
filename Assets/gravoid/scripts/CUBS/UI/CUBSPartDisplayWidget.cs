@@ -8,7 +8,7 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 	
 		[Serializable]
 		public class PartChangeRequestEventArgs{
-			CUBSPartDisplayWidget partWidget;
+			public CUBSPartDisplayWidget partWidget;
 		}
 	
 		[Serializable]
@@ -67,7 +67,7 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 			Part = Part; //initializes the current part according to it's current value
 		}
 		
-		public virtual void OnPartChangeRequest(){
+		public void OnPartChangeRequest(){
 			if(pcrEvent != null){
 				pcrEvent(this, args);
 			}
@@ -80,6 +80,8 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 		virtual public void DeregisterPartChangeRequestListener(PartChangeRequestEventHandler onEvent){
 			pcrEvent -= onEvent;
 		}
+
+
 		
 	}
 	
