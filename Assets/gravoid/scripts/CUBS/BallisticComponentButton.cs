@@ -6,19 +6,19 @@ using TheKeepStudios.Gravoid.CUBS.Ballistics;
 // This behavior will require a component prefab and thus generate the look of the corresponding Ballistic Component Button in the CUBS window 
 // TODO Also make this script update the name of the Game Object its self (ex. Mass Component Button)
 
-namespace TheKeepStudios.Gravoid.CUBS {
-	public class BallisticComponentButton : MonoBehaviour {
+namespace TheKeepStudios.Gravoid.CUBS{
+	public class BallisticComponentButton : MonoBehaviour{
 		[SerializeField]
-		private PartSelectionBehavior partInfo;
+		private PartSelectionBehavior
+			partInfo;
 		public Image partIcon;
-		public Text buttonLabel; 
+		public Text buttonLabel;
 
-
-		public PartSelectionBehavior PartInfo {
-			get {
+		public PartSelectionBehavior PartInfo{
+			get{
 				return partInfo;
 			}
-			set {
+			set{
 				partInfo = value;
 				buttonLabel.text = PartInfo.Title;
 				partIcon.sprite = PartInfo.Icon;
