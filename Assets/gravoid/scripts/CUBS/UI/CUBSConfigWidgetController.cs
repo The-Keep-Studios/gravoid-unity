@@ -25,7 +25,7 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 			widgetPrefabTranform;
 		
 		[SerializeField]
-		GameObject
+		CUBSConfigurationFlyoutWidget
 			configurationAltertionWidget;
 		
 		[SerializeField]
@@ -45,12 +45,16 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 		}
 		
 		public void ChangeCurrentPart(){
-			//TODO Retrieve the PartSelectionBehavior newBallisticPartSelection from the Flyout
-			//TODO Change the part display
+			PartSelectionBehavior newPartSelection = null;
+			if(newPartSelection == null){
+				Debug.LogWarning("No part selection specified. Assuming the configurationAltertionWidget's CurrentlyDisplayedPart was intended.");
+				partToChange.Part = configurationAltertionWidget.CurrentlyDisplayedPart;
+			} else{
+				partToChange.Part = newPartSelection;
+			}
 			//TODO Create a new Ballistics.IProjectileConfiguration
 			//TODO Send the new Ballistics.IProjectileConfiguration to the ConfigurationSelectorBehavior
-			
-			configurationAltertionWidget.SetActive(false);
+			configurationAltertionWidget.gameObject.SetActive(false);
 		}
 
 		public void OnChangeConfiguration(Ballistics.IProjectileConfiguration config){
@@ -98,8 +102,8 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 			widgetContainerTranform.sizeDelta = sizeDelta;
 		}
 		
-		void PartChangeRequestEventHandler(object sender, CUBSPartDisplayWidget.PartChangeRequestEventArgs e){
-			configurationAltertionWidget.SetActive(true);
+		private void PartChangeRequestEventHandler(object sender, CUBSPartDisplayWidget.PartChangeRequestEventArgs e){
+			configurationAltertionWidget.gameObject.SetActive(true);
 			partToChange = e.partWidget;
 		}
 

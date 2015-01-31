@@ -310,7 +310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &100034
 GameObject:
   m_ObjectHideFlags: 1
@@ -1594,7 +1594,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11421530}
-        m_MethodName: PartSelect
+        m_MethodName: ChangeDisplayedPart
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11475166, guid: 1d113bd2691cdbc46a8aae0e05fc0919,
@@ -1858,7 +1858,7 @@ MonoBehaviour:
   borderHeight: 5
   widgetContainerTranform: {fileID: 22400038}
   widgetPrefabTranform: {fileID: 22400002}
-  configurationAltertionWidget: {fileID: 100032}
+  configurationAltertionWidget: {fileID: 0}
   partToChange: {fileID: 0}
 --- !u!114 &11400058
 MonoBehaviour:
@@ -1959,8 +1959,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 1
       - m_Target: {fileID: 11400056}
-        m_MethodName: BroadcastMessage
-        m_Mode: 5
+        m_MethodName: ChangeCurrentPart
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
@@ -2178,7 +2178,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11421530}
-        m_MethodName: PartSelect
+        m_MethodName: ChangeDisplayedPart
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11461982, guid: dbc3e9cac1dbe8846b195407b6d3d841,
@@ -2531,7 +2531,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11421530}
-        m_MethodName: PartSelect
+        m_MethodName: ChangeDisplayedPart
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11473694, guid: 1316f60a40deca34aa84110ab62ace5d,
@@ -2648,7 +2648,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11421530}
-        m_MethodName: PartSelect
+        m_MethodName: ChangeDisplayedPart
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400002, guid: e65b126e4b058eb42ad87a49d3a01f55,
@@ -2765,7 +2765,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11421530}
-        m_MethodName: PartSelect
+        m_MethodName: ChangeDisplayedPart
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11439750, guid: b4805a4a44a733f4bacb6274ac8eb935,

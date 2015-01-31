@@ -22,11 +22,20 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 		private  PartSelectionBehavior
 			currentlyDisplayedPart;
 
+		public PartSelectionBehavior CurrentlyDisplayedPart{
+			get{
+				return currentlyDisplayedPart;
+			}
+			set{
+				currentlyDisplayedPart = value;
+				partName.text = currentlyDisplayedPart.Title;
+				partMechanics.text = currentlyDisplayedPart.Description;
+				partFlavor.text = currentlyDisplayedPart.Flavor;
+			}
+		}
+
 		public void ChangeDisplayedPart(PartSelectionBehavior partInformationToDisplay){
-			partName.text = partInformationToDisplay.Title;
-			partMechanics.text = partInformationToDisplay.Description;
-			partFlavor.text = partInformationToDisplay.Flavor;
-			currentlyDisplayedPart = partInformationToDisplay;
+			CurrentlyDisplayedPart = partInformationToDisplay;
 		}
 	}
 }

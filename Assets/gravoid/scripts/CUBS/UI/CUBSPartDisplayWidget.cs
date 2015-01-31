@@ -68,6 +68,7 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 		}
 		
 		public void OnPartChangeRequest(){
+			args.partWidget = this;
 			if(pcrEvent != null){
 				pcrEvent(this, args);
 			}
