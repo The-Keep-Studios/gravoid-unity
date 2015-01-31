@@ -823,6 +823,7 @@ GameObject:
   - 222: {fileID: 339473165}
   - 114: {fileID: 339473164}
   - 114: {fileID: 339473163}
+  - 114: {fileID: 339473166}
   m_Layer: 5
   m_Name: Options Button
   m_TagString: Untagged
@@ -913,6 +914,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 1891647373}
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Select Sound
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &339473164
@@ -944,6 +957,37 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 244960399}
   m_GameObject: {fileID: 339473161}
+--- !u!114 &339473166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11409566, guid: 862f4d185238ebb41a47c011fd20b4e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 244960399}
+  m_GameObject: {fileID: 339473161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1891647373}
+          m_MethodName: PlaySound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Mouse Over Sound
+            m_BoolArgument: 0
+          m_CallState: 1
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &348401530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,6 +1481,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 244960399}
   m_GameObject: {fileID: 472571886}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -1481,6 +1526,7 @@ GameObject:
   - 222: {fileID: 489360411}
   - 114: {fileID: 489360410}
   - 114: {fileID: 489360409}
+  - 114: {fileID: 489360412}
   m_Layer: 5
   m_Name: Exit GameButton
   m_TagString: Untagged
@@ -1571,6 +1617,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 1
+      - m_Target: {fileID: 1891647373}
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Select Sound
+          m_BoolArgument: 1
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &489360410
@@ -1602,6 +1660,37 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 244960399}
   m_GameObject: {fileID: 489360407}
+--- !u!114 &489360412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11409570, guid: 862f4d185238ebb41a47c011fd20b4e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 244960399}
+  m_GameObject: {fileID: 489360407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1891647373}
+          m_MethodName: PlaySound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Mouse Over Sound
+            m_BoolArgument: 0
+          m_CallState: 1
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1001 &497171576
 Prefab:
   m_ObjectHideFlags: 0
@@ -2153,7 +2242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &744558608
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2487,7 +2576,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -4186,6 +4274,34 @@ Prefab:
     - target: {fileID: 14800000, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
       propertyPath: m_ViewID.m_Type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100032, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400116, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: .75
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400116, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: .336397052
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400116, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: .336397052
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400076, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: .155925617
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400076, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: .38405323
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400076, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: .757352948
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3e973b1fee3b6943a079760c565d407, type: 2}
@@ -6276,6 +6392,7 @@ GameObject:
   - 222: {fileID: 1168661996}
   - 114: {fileID: 1168661995}
   - 114: {fileID: 1168661994}
+  - 114: {fileID: 1168661997}
   m_Layer: 5
   m_Name: Return To Game Button
   m_TagString: Untagged
@@ -6390,6 +6507,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 1
+      - m_Target: {fileID: 1891647373}
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Close Menu Sound
+          m_BoolArgument: 1
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1168661995
@@ -6421,6 +6550,37 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 244960399}
   m_GameObject: {fileID: 1168661992}
+--- !u!114 &1168661997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11409572, guid: 862f4d185238ebb41a47c011fd20b4e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 244960399}
+  m_GameObject: {fileID: 1168661992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1891647373}
+          m_MethodName: PlaySound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Mouse Over Sound
+            m_BoolArgument: 0
+          m_CallState: 1
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1187624652
 GameObject:
   m_ObjectHideFlags: 0
@@ -6466,6 +6626,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 244960399}
   m_GameObject: {fileID: 1187624652}
+  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
@@ -7818,7 +7979,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -10915,7 +11075,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -11182,6 +11341,7 @@ GameObject:
   - 222: {fileID: 1515181119}
   - 114: {fileID: 1515181118}
   - 114: {fileID: 1515181117}
+  - 114: {fileID: 1515181120}
   m_Layer: 5
   m_Name: Open Server Game Button
   m_TagString: Untagged
@@ -11272,6 +11432,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 1891647373}
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Select Sound
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1515181118
@@ -11303,6 +11475,37 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 244960399}
   m_GameObject: {fileID: 1515181115}
+--- !u!114 &1515181120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11409574, guid: 862f4d185238ebb41a47c011fd20b4e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 244960399}
+  m_GameObject: {fileID: 1515181115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1891647373}
+          m_MethodName: PlaySound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Mouse Over Sound
+            m_BoolArgument: 0
+          m_CallState: 1
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1525132904
 GameObject:
   m_ObjectHideFlags: 0
@@ -12287,6 +12490,7 @@ GameObject:
   - 222: {fileID: 1706972000}
   - 114: {fileID: 1706971999}
   - 114: {fileID: 1706971998}
+  - 114: {fileID: 1706972001}
   m_Layer: 5
   m_Name: Return To Menu Button
   m_TagString: Untagged
@@ -12377,6 +12581,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 1
+      - m_Target: {fileID: 1891647373}
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Select Sound
+          m_BoolArgument: 1
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1706971999
@@ -12408,6 +12624,37 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 244960399}
   m_GameObject: {fileID: 1706971996}
+--- !u!114 &1706972001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11409576, guid: 862f4d185238ebb41a47c011fd20b4e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 244960399}
+  m_GameObject: {fileID: 1706971996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1891647373}
+          m_MethodName: PlaySound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Mouse Over Sound
+            m_BoolArgument: 0
+          m_CallState: 1
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1771666528
 GameObject:
   m_ObjectHideFlags: 0
@@ -12771,7 +13018,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_HighlightedColor: {r: .155925617, g: .38405323, b: .757352948, a: 1}
     m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
@@ -13085,6 +13332,117 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 244960399}
   m_GameObject: {fileID: 1877861136}
+--- !u!1 &1891647371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 109566, guid: 862f4d185238ebb41a47c011fd20b4e0, type: 2}
+  m_PrefabInternal: {fileID: 244960399}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1891647372}
+  - 114: {fileID: 1891647373}
+  - 82: {fileID: 1891647374}
+  m_Layer: 0
+  m_Name: GUI Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1891647372
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 409566, guid: 862f4d185238ebb41a47c011fd20b4e0, type: 2}
+  m_PrefabInternal: {fileID: 244960399}
+  m_GameObject: {fileID: 1891647371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1941206023}
+  m_RootOrder: 3
+--- !u!114 &1891647373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11409568, guid: 862f4d185238ebb41a47c011fd20b4e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 244960399}
+  m_GameObject: {fileID: 1891647371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72500f9e778da684da136c4a7ddb4d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundMap:
+    valueWhenKeyIsMissing: {fileID: 0}
+    keyValuePairs:
+    - m_key: Select Sound
+      m_data: {fileID: 8300000, guid: 0afd2ccb32039a1478f1ff1dda805276, type: 3}
+    - m_key: Mouse Over Sound
+      m_data: {fileID: 8300000, guid: c1420462a76186a40906435f7932a0a7, type: 3}
+    - m_key: Open Menu Sound
+      m_data: {fileID: 8300000, guid: 7eeda2c402801aa498ff59d4dfdd2ca1, type: 3}
+    - m_key: Close Menu Sound
+      m_data: {fileID: 8300000, guid: ae875854fd63d644caa2c3494c269ada, type: 3}
+--- !u!82 &1891647374
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8209566, guid: 862f4d185238ebb41a47c011fd20b4e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 244960399}
+  m_GameObject: {fileID: 1891647371}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1894149086
 GameObject:
   m_ObjectHideFlags: 0
@@ -13387,6 +13745,7 @@ Transform:
   - {fileID: 863745918}
   - {fileID: 1471442081}
   - {fileID: 220309163}
+  - {fileID: 1891647372}
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!1 &1994784508
@@ -13847,7 +14206,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_HighlightedColor: {r: .75, g: .336397052, b: .336397052, a: 1}
     m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
