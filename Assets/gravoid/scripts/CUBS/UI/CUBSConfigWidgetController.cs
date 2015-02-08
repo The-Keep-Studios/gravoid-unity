@@ -1,10 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 using System;
 using TheKeepStudios.Gravoid.CUBS.Ballistics;
 
 namespace TheKeepStudios.Gravoid.CUBS.UI{
-	public class CUBSConfigWidgetController : MonoBehaviour{
+	public class CUBSConfigWidgetController : ConfigurationSelectorBehavior{
 	
 		[SerializeField]
 		CUBSPartDisplayWidget
@@ -31,7 +31,17 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 		[SerializeField]
 		private  CUBSPartDisplayWidget
 			partToChange;
-		
+
+		virtual public Ballistics.IProjectileConfiguration Configuration{
+			get{
+				return base.Configuration;
+			}
+			set{
+				base.Configuration = value;
+				SetSelection(Configuration);
+			}
+		}
+
 		void Awake(){
 			if(partDisplayButtonPrefab == null){
 				Debug.LogWarning("Invalid setup, partDisplayButtonPrefab cannot be null");
@@ -58,10 +68,10 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 		}
 
 		public void OnChangeConfiguration(Ballistics.IProjectileConfiguration config){
-			SetSelection(config);
+			Configuration = config;
 		}
 		
-		public void SetSelection(Ballistics.IProjectileConfiguration config){
+		private void SetSelection(Ballistics.IProjectileConfiguration config){
 			List<CUBSPartDisplayWidget> widgets = new List<CUBSPartDisplayWidget>(GetComponentsInChildren<CUBSPartDisplayWidget>());
 			SetHeight(config.Parts.Count);
 			bool isWidgetLayoutChanged = false;

@@ -75,8 +75,10 @@
      <Compile Include="Assets\gravoid\scripts\physics\AutoPilot.cs" />
      <Compile Include="Assets\gravoid\scripts\player\PlayerController.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\_IMPORTED\FlipbookGames\ScriptInspector2\Editor\EditorResources\SourceCodePro\LICENSE.txt" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\gravoid\graphics\Shaders\Shobatha-shader.shader" />
+     <None Include="Assets\_IMPORTED\FlipbookGames\ScriptInspector2\readme.txt" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\gravoid\graphics\Shaders\Asteroid-shader.shader" />
      <None Include="Assets\gravoid\graphics\Shaders\Player-shader.shader" />

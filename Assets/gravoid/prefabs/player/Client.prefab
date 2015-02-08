@@ -253,7 +253,6 @@ GameObject:
   - 114: {fileID: 11400094}
   - 114: {fileID: 11400096}
   - 114: {fileID: 11400106}
-  - 114: {fileID: 11400102}
   - 114: {fileID: 11400104}
   - 148: {fileID: 14800000}
   m_Layer: 0
@@ -451,7 +450,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &100050
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -868,7 +867,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400026}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &400004
 Transform:
   m_ObjectHideFlags: 1
@@ -880,7 +879,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400026}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!4 &400006
 Transform:
   m_ObjectHideFlags: 1
@@ -892,7 +891,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400026}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!4 &400008
 Transform:
   m_ObjectHideFlags: 1
@@ -904,7 +903,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400026}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!4 &400010
 Transform:
   m_ObjectHideFlags: 1
@@ -916,7 +915,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400026}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!4 &400012
 Transform:
   m_ObjectHideFlags: 1
@@ -928,7 +927,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400026}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!4 &400014
 Transform:
   m_ObjectHideFlags: 1
@@ -941,6 +940,7 @@ Transform:
   m_Children:
   - {fileID: 400026}
   - {fileID: 400000}
+  - {fileID: 22400032}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &400026
@@ -953,7 +953,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 22400032}
   - {fileID: 400002}
   - {fileID: 400004}
   - {fileID: 400008}
@@ -2294,7 +2293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d2f31f8172b790642b43a71ae43e2aa8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2426,33 +2425,6 @@ MonoBehaviour:
   maxLevel: 0
   impactVulnerabiliy: 0
   triggers: []
---- !u!114 &11400102
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa6a014b59c66144c9e067937a659b8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectionType: 2
-  selectionOptionToTypeMaps:
-    valueWhenKeyIsMissing: []
-    keyValuePairs:
-    - m_presetType: 0
-      m_presetContents:
-      - {fileID: 11400000, guid: f9aa7bf6985feb24b869194c6ccf4d6a, type: 2}
-    - m_presetType: 1
-      m_presetContents:
-      - {fileID: 11400000, guid: dcf4215d72a78454e9e703e5e3b14921, type: 2}
-    - m_presetType: 2
-      m_presetContents:
-      - {fileID: 11400000, guid: f9aa7bf6985feb24b869194c6ccf4d6a, type: 2}
-      - {fileID: 11400000, guid: dcf4215d72a78454e9e703e5e3b14921, type: 2}
-      - {fileID: 11400000, guid: f9aa7bf6985feb24b869194c6ccf4d6a, type: 2}
-      - {fileID: 11400000, guid: f9aa7bf6985feb24b869194c6ccf4d6a, type: 2}
 --- !u!114 &11400104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2469,7 +2441,7 @@ MonoBehaviour:
   m_SubSystemLinks:
   - launchKeyName: Fire2
     m_launcher: {fileID: 11400004}
-    m_componentSelector: {fileID: 11400102}
+    m_componentSelector: {fileID: 11400056}
     m_inventory: {fileID: 11400106}
 --- !u!114 &11400106
 MonoBehaviour:
@@ -8857,8 +8829,8 @@ RectTransform:
   m_Children:
   - {fileID: 22400038}
   - {fileID: 22400014}
-  m_Father: {fileID: 400026}
-  m_RootOrder: 0
+  m_Father: {fileID: 400014}
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}

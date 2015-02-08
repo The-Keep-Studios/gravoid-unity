@@ -18,14 +18,13 @@ namespace TheKeepStudios.Gravoid.CUBS{
 
 		// Use this for initialization
 		void Start(){
+			if(Configuration == null){
+				Configuration = new Ballistics.ProjectileConfiguration();
+			}
 		}
 
 		// Update is called once per frame
 		void Update(){
-		}
-	
-		virtual public Ballistics.IProjectileConfiguration GetCurrentSelection(){
-			return Configuration;
 		}
 	}
 }
