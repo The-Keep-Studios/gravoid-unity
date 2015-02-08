@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 
-	public class ProjectileConfiguration : UnityEngine.ScriptableObject, IProjectileConfiguration{
+	public class ProjectileConfiguration : /*UnityEngine.ScriptableObject,*/ IProjectileConfiguration{
 
 
 		private List<PartSelectionBehavior> parts = new List<PartSelectionBehavior>();

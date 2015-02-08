@@ -132,7 +132,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 		
 			private void Launch(){
 
-				Ballistics.IProjectileConfiguration selection = this.componentSelector.GetCurrentSelection();
+				Ballistics.IProjectileConfiguration selection = this.componentSelector.Configuration;
 			
 				ProjectileBehavior launchable = this.inventory.GetProjectile(selection, this.m_projectilePrefab);
 
