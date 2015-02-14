@@ -2,26 +2,28 @@ using UnityEngine;
 using System.Collections.Generic;
 
 //I'm going to be the first to admit this is a bad name. If there are any suggestions, tell me. -Ian S.
-public class DataMap<Key,Data,Link> where Link : Link<Key,Data>, new()
-{
+public class DataMap<Key,Data,Link> where Link : Link<Key,Data>, new(){
 
 	public Data valueWhenKeyIsMissing;
 
 	//Should never be accessed directly in code, but needs to be public for serialization
 	[SerializeField]
-	private List<Link> keyValuePairs;
+	private List<Link>
+		keyValuePairs;
 	
-	[SerializeField]//doesn't work, but in case LATER this is implemented, this is useful
-	private Dictionary<Key, Link> m_dict;
+	[SerializeField]
+	//doesn't work, but in case LATER this is implemented, this is useful
+	private Dictionary<Key, Link>
+		m_dict;
 
 
-	protected Dictionary<Key, Link> stitchedDict {
+	protected Dictionary<Key, Link> stitchedDict{
 
-		get {
+		get{
 			
-			if (this.keyValuePairs == null || this.m_dict == null || this.keyValuePairs.Count != this.m_dict.Count) {
+			if(this.keyValuePairs == null || this.m_dict == null || this.keyValuePairs.Count != this.m_dict.Count){
 				
-				restitchDict ();
+				restitchDict();
 				
 			}
 			
@@ -41,7 +43,7 @@ public class DataMap<Key,Data,Link> where Link : Link<Key,Data>, new()
 	}
 	
 	
-	public DataMap( List<Link> _serializedSource ){
+	public DataMap(List<Link> _serializedSource){
 		
 		
 		keyValuePairs = _serializedSource;
@@ -49,14 +51,13 @@ public class DataMap<Key,Data,Link> where Link : Link<Key,Data>, new()
 	}
 
 
-	public Data getData (Key key)
-	{
+	public Data getData(Key key){
 		
-		if (this.stitchedDict.ContainsKey (key)) {
+		if(this.stitchedDict.ContainsKey(key)){
 			
 			return this.stitchedDict[key].getData();
 			
-		} else {
+		} else{
 			
 			return this.valueWhenKeyIsMissing;
 			
@@ -65,22 +66,21 @@ public class DataMap<Key,Data,Link> where Link : Link<Key,Data>, new()
 	}
 
 
-	public void setData (Key _key, Data _data)
-	{
+	public void setData(Key _key, Data _data){
 		
-		if ( !this.stitchedDict.ContainsKey(_key) ) {
+		if(!this.stitchedDict.ContainsKey(_key)){
 			
-			Link dataMap = new Link ();
+			Link dataMap = new Link();
 			
 			dataMap.setKey(_key);
 			
 			dataMap.setData(_data);
 			
-			this.addMap (dataMap);
+			this.addMap(dataMap);
 			
-			this.restitchDict ();
+			this.restitchDict();
 			
-		} else {
+		} else{
 			
 			this.stitchedDict[_key].setData(_data);
 			
@@ -89,27 +89,27 @@ public class DataMap<Key,Data,Link> where Link : Link<Key,Data>, new()
 	}
 
 
-	protected void restitchDict ()
-	{
+	protected void restitchDict(){
 		
-		if (this.m_dict == null) {
+		if(this.m_dict == null){
 			
-			this.m_dict = new Dictionary<Key, Link> ();
+			this.m_dict = new Dictionary<Key, Link>();
 			
 		}
 		
-		this.m_dict.Clear ();
+		this.m_dict.Clear();
 		
-		this.validateMaps ();
+		this.validateMaps();
 		
-		foreach (Link nextMap in this.keyValuePairs) {
+		foreach(Link nextMap in this.keyValuePairs){
+		
+			Key nextKey = nextMap.getKey();
 			
-			if( this.m_dict.ContainsKey(nextMap.getKey()) ){
+			if(this.m_dict.ContainsKey(nextKey)){
 				
 				this.keyValuePairs.Remove(nextMap); //the key is a duplicate, so we remove it completely
 				
-			}
-			else{
+			} else{
 				
 				this.m_dict[nextMap.getKey()] = nextMap;
 				
@@ -121,22 +121,20 @@ public class DataMap<Key,Data,Link> where Link : Link<Key,Data>, new()
 	}
 
 
-	protected void addMap (Link _dataMap)
-	{
+	protected void addMap(Link _dataMap){
 		
-		this.validateMaps ();
+		this.validateMaps();
 		
-		this.keyValuePairs.Add (_dataMap);
+		this.keyValuePairs.Add(_dataMap);
 		
 	}
 
 
-	protected void validateMaps ()
-	{
+	protected void validateMaps(){
 		
-		if (this.keyValuePairs == null) {
+		if(this.keyValuePairs == null){
 			
-			this.keyValuePairs = new List<Link> ();
+			this.keyValuePairs = new List<Link>();
 			
 		}
 		
@@ -148,8 +146,7 @@ public class DataMap<Key,Data,Link> where Link : Link<Key,Data>, new()
 }
 
 
-public abstract class Link<Key,Data>
-{
+public abstract class Link<Key,Data>{
 	
 	public abstract Key getKey();
 	

@@ -3197,11 +3197,7 @@ MonoBehaviour:
   infiniteResources: 1
   m_counts:
     valueWhenKeyIsMissing: 0
-    keyValuePairs:
-    - m_selectionType: {fileID: 0}
-      m_remainingInInventory: 10
-    - m_selectionType: {fileID: 0}
-      m_remainingInInventory: 10
+    keyValuePairs: []
 --- !u!114 &11400108
 MonoBehaviour:
   m_ObjectHideFlags: 1

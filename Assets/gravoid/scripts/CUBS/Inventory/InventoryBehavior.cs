@@ -8,7 +8,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Inventory{
 	public class InventoryBehavior: MonoBehaviour{
 		
 		[SerializeField]
-		bool infiniteResources;
+		bool
+			infiniteResources;
 	
 		[SerializeField]
 		private Map
@@ -40,6 +41,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Inventory{
 			IProjectileConfiguration selections = this.GetSelections(configuration);
 			projectile = ProjectileBehavior.Spawn(selections, projectilePrefab);
 			if(projectile == null || !projectile.CanBeLaunched()){
+				Debug.LogWarning("Putting back projectile parts for " + configuration + " due to the projectile not spawning correctly.");
 				foreach(PartSelectionBehavior nextSelection in selections.Parts){
 					//place each of the selections back in the inventory, as we cannot use them after all
 					this.Insert(nextSelection);
@@ -69,9 +71,10 @@ namespace TheKeepStudios.Gravoid.CUBS.Inventory{
 		}
 	
 		private List<PartSelectionBehavior> GetInsufficientselections(List<PartSelectionBehavior> _selectionPrefabList){
-			List<PartSelectionBehavior> missing = new List<PartSelectionBehavior>(_selectionPrefabList.Count);
-			Dictionary<PartSelectionBehavior,int> counts = new Dictionary<PartSelectionBehavior, int>(_selectionPrefabList.Count);
-			if(_selectionPrefabList != null){
+			List<PartSelectionBehavior> missing = new List<PartSelectionBehavior>();
+			//skip checking for null lists or if we are assuming infinite resources
+			if(_selectionPrefabList != null && !infiniteResources){
+				Dictionary<PartSelectionBehavior,int> counts = new Dictionary<PartSelectionBehavior, int>(_selectionPrefabList.Count);
 				foreach(PartSelectionBehavior next in _selectionPrefabList){
 					if(!counts.ContainsKey(next)){
 						counts.Add(next, 0);
@@ -94,6 +97,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Inventory{
 		private IProjectileConfiguration GetSelections(Ballistics.IProjectileConfiguration configuration){
 			List<PartSelectionBehavior> lackingComponents = this.GetInsufficientselections(configuration.Parts);
 			if(lackingComponents.Count == 0 || infiniteResources){
+				//I'm not sure why we ARE making a NEW IProjectileConfiguration here, but it may well be an artifcat of previous design - Ian S.
 				IProjectileConfiguration retrievedConfiguration = new ProjectileConfiguration();
 				foreach(PartSelectionBehavior nextselectionType in configuration.Parts){
 					retrievedConfiguration.Add(this.Take(nextselectionType));

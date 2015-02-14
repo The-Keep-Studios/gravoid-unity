@@ -67,10 +67,14 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 
 		public List<PartSelectionBehavior> Parts{
 			get{
-				return parts;
+				return new List<PartSelectionBehavior>(parts);
 			}
 			set{
-				parts.Clear();
+				//we DO need to be careful that we don't accidentally get passed back OUR list of parts somehow
+				if(parts != value){
+					parts.Clear();
+					parts.AddRange(value);
+				}
 			}
 		}
 

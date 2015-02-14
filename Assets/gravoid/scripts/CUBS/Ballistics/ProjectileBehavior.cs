@@ -13,24 +13,33 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		public IProjectileConfiguration m_partSelections = null;
 
 		public List<ProjectilePartBehavior> m_parts = new List<ProjectilePartBehavior>();
+
+		public ILaunchableState State{
+			get{
+				if(m_state == null){
+					State = new UnlaunchedState(this);
+				}
+				return m_state;
+			}
+			set{
+				m_state = value;
+			}
+		}
 	
 		public void Start(){
-			if(m_state == null){
-				m_state = new UnlaunchedState(this);
-			}
-			this.m_state.Start();
+			this.State.Start();
 		}
 
 		public void Update(){
-			this.m_state.Update();
+			this.State.Update();
 		}
 
 		public void FixedUpdate(){
-			this.m_state.FixedUpdate();
+			this.State.FixedUpdate();
 		}
 	
 		void SetPartSelections(IProjectileConfiguration config){
-			this.m_partSelections.Copy(config);
+			this.m_partSelections = config;
 		}
 
 		public static ProjectileBehavior Spawn(IProjectileConfiguration config, ProjectileBehavior _prefab){	
@@ -48,7 +57,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		}
 	
 		public bool CanBeLaunched(){
-			return this.m_state.CanLaunch();
+			return this.State.CanLaunch();
 		}
 
 		public bool SetPosition(Vector2 _pos){
@@ -57,7 +66,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		}
 
 		public bool Launch(float _force, Transform _tm){
-			return this.m_state.Launch(_force, _tm);
+			return this.State.Launch(_force, _tm);
 		}
 	
 		public void ignoreCollisionsWith(Collider _collider){
@@ -131,8 +140,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			}
 
 			override public bool Launch(float _force, Transform _tm){
-				Parent.m_state = new LaunchingState(Parent);
-				Parent.m_state.Launch(_force, _tm);
+				Parent.State = new LaunchingState(Parent);
+				Parent.State.Launch(_force, _tm);
 				return true;
 			}
 
@@ -156,10 +165,10 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				if(Parent.m_parts.Count > 0){
 					//get the tail most object
 					Parent.m_parts[Parent.m_parts.Count - 1].Activate(_tm.gameObject);
-					Parent.m_state = new LaunchedState(Parent);
+					Parent.State = new LaunchedState(Parent);
 					return true;
 				} else{
-					Parent.m_state = new LaunchedState(Parent);
+					Parent.State = new LaunchedState(Parent);
 					return false;
 				}
 			}

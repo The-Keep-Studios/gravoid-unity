@@ -56,15 +56,14 @@ namespace TheKeepStudios.Gravoid.CUBS.UI{
 		}
 		
 		public void ChangeCurrentPart(){
-			PartSelectionBehavior newPartSelection = null;
-			if(newPartSelection == null){
-				Debug.LogWarning("No part selection specified. Assuming the configurationAltertionWidget's CurrentlyDisplayedPart was intended.");
-				partToChange.Part = configurationAltertionWidget.CurrentlyDisplayedPart;
-			} else{
-				partToChange.Part = newPartSelection;
+			partToChange.Part = configurationAltertionWidget.CurrentlyDisplayedPart;
+			// We need to actually UPDATE the configuration parts list
+			List<PartSelectionBehavior> partList = Configuration.Parts;
+			partList.Clear();
+			foreach(CUBSPartDisplayWidget nextWidget in GetComponentsInChildren<CUBSPartDisplayWidget>()){
+				partList.Add(nextWidget.Part);
 			}
-			//TODO Create a new Ballistics.IProjectileConfiguration
-			//TODO Send the new Ballistics.IProjectileConfiguration to the ConfigurationSelectorBehavior
+			Configuration.Parts = partList;
 			configurationAltertionWidget.gameObject.SetActive(false);
 		}
 
