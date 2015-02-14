@@ -1,10 +1,14 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TheKeepStudios.Gravoid.CUBS.Ballistics;
 
 namespace TheKeepStudios.Gravoid.CUBS.Inventory{
+
 	public class InventoryBehavior: MonoBehaviour{
+		
+		[SerializeField]
+		bool infiniteResources;
 	
 		[SerializeField]
 		private Map
@@ -18,9 +22,9 @@ namespace TheKeepStudios.Gravoid.CUBS.Inventory{
 
 		public PartSelectionBehavior Take(PartSelectionBehavior _selectionPrefab){
 			PartSelectionBehavior taken = null;
-			if(this.GetCount(_selectionPrefab) > 0){
+			if(this.GetCount(_selectionPrefab) > 0 || infiniteResources){
 				taken = _selectionPrefab;
-				if(taken != null){
+				if(taken != null && !infiniteResources){
 					//successfully retrieved selection, decriment the count
 					int newCount = this.GetCount(_selectionPrefab) - 1;
 					this.SetCount(_selectionPrefab, newCount);
@@ -31,10 +35,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Inventory{
 	
 		public ProjectileBehavior GetProjectile(Ballistics.IProjectileConfiguration configuration, ProjectileBehavior projectilePrefab){
 			ProjectileBehavior projectile = null;
-			/*
-			 * TRY and get the selected selections from the inventory, and instantiate a
-			 * projectile (all this logic SHOULD be moved to the inventory)
-			 */
+			Debug.Log("Creating a projectile from inventory resources for " + configuration);
+			//TRY and get the selected selections from the inventory, and instantiate a projectile
 			IProjectileConfiguration selections = this.GetSelections(configuration);
 			projectile = ProjectileBehavior.Spawn(selections, projectilePrefab);
 			if(projectile == null || !projectile.CanBeLaunched()){
@@ -90,9 +92,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Inventory{
 		}
 	
 		private IProjectileConfiguration GetSelections(Ballistics.IProjectileConfiguration configuration){
-			//FIXME when we have a ProjectileConfiguration
 			List<PartSelectionBehavior> lackingComponents = this.GetInsufficientselections(configuration.Parts);
-			if(lackingComponents.Count == 0){
+			if(lackingComponents.Count == 0 || infiniteResources){
 				IProjectileConfiguration retrievedConfiguration = new ProjectileConfiguration();
 				foreach(PartSelectionBehavior nextselectionType in configuration.Parts){
 					retrievedConfiguration.Add(this.Take(nextselectionType));
@@ -119,6 +120,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Inventory{
 		internal class Link: Link<PartSelectionBehavior,int>{
 		
 			public PartSelectionBehavior m_selectionType;
+
 			public int m_remainingInInventory;
 
 			public override PartSelectionBehavior getKey(){

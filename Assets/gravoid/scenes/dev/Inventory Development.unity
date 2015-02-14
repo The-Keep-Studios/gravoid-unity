@@ -414,6 +414,14 @@ Prefab:
       propertyPath: m_Name
       value: Inventory Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 22400044, guid: 365ae074b8075204582895a1c7e39c4a, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22400044, guid: 365ae074b8075204582895a1c7e39c4a, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 365ae074b8075204582895a1c7e39c4a, type: 2}
   m_RootGameObject: {fileID: 2022848256}
