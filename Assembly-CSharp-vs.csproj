@@ -49,7 +49,6 @@
      <Compile Include="Assets\ApplicationExiter.cs" />
      <Compile Include="Assets\AudioVolumeAdjuster.cs" />
      <Compile Include="Assets\PartDisplayButtonWidget.cs" />
-     <Compile Include="Assets\gravoid\scenes\dev\mpAsteroidTest\LocalServerConnector.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\BallisticComponentButton.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\IProjectileConfiguration.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\MassProjectileBehavior.cs" />
