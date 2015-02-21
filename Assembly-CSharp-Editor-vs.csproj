@@ -68,6 +68,9 @@
      <None Include="Assets\_IMPORTED\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\gravoid\graphics\Shaders\Asteroid-shader.shader" />
      <None Include="Assets\gravoid\graphics\Shaders\Player-shader.shader" />
+ <Reference Include="Assembly-UnityScript">
+ <HintPath>C:/Users/Ian Small/git/gravoid-unity_project/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>

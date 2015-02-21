@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11413680}
   - 114: {fileID: 11439750}
   m_Layer: 0
-  m_Name: CUBPart_Rocket
+  m_Name: rt_Propellant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b9a13d5e23a5b8498e9e127f9b2edc7, type: 3}
+  m_Script: {fileID: 11500000, guid: 0292ec3b5f7ae4d4c93abd0e44e67146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   originSpawnPoolName: 

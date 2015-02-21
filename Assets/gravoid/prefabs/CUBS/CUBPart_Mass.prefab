@@ -154,7 +154,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b9a13d5e23a5b8498e9e127f9b2edc7, type: 3}
+  m_Script: {fileID: 11500000, guid: a9219f7f942cf2647aaad0196773aba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   originSpawnPoolName: 

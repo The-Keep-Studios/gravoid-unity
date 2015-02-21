@@ -12,7 +12,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		//FIXME needs to be an instance or we need to accept it from somewhere
 		public IProjectileConfiguration m_partSelections = null;
 
-		public List<ProjectilePartBehavior> m_parts = new List<ProjectilePartBehavior>();
+		public List<CUBPartBase> m_parts = new List<CUBPartBase>();
 
 		public ILaunchableState State{
 			get{
@@ -174,7 +174,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			}
 			
 			void InitializeParts(){
-				foreach(ProjectilePartBehavior nextPart in Parent.m_parts){
+				foreach(CUBPartBase nextPart in Parent.m_parts){
 					//despawn any existing parts
 					nextPart.GetComponent<TheKeepStudios.spawning.Spawned>().Despawn();
 				}
@@ -189,8 +189,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 						if(nextSelection == null){
 							continue; //skip null parts
 						}
-						ProjectilePartBehavior prefab = nextSelection.ProjectilePartPrefab;
-						ProjectilePartBehavior nextPart = prefab.Spawn(prefab.transform).GetComponent<ProjectilePartBehavior>();
+						CUBPartBase prefab = nextSelection.ProjectilePartPrefab;
+						CUBPartBase nextPart = prefab.Spawn(prefab.transform).GetComponent<CUBPartBase>();
 						Parent.m_parts.Add(nextPart);
 						nextPositionStart -= nextPart.offset / 2;
 						//place the part at the center of it's offset

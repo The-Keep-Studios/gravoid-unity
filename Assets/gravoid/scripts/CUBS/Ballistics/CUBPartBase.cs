@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 
-	public abstract class ProjectilePartBehavior : TheKeepStudios.spawning.Spawnable{
+	public abstract class CUBPartBase : TheKeepStudios.spawning.Spawnable{
 
 		[SerializeField]
 		private float
