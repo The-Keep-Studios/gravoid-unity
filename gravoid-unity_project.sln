@@ -1,13 +1,11 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{7BB2EC82-7B0B-5E22-488B-6667CDB280EC}") = "gravoid-unity_project", "Assembly-CSharp-firstpass.csproj", "{09770D6E-455C-3229-F2E6-BD73CBDEAE65}"
-EndProject
 Project("{7BB2EC82-7B0B-5E22-488B-6667CDB280EC}") = "gravoid-unity_project", "Assembly-CSharp.csproj", "{8441EC33-B71D-4AB0-2C46-2E4E8AABD702}"
 EndProject
 Project("{7BB2EC82-7B0B-5E22-488B-6667CDB280EC}") = "gravoid-unity_project", "Assembly-CSharp-Editor.csproj", "{C9EB94A3-F93C-70A7-9F93-3A450582A1AE}"
 EndProject
-Project("{7BB2EC82-7B0B-5E22-488B-6667CDB280EC}") = "gravoid-unity_project", "Assembly-UnityScript-firstpass.unityproj", "{983BF82F-874E-7FDC-178A-A54641427ADD}"
+Project("{7BB2EC82-7B0B-5E22-488B-6667CDB280EC}") = "gravoid-unity_project", "Assembly-UnityScript.unityproj", "{70DAB053-AA12-D5BF-3561-686D1B2F3C33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{09770D6E-455C-3229-F2E6-BD73CBDEAE65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09770D6E-455C-3229-F2E6-BD73CBDEAE65}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09770D6E-455C-3229-F2E6-BD73CBDEAE65}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09770D6E-455C-3229-F2E6-BD73CBDEAE65}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8441EC33-B71D-4AB0-2C46-2E4E8AABD702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8441EC33-B71D-4AB0-2C46-2E4E8AABD702}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8441EC33-B71D-4AB0-2C46-2E4E8AABD702}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,15 +21,15 @@ Global
 		{C9EB94A3-F93C-70A7-9F93-3A450582A1AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9EB94A3-F93C-70A7-9F93-3A450582A1AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9EB94A3-F93C-70A7-9F93-3A450582A1AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{983BF82F-874E-7FDC-178A-A54641427ADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{983BF82F-874E-7FDC-178A-A54641427ADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{983BF82F-874E-7FDC-178A-A54641427ADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{983BF82F-874E-7FDC-178A-A54641427ADD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70DAB053-AA12-D5BF-3561-686D1B2F3C33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70DAB053-AA12-D5BF-3561-686D1B2F3C33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70DAB053-AA12-D5BF-3561-686D1B2F3C33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70DAB053-AA12-D5BF-3561-686D1B2F3C33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																																					GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																															GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																																							GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> develop

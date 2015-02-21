@@ -1,8 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{7BB2EC82-7B0B-5E22-488B-6667CDB280EC}") = "gravoid-unity_project", "Assembly-CSharp-firstpass-vs.csproj", "{09770D6E-455C-3229-F2E6-BD73CBDEAE65}"
-EndProject
 Project("{7BB2EC82-7B0B-5E22-488B-6667CDB280EC}") = "gravoid-unity_project", "Assembly-CSharp-vs.csproj", "{8441EC33-B71D-4AB0-2C46-2E4E8AABD702}"
 EndProject
 Project("{7BB2EC82-7B0B-5E22-488B-6667CDB280EC}") = "gravoid-unity_project", "Assembly-CSharp-Editor-vs.csproj", "{C9EB94A3-F93C-70A7-9F93-3A450582A1AE}"
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{09770D6E-455C-3229-F2E6-BD73CBDEAE65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09770D6E-455C-3229-F2E6-BD73CBDEAE65}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09770D6E-455C-3229-F2E6-BD73CBDEAE65}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09770D6E-455C-3229-F2E6-BD73CBDEAE65}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8441EC33-B71D-4AB0-2C46-2E4E8AABD702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8441EC33-B71D-4AB0-2C46-2E4E8AABD702}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8441EC33-B71D-4AB0-2C46-2E4E8AABD702}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,7 +23,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																																						GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																																GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																																							GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> develop
