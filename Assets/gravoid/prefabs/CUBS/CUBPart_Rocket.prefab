@@ -10,10 +10,10 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 114: {fileID: 11480758}
-  - 114: {fileID: 11461982}
+  - 114: {fileID: 11413680}
+  - 114: {fileID: 11439750}
   m_Layer: 0
-  m_Name: Explosive_Component
+  m_Name: CUBPart_Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.66827321, y: -1.23168302, z: 0}
+  m_LocalPosition: {x: 3.24000001, y: -.776000023, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +43,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2784616a082d0754ea4d470d9d21fc2f, type: 2}
+  - {fileID: 2100000, guid: 3177b4d53ff2cc6488693012b84ff571, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -57,23 +57,8 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300000, guid: f7e59d4b27f0b324694c4a552fb5011d, type: 3}
---- !u!114 &11461982
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2cb55d7c096aae4c8961b747f03d609, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 2e0c6f764f2c79241a8945a004273529, type: 3}
-  title: Detonation
-  description: Explodes on collision
-  flavor: Rapid Scheduled Dissassembly
---- !u!114 &11480758
+  m_Mesh: {fileID: 4300000, guid: e747a40d7b3f1bf44a80cc7709fa52d7, type: 3}
+--- !u!114 &11413680
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,6 +71,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originSpawnPoolName: 
   lengthInAxisY: 0
+--- !u!114 &11439750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2cb55d7c096aae4c8961b747f03d609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: cd0d7259fe8801147b45567a0d16594b, type: 3}
+  title: Propellant
+  description: Accelerates forward when activated
+  flavor: Propelling your career in the right direction.
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

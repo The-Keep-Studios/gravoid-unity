@@ -109,7 +109,7 @@ GameObject:
   - 222: {fileID: 22200008}
   - 114: {fileID: 11400008}
   m_Layer: 5
-  m_Name: CUBS Config Builder Widget
+  m_Name: Widget_CUBS Config Builder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

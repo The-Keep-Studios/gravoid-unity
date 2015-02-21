@@ -10,10 +10,10 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 114: {fileID: 11409702}
-  - 114: {fileID: 11473694}
+  - 114: {fileID: 11417656}
+  - 114: {fileID: 11475166}
   m_Layer: 0
-  m_Name: Spring_Component
+  m_Name: CUBPart_Grabber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.22000003, y: .326999992, z: 0}
+  m_LocalPosition: {x: 4.2579999, y: -.800000012, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +43,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 6cb19a6b4d693f54bac04279ec90fd5c, type: 2}
+  - {fileID: 2100000, guid: 96c6c8dfbf75126409b322ee241bf983, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -57,8 +57,8 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300000, guid: 414d16576f7528e44ba771616f5658c5, type: 3}
---- !u!114 &11409702
+  m_Mesh: {fileID: 4300000, guid: 19bbe5c18afc7104fac76ce037d5ec3d, type: 3}
+--- !u!114 &11417656
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originSpawnPoolName: 
   lengthInAxisY: 0
---- !u!114 &11473694
+--- !u!114 &11475166
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -82,11 +82,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2cb55d7c096aae4c8961b747f03d609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 73a54ef7d8cb66947b6581fec66e232c, type: 3}
-  title: Tension Seperation Mechanism
-  description: Applies an equal force to parts to the front and rear of the component
-    in equal and opposit directions
-  flavor: Mmmm Newtonian.
+  icon: {fileID: 21300000, guid: 804aa5dc792a5a14ba68c3dac2a5287c, type: 3}
+  title: Grabber
+  description: Attatches to the object immediately in front of it when activated
+  flavor: Just as effective as the claw.
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
