@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using TheKeepStudios.spawning;
 
 namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 
 	[RequireComponent(typeof(CapsuleCollider), typeof(Rigidbody))]
-	public class ProjectileBehavior : TheKeepStudios.spawning.Spawnable{
+	public class ProjectileBehavior : Spawnable{
 
 		public ILaunchableState m_state;
 
@@ -74,6 +75,136 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				Physics.IgnoreCollision(this.collider, _collider);
 			}
 		}
+
+		/// <summary>
+		/// Split the specified splitLocation.
+		/// </summary>
+		/// <param name="splitLocation">The resultant projectiles</param>
+		public List<ProjectileBehavior> Split(CUBPartBase splitLocation){
+			Debug.Log("Splitting  " + this.name + " at " + splitLocation.name);
+			if(splitLocation == null){
+				throw new NullReferenceException("Split location must not be null");
+			} else if(!m_parts.Contains(splitLocation)){
+				throw new Exception("Split location CUBPart not a member of this projectile ");
+			}
+				
+			//get the integer location of the split
+			int splitIdx = m_parts.IndexOf(splitLocation);
+			int numHeadParts = splitIdx;
+			int numMidParts = 1;
+			int numTailParts = m_parts.Count - splitIdx - 1;
+			
+			//ready a list of the resultant projectiles
+			List<ProjectileBehavior> projectiles = new List<ProjectileBehavior>(3);
+			projectiles.Add(this);
+				
+			if((numHeadParts + numTailParts) == 0){
+				//the split is unnecesary as it's the ONLY child
+				return projectiles;
+			}
+			
+			//deterime our parts lists
+			List<CUBPartBase> headParts = m_parts.GetRange(0, numHeadParts);
+			List<CUBPartBase> midParts = m_parts.GetRange(splitIdx, numMidParts);
+			List<CUBPartBase> tailParts = m_parts.GetRange(splitIdx + 1, numTailParts);			
+			tailParts.Reverse();
+			
+			//setup ourselves as the "middle" part
+			this.m_parts = midParts;
+			SetupCollider(PositionParts() / 2);
+			
+			//make new head and add it if it is not null
+			ProjectileBehavior head = MakeNewProjectileFromParts(headParts);
+			if(head){
+				projectiles.Add(head);
+			}
+			
+			//make new tail and add it if it is not null
+			ProjectileBehavior tail = MakeNewProjectileFromParts(tailParts);
+			if(tail){
+				projectiles.Add(tail);
+			}
+			return projectiles;
+		}
+
+		ProjectileBehavior MakeNewProjectileFromParts(List<CUBPartBase> parts){
+			if(parts.Count < 0){
+				Debug.Log("No new ProjectileBehavior gameobject was made from the empty parts list");
+				return null;
+			}
+			ProjectileBehavior projectile = this.Spawn(parts[0].transform) as ProjectileBehavior;
+			projectile.m_parts = parts;
+			//position the parts and setup the collider
+			projectile.SetupCollider(projectile.PositionParts() / 2);
+			Debug.Log("Made new projectile  " + projectile.name);
+			return projectile;
+		}
+		
+		void OnCollisionEnter(Collision collision){
+			if(m_parts.Count > 0){
+				Debug.Log("Collidsion detected, sending signal to  " + m_parts[0].name);
+				m_parts[0].OnCollisionEnter(collision);
+			}
+		}
+		
+		void InitializeParts(){
+			foreach(CUBPartBase nextPart in m_parts){
+				//despawn any existing parts
+				nextPart.GetComponent<TheKeepStudios.spawning.Spawned>().Despawn();
+			}
+			
+			// setup the list to contain the new parts
+			m_parts.Clear();
+			if(m_partSelections != null && m_partSelections.Count != 0){
+				m_parts.Capacity = m_partSelections.Count;
+				// create the parts
+				foreach(PartSelectionBehavior nextSelection in m_partSelections.Parts){
+					if(nextSelection == null){
+						continue; //skip null parts
+					}
+					CUBPartBase prefab = nextSelection.ProjectilePartPrefab;
+					CUBPartBase nextPart = prefab.Spawn(prefab.transform).GetComponent<CUBPartBase>();
+					m_parts.Add(nextPart);
+				}
+			}
+			SetupCollider(PositionParts() / 2);
+		}
+		
+		/// <summary>
+		/// Positions the parts.
+		/// </summary>
+		/// <returns>The center point of the parts along the y-axis, whos absolute value doubled is the height of the parts.</returns>
+		float PositionParts(){
+			float nextPositionStart = 0.0f;
+			if(m_partSelections != null && m_partSelections.Count != 0){
+				m_parts.Capacity = m_partSelections.Count;
+				// create and stack the parts along Vector3.up
+				foreach(CUBPartBase nextPart in m_parts){
+					if(nextPart == null){
+						continue; //skip null parts
+					}
+					nextPositionStart -= nextPart.offset / 2;
+					//place the part at the center of it's offset
+					nextPart.JoinToLaunchedObject(transform, Vector3.up * nextPositionStart);
+					//finish adjusting the offset
+					nextPositionStart -= nextPart.offset / 2;
+				}
+			}
+			return nextPositionStart;
+		}
+		
+		/// <summary>
+		/// Setups the collider.
+		/// </summary>
+		/// <param name="newCenter">New center along the y axis.</param>
+		void SetupCollider(float newCenter){
+			//manipulate our collider to conform to the parts
+			CapsuleCollider collider = gameObject.GetComponent<CapsuleCollider>();
+			Vector3 newColliderCenter = collider.center;
+			newColliderCenter.y = newCenter;
+			collider.center = newColliderCenter;
+			collider.height = Mathf.Abs(newCenter) * 2;
+		}
 	
 	#region ILaunchableStates
 
@@ -96,7 +227,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		[System.Serializable]
 		public abstract class BaseLaunchState : ILaunchableState{
 		
-			private ProjectileBehavior parent;			
+			private ProjectileBehavior parent;
 			
 			public ProjectileBehavior Parent{ get { return parent; } set { parent = value; } }
 			
@@ -110,6 +241,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			virtual public void Update(){
 			
 			}
+
 			virtual public void FixedUpdate(){
 			}
 			
@@ -122,7 +254,6 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			}
 			
 		}
-
 
 		[System.Serializable]
 		public class UnlaunchedState : BaseLaunchState, ILaunchableState{
@@ -150,7 +281,6 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			}		
 		}
 
-
 		[System.Serializable]
 		public class LaunchingState : BaseLaunchState, ILaunchableState{
 			
@@ -161,52 +291,16 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				Parent.transform.position = _tm.position;
 				Parent.transform.rotation = _tm.rotation;
 				//spawn all our selections to new part instances
-				InitializeParts();
+				Parent.InitializeParts();
 				if(Parent.m_parts.Count > 0){
 					//get the tail most object
-					Parent.m_parts[Parent.m_parts.Count - 1].Activate(_tm.gameObject);
+					Parent.m_parts[Parent.m_parts.Count - 1].OnLaunch(_tm.gameObject);
 					Parent.State = new LaunchedState(Parent);
 					return true;
 				} else{
 					Parent.State = new LaunchedState(Parent);
 					return false;
 				}
-			}
-			
-			void InitializeParts(){
-				foreach(CUBPartBase nextPart in Parent.m_parts){
-					//despawn any existing parts
-					nextPart.GetComponent<TheKeepStudios.spawning.Spawned>().Despawn();
-				}
-				
-				// setup the list to contain the new parts
-				Parent.m_parts.Clear();
-				float nextPositionStart = 0.0f;
-				if(Parent.m_partSelections != null && Parent.m_partSelections.Count != 0){
-					Parent.m_parts.Capacity = Parent.m_partSelections.Count;
-					// create and stack the parts along Vector3.up
-					foreach(PartSelectionBehavior nextSelection in Parent.m_partSelections.Parts){
-						if(nextSelection == null){
-							continue; //skip null parts
-						}
-						CUBPartBase prefab = nextSelection.ProjectilePartPrefab;
-						CUBPartBase nextPart = prefab.Spawn(prefab.transform).GetComponent<CUBPartBase>();
-						Parent.m_parts.Add(nextPart);
-						nextPositionStart -= nextPart.offset / 2;
-						//place the part at the center of it's offset
-						nextPart.JoinToLaunchedObject(Parent.transform, Vector3.up * nextPositionStart);
-						//finish adjusting the offset
-						nextPositionStart -= nextPart.offset / 2;
-					}
-				}
-				
-				//manipulate our collider to conform to the parts
-				CapsuleCollider collider = Parent.gameObject.GetComponent<CapsuleCollider>();
-				Vector3 newColliderCenter = collider.center;
-				newColliderCenter.y = nextPositionStart / 2;
-				//position the center midway along the y axis
-				collider.center = newColliderCenter;
-				collider.height = -nextPositionStart;
 			}
 		}
 		

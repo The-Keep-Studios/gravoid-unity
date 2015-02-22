@@ -17,8 +17,23 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		virtual public float offset{
 			get { return this.lengthInAxisY; }
 		}
+		
+		protected ProjectileBehavior getParentProjectile(){
+			Transform parentTM = this.transform.parent;
+			if(parentTM != null){
+				return parentTM.GetComponent<ProjectileBehavior>();
+			}
+			return null;
+		}
 
 		abstract public void Activate(GameObject activator);
+		
+		virtual public void OnLaunch(GameObject activator){
+		}
+		
+		virtual public void OnCollisionEnter(Collision collision){
+			
+		}
 		
 	}
 }
