@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 //TODO Needs to know which way to force things
@@ -9,20 +9,21 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics
 {
 		public class CUBPart_Propellant : CUBPartBase
 		{
-				//The amount of time for which the engine will burn
+				[Tooltip("The amount of time for which the engine will burn [sec]")]
 				[SerializeField]
 				float burnTime;
 
-				//The force which will be imparted on the object
+				[Tooltip("The force which will be imparted on the object [units]")]
 				[SerializeField]
 				float
 						force;
 
 				//is the rocket firing?
 				private bool isFiring = false;
+				private bool canStillFire = true;
 				//is used as a counter to track how much time has passed while the physics is updating.
-				private float timeCounter = 0;
-				private float currentTime;
+				private float deltaTime = 0;
+
 
 				override public void Activate (GameObject activator)
 				{
@@ -42,17 +43,23 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics
 				void FixedUpdate ()
 				{
 						//Is the engine firing?
-						if (isFiring) {
+						if (isFiring && canStillFire) {
 								//Taking the current position
-								currentTime = (++timeCounter) * Time.fixedDeltaTime;
-
-								if (currentTime <= burnTime) {
+								deltaTime += Time.fixedDeltaTime;
+								
+								
+								if (deltaTime <= burnTime) {
 										//transform.parent.rigidbody
-										Debug.Log ("Current timestep" + currentTime);
+										Debug.Log ("Current timestep" + deltaTime);
+										
+										//Should apply the force in the +y direction of the nozzle
+										transform.parent.rigidbody.AddForce(Vector3.up * force);
 
 
-
-
+								}
+								else{
+								canStillFire = false;
+								Debug.Log("All Done!");
 								}
 						}
 

@@ -71,6 +71,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originSpawnPoolName: 
   lengthInAxisY: 0
+  burnTime: 3
+  force: 100
 --- !u!114 &11439750
 MonoBehaviour:
   m_ObjectHideFlags: 1
