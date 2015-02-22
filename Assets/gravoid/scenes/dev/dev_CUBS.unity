@@ -13551,7 +13551,7 @@ Transform:
   - {fileID: 1638022061}
   - {fileID: 935109996}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!114 &1457275877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14876,7 +14876,7 @@ Transform:
   - {fileID: 880280639}
   - {fileID: 2042765189}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &1593600484
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -86,8 +86,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originSpawnPoolName: 
   lengthInAxisY: 0
-  radius: 5
-  power: 5
+  radius: 100
+  force: 5000
+  rateOfExpansion: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
