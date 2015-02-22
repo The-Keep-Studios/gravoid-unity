@@ -44,6 +44,9 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics
 				{
 						Debug.Log ("The object should be exploding");
 						
+						
+						transform.parent.GetComponent<ProjectileBehavior>().Split(this);
+						//this flag/EXPLOSIONS?!?!?! probablly won't work until the split code is fixed. If this is not the case, other things be fucked
 						isExploding = true;		
 		
 
