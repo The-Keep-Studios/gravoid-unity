@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{C5D5B0D2-B3E5-B2D9-539A-E9C97AD23A60}</ProjectGuid>
+	<ProjectGuid>{8441EC33-B71D-4AB0-2C46-2E4E8AABD702}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -156,6 +156,7 @@
      <Compile Include="Assets\_IMPORTED\Standard Assets\Scripts\Utility Scripts\MeshCombineUtility.cs" />
      <Compile Include="Assets\_IMPORTED\Standard Assets\Water (Basic)\Sources\Scripts\WaterSimple.cs" />
      <Compile Include="Assets\_IMPORTED\UnityPatterns\Plugins\ObjectPool\Scripts\ObjectPool.cs" />
+     <Compile Include="Assets\gravoid\scripts\AutoPilot.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\BallisticComponentButton.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\CUBPartBase.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\CUBPart_Explosion.cs" />
@@ -163,6 +164,7 @@
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\CUBPart_Mass.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\CUBPart_Propellant.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\CUBPart_SpringLauncher.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\ILaunchable.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\IProjectileConfiguration.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\PartSelectionBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\ProjectileBehavior.cs" />
@@ -174,7 +176,7 @@
      <Compile Include="Assets\gravoid\scripts\CUBS\Inventory\CollectableResource.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Inventory\InventoryBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Inventory\PartCollector.cs" />
-     <Compile Include="Assets\gravoid\scripts\CUBS\Launcher\LauncherBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\LauncherBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSConfigCostWidget.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSConfigWidgetController.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\UI\CUBSConfigurationFlyoutWidget.cs" />
@@ -182,8 +184,7 @@
      <Compile Include="Assets\gravoid\scripts\CollectableItem.cs" />
      <Compile Include="Assets\gravoid\scripts\MenuSounds.cs" />
      <Compile Include="Assets\gravoid\scripts\PlayerControlToggler.cs" />
-     <Compile Include="Assets\gravoid\scripts\physics\AutoPilot.cs" />
-     <Compile Include="Assets\gravoid\scripts\player\PlayerController.cs" />
+     <Compile Include="Assets\gravoid\scripts\PlayerController.cs" />
      <None Include="Assets\_IMPORTED\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\_IMPORTED\FlipbookGames\ScriptInspector2\Editor\EditorResources\SourceCodePro\LICENSE.txt" />
      <None Include="Assets\_IMPORTED\Standard Assets\Skyboxes\_skybox info.txt" />

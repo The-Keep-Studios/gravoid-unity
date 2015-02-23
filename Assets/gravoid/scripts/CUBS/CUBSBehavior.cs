@@ -126,7 +126,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 		
 				return Input.GetButtonDown(this.launchKeyName)
 					&& this.launcher != null 
-					&& this.launcher.ReadyToLaunch();
+					&& this.launcher.IsReadyToLaunch;
 		
 			}
 		

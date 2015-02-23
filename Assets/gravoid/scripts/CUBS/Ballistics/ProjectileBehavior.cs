@@ -6,16 +6,16 @@ using TheKeepStudios.spawning;
 namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 
 	[RequireComponent(typeof(CapsuleCollider), typeof(Rigidbody))]
-	public class ProjectileBehavior : Spawnable{
+	public class ProjectileBehavior : Spawnable, ILaunchable{
 
-		public ILaunchableState m_state;
+		public ILaunchable m_state;
 
 		//FIXME needs to be an instance or we need to accept it from somewhere
 		public IProjectileConfiguration m_partSelections = null;
 
 		public List<CUBPartBase> m_parts = new List<CUBPartBase>();
 
-		public ILaunchableState State{
+		public ILaunchable State{
 			get{
 				if(m_state == null){
 					State = new UnlaunchedState(this);
@@ -57,7 +57,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			return projectile;		
 		}
 	
-		public bool CanBeLaunched(){
+		public bool CanLaunch(){
 			return this.State.CanLaunch();
 		}
 
@@ -128,7 +128,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		}
 
 		ProjectileBehavior MakeNewProjectileFromParts(List<CUBPartBase> parts){
-			if(parts.Count < 0){
+			if(parts.Count <= 0){
 				Debug.Log("No new ProjectileBehavior gameobject was made from the empty parts list");
 				return null;
 			}
@@ -163,7 +163,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 						continue; //skip null parts
 					}
 					CUBPartBase prefab = nextSelection.ProjectilePartPrefab;
-					CUBPartBase nextPart = prefab.Spawn(prefab.transform).GetComponent<CUBPartBase>();
+					CUBPartBase nextPart = prefab.Spawn(transform).GetComponent<CUBPartBase>();
 					m_parts.Add(nextPart);
 				}
 			}
@@ -185,7 +185,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 					}
 					nextPositionStart -= nextPart.offset / 2;
 					//place the part at the center of it's offset
-					nextPart.JoinToLaunchedObject(transform, Vector3.up * nextPositionStart);
+					Vector3 nextPosition = Vector3.up * nextPositionStart;
+					nextPart.JoinToLaunchedObject(transform, nextPosition);
 					//finish adjusting the offset
 					nextPositionStart -= nextPart.offset / 2;
 				}
@@ -207,26 +208,16 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		}
 	
 	#region ILaunchableStates
-
-		public interface ILaunchableState{
+		
+		public interface ILaunchableState : ILaunchable{
 			
 			ProjectileBehavior Parent{ get; set; }
-
-			void Start();
-
-			void Update();
-
-			void FixedUpdate();
-
-			bool Launch(float _force, Transform _tm);
-
-			bool CanLaunch();
-		
+			
 		}
 		
 		[System.Serializable]
-		public abstract class BaseLaunchState : ILaunchableState{
-		
+		public abstract class BaseLaunchState : ILaunchable{
+			
 			private ProjectileBehavior parent;
 			
 			public ProjectileBehavior Parent{ get { return parent; } set { parent = value; } }
@@ -239,9 +230,9 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			}
 			
 			virtual public void Update(){
-			
+				
 			}
-
+			
 			virtual public void FixedUpdate(){
 			}
 			
@@ -254,9 +245,9 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			}
 			
 		}
-
+		
 		[System.Serializable]
-		public class UnlaunchedState : BaseLaunchState, ILaunchableState{
+		public class UnlaunchedState : BaseLaunchState, ILaunchable{
 			
 			public UnlaunchedState(ProjectileBehavior parent):base(parent){
 			}
@@ -269,25 +260,11 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 					Parent.gameObject.AddComponent<CapsuleCollider>();
 				}
 			}
-
-			override public bool Launch(float _force, Transform _tm){
-				Parent.State = new LaunchingState(Parent);
-				Parent.State.Launch(_force, _tm);
-				return true;
-			}
-
-			override public bool CanLaunch(){
-				return true;
-			}		
-		}
-
-		[System.Serializable]
-		public class LaunchingState : BaseLaunchState, ILaunchableState{
 			
-			public LaunchingState(ProjectileBehavior parent):base(parent){
-			}
-
 			override public bool Launch(float _force, Transform _tm){
+				//to prevent race conditions we switch to the LaunchingState
+				Parent.State = new LaunchingState(Parent);
+				Debug.Log("Launching " + Parent + " from Transform " + _tm);
 				Parent.transform.position = _tm.position;
 				Parent.transform.rotation = _tm.rotation;
 				//spawn all our selections to new part instances
@@ -302,14 +279,30 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 					return false;
 				}
 			}
+			
+			override public bool CanLaunch(){
+				return true;
+			}
 		}
 		
 		[System.Serializable]
-		public class LaunchedState : BaseLaunchState, ILaunchableState{
+		public class LaunchingState : BaseLaunchState, ILaunchable{
+			
+			public LaunchingState(ProjectileBehavior parent):base(parent){
+			}
+			
+			override public bool Launch(float _force, Transform _tm){
+				//HACK works to indicated exceptional behavior but we should handle this more elegantly
+				throw new Exception("Race condition detected, ILaunchable.Launch was called while already launching");
+			}
+		}
+		
+		[System.Serializable]
+		public class LaunchedState : BaseLaunchState, ILaunchable{
 			public LaunchedState(ProjectileBehavior parent):base(parent){
 			}
 		}
-	
+		
 	#endregion
 	}
 }

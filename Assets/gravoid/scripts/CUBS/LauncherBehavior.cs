@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using TheKeepStudios.Gravoid.CUBS.Ballistics;
 
 namespace TheKeepStudios.Gravoid.CUBS{
+
 	public class LauncherBehavior : MonoBehaviour{
+		
+		Transform launchVector;
 	
 		public float launchingForce;
 
@@ -19,10 +22,10 @@ namespace TheKeepStudios.Gravoid.CUBS{
 		
 		}
 
-		public bool ReadyToLaunch(){
-		
-			return this.m_readyToLaunch;
-		
+		public bool IsReadyToLaunch{
+			get{
+				return this.m_readyToLaunch;
+			}		
 		}
 
 		public bool Launch(ProjectileBehavior _projectile){
@@ -30,27 +33,21 @@ namespace TheKeepStudios.Gravoid.CUBS{
 			bool success = false;
 		
 		
-			if(this.ReadyToLaunch() && _projectile != null && _projectile.CanBeLaunched()){
+			if(this.IsReadyToLaunch && _projectile != null && _projectile.CanLaunch()){
 			
-				this.startLaunch(_projectile);
+				m_readyToLaunch = false;
+				
+				_projectile.ignoreCollisionsWith(this.gameObject.collider);
+				
+				_projectile.Launch(launchingForce, this.transform); //need to get the world, not the local transform
+				
+				this.StartCoroutine(this.startCooldown());
 			
 				success = true;
 			
 			}
 		
 			return success;
-		
-		}
-
-		protected void startLaunch(ProjectileBehavior _projectile){
-		
-			m_readyToLaunch = false;
-		
-			_projectile.ignoreCollisionsWith(this.gameObject.collider);
-		
-			_projectile.Launch(launchingForce, this.transform); //need to get the world, not the local transform
-		
-			this.StartCoroutine(this.startCooldown());
 		
 		}
 

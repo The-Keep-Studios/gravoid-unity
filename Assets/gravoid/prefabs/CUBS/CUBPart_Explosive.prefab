@@ -84,9 +84,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e36f5a224e4bb64491bcd9309c9d680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originSpawnPoolName: 
-  lengthInAxisY: 0
-  radius: 100
+  originSpawnPoolName: PartSelections
+  lengthInAxisY: .25
+  radius: 25
   force: 5000
   rateOfExpansion: 10
 --- !u!1001 &100100000

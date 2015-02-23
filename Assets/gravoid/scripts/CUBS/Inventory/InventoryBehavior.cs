@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TheKeepStudios.Gravoid.CUBS.Ballistics;
@@ -40,7 +40,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Inventory{
 			//TRY and get the selected selections from the inventory, and instantiate a projectile
 			IProjectileConfiguration selections = this.GetSelections(configuration);
 			projectile = ProjectileBehavior.Spawn(selections, projectilePrefab);
-			if(projectile == null || !projectile.CanBeLaunched()){
+			if(projectile == null || !projectile.CanLaunch()){
 				Debug.LogWarning("Putting back projectile parts for " + configuration + " due to the projectile not spawning correctly.");
 				foreach(PartSelectionBehavior nextSelection in selections.Parts){
 					//place each of the selections back in the inventory, as we cannot use them after all

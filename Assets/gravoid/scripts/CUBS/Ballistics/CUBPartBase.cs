@@ -10,8 +10,10 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			lengthInAxisY = 0.0F;
 		
 		virtual public void JoinToLaunchedObject(Transform _parent, Vector3 _relativePosition){
+			Debug.Log("Joining CUBPart " + this.name + " to " + _parent.gameObject.name + " at relative point " + _relativePosition);
 			this.transform.parent = _parent;
-			this.transform.position = _relativePosition;
+			this.transform.localPosition = _relativePosition;
+			this.transform.localEulerAngles = Vector3.zero;
 		}
 	
 		virtual public float offset{
