@@ -85,9 +85,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 73a54ef7d8cb66947b6581fec66e232c, type: 3}
   title: Tension Seperation Mechanism
-  description: Applies an equal force to parts to the front and rear of the component
-    in equal and opposit directions
-  flavor: Mmmm Newtonian.
+  description: "Springs push two objects apart, depending on the configuration. When
+    activated it will split the projectile to either side of it. Each side is pushed
+    away with equal force.\r\nIf activated by a collision when the head component
+    the spring will push the components behind it away from the collision object.\r\nIf
+    activated in a launch they will push the remainder of the projectile away from
+    the ship. This will also refund the resources to the ships inventory, making it
+    the cheapest of all launch systems."
+  flavor: The hardest part of this job is getting your mass in the right spot. It
+    takes practice, but it's the fastest way to build. When getting in close to your
+    target is too high a risk, consider launching your mass directly at it's face!
+    "Maybe if I shoot this thing right here it'll work."
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
