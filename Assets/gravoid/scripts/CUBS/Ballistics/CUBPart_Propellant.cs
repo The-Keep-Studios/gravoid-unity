@@ -6,7 +6,7 @@ using System.Collections;
 //FIXME Need to know how the grabber is handling "attatching" to items. Is it all one rigidbody?
 
 namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
-	public class CUBPart_Propellant : CUBPartBase{
+	public class CUBPart_Propellant : CUBPart{
 		[Tooltip("The amount of time for which the engine will burn [sec]")]
 		[SerializeField]
 		float

@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 
-	[RequireComponent(typeof(CUBPartBase))]
+	[RequireComponent(typeof(CUBPart))]
 	public class PartSelectionBehavior : MonoBehaviour{
 
 
@@ -23,9 +23,9 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		private string
 			flavor;
 		
-		public CUBPartBase ProjectilePartPrefab{
+		public CUBPart ProjectilePartPrefab{
 			get{
-				return this.GetComponent<CUBPartBase>();
+				return this.GetComponent<CUBPart>();
 			}
 		}
 

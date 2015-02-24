@@ -13,7 +13,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		//FIXME needs to be an instance or we need to accept it from somewhere
 		public IProjectileConfiguration m_partSelections = null;
 
-		public List<CUBPartBase> m_parts = new List<CUBPartBase>();
+		public List<CUBPart> m_parts = new List<CUBPart>();
 
 		public ILaunchable State{
 			get{
@@ -80,7 +80,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		/// Split the specified splitLocation.
 		/// </summary>
 		/// <param name="splitLocation">The resultant projectiles</param>
-		public List<ProjectileBehavior> Split(CUBPartBase splitLocation){
+		public List<ProjectileBehavior> Split(CUBPart splitLocation){
 			Debug.Log("Splitting  " + this.name + " at " + splitLocation.name);
 			if(splitLocation == null){
 				throw new NullReferenceException("Split location must not be null");
@@ -104,9 +104,9 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			}
 			
 			//deterime our parts lists
-			List<CUBPartBase> headParts = m_parts.GetRange(0, numHeadParts);
-			List<CUBPartBase> midParts = m_parts.GetRange(splitIdx, numMidParts);
-			List<CUBPartBase> tailParts = m_parts.GetRange(splitIdx + 1, numTailParts);			
+			List<CUBPart> headParts = m_parts.GetRange(0, numHeadParts);
+			List<CUBPart> midParts = m_parts.GetRange(splitIdx, numMidParts);
+			List<CUBPart> tailParts = m_parts.GetRange(splitIdx + 1, numTailParts);			
 			tailParts.Reverse();
 			
 			//setup ourselves as the "middle" part
@@ -127,7 +127,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			return projectiles;
 		}
 
-		ProjectileBehavior MakeNewProjectileFromParts(List<CUBPartBase> parts){
+		ProjectileBehavior MakeNewProjectileFromParts(List<CUBPart> parts){
 			if(parts.Count <= 0){
 				Debug.Log("No new ProjectileBehavior gameobject was made from the empty parts list");
 				return null;
@@ -148,7 +148,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		}
 		
 		void InitializeParts(){
-			foreach(CUBPartBase nextPart in m_parts){
+			foreach(CUBPart nextPart in m_parts){
 				//despawn any existing parts
 				nextPart.GetComponent<TheKeepStudios.spawning.Spawned>().Despawn();
 			}
@@ -162,8 +162,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 					if(nextSelection == null){
 						continue; //skip null parts
 					}
-					CUBPartBase prefab = nextSelection.ProjectilePartPrefab;
-					CUBPartBase nextPart = prefab.Spawn(transform).GetComponent<CUBPartBase>();
+					CUBPart prefab = nextSelection.ProjectilePartPrefab;
+					CUBPart nextPart = prefab.Spawn(transform).GetComponent<CUBPart>();
 					m_parts.Add(nextPart);
 				}
 			}
@@ -179,7 +179,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			if(m_partSelections != null && m_partSelections.Count != 0){
 				m_parts.Capacity = m_partSelections.Count;
 				// create and stack the parts along Vector3.up
-				foreach(CUBPartBase nextPart in m_parts){
+				foreach(CUBPart nextPart in m_parts){
 					if(nextPart == null){
 						continue; //skip null parts
 					}
@@ -189,6 +189,9 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 					nextPart.JoinToLaunchedObject(transform, nextPosition);
 					//finish adjusting the offset
 					nextPositionStart -= nextPart.offset / 2;
+					//link the parts together
+					nextPart.Next = null;
+					nextPart.Previous = m_parts.Count == 0 ? null : m_parts[m_parts.Count - 1];
 				}
 			}
 			return nextPositionStart;

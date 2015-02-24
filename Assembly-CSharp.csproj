@@ -158,7 +158,7 @@
      <Compile Include="Assets\_IMPORTED\UnityPatterns\Plugins\ObjectPool\Scripts\ObjectPool.cs" />
      <Compile Include="Assets\gravoid\scripts\AutoPilot.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\BallisticComponentButton.cs" />
-     <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\CUBPartBase.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\CUBPart.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\CUBPart_Explosion.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\CUBPart_Grabber.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\CUBPart_Mass.cs" />

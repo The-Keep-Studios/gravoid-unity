@@ -4,7 +4,7 @@ using TheKeepStudios.spawning;
 
 namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 
-	public class CUBPart_SpringLauncher : CUBPartBase{
+	public class CUBPart_SpringLauncher : CUBPart{
 		
 		public float power;
 		

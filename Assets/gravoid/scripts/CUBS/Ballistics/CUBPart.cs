@@ -3,11 +3,32 @@ using System.Collections;
 
 namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 
-	public abstract class CUBPartBase : TheKeepStudios.spawning.Spawnable{
+	public abstract class CUBPart : TheKeepStudios.spawning.Spawnable{
 
 		[SerializeField]
 		private float
 			lengthInAxisY = 0.0F;
+			
+		private CUBPart next;
+		private CUBPart previous;
+
+		public CUBPart Next{
+			get{
+				return next;
+			}
+			set{
+				next = value;
+			}
+		}
+
+		public CUBPart Previous{
+			get{
+				return previous;
+			}
+			set{
+				previous = value;
+			}
+		}
 		
 		virtual public void JoinToLaunchedObject(Transform _parent, Vector3 _relativePosition){
 			Debug.Log("Joining CUBPart " + this.name + " to " + _parent.gameObject.name + " at relative point " + _relativePosition);

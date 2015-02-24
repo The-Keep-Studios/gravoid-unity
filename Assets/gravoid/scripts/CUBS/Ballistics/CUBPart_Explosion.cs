@@ -6,7 +6,7 @@ using UnityEditor;
 
 namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 
-	public class CUBPart_Explosion : CUBPartBase{	
+	public class CUBPart_Explosion : CUBPart{	
 	
 		//indicates the radius encompassed by the explosion
 		[SerializeField]
