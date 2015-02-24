@@ -71,8 +71,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 2e0c6f764f2c79241a8945a004273529, type: 3}
   title: Detonation
-  description: Explodes on collision
-  flavor: Rapid Scheduled Dissassembly
+  description: Explosives push objects in a wide area outwards from their epicenter.
+    Detonates on collisions with other objects.
+  flavor: Much more efficient than drilling, but with far less predictable results.
 --- !u!114 &11480758
 MonoBehaviour:
   m_ObjectHideFlags: 1
