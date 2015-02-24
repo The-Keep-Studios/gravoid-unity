@@ -132,8 +132,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: d2f31f8172b790642b43a71ae43e2aa8, type: 3}
   title: Mass
-  description: Description of Mass
-  flavor: Flavor text of Mass
+  description: Literally a ball of matter to be used as a projectile inertial energy
+    store.
+  flavor: We aren't soldiers and have never received any sort of military training.
+    But I'll be god damned if these things think they can invade our planet. We'll
+    fight with anything we can get our tethers on. If one of these ugly bastards wants
+    to try to take a bite out of us, we'll beat it with it's friends dead husk. We
+    will never go down without a fight!
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
