@@ -86,8 +86,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: cd0d7259fe8801147b45567a0d16594b, type: 3}
   title: Propellant
-  description: Accelerates forward when activated
-  flavor: Propelling your career in the right direction.
+  description: Steadily accelerates forward when activated.
+  flavor: Throughout the span of human civilization we keep trying to find better
+    ways to shoot things from here to there.
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
