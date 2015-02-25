@@ -34,12 +34,12 @@ namespace TheKeepStudios.Gravoid.CUBS.Inventory{
 			return taken;
 		}
 	
-		public ProjectileBehavior GetProjectile(Ballistics.IProjectileConfiguration configuration, ProjectileBehavior projectilePrefab){
-			ProjectileBehavior projectile = null;
+		public Projectile GetProjectile(Ballistics.IProjectileConfiguration configuration){
+			Projectile projectile = null;
 			Debug.Log("Creating a projectile from inventory resources for " + configuration);
 			//TRY and get the selected selections from the inventory, and instantiate a projectile
 			IProjectileConfiguration selections = this.GetSelections(configuration);
-			projectile = ProjectileBehavior.Spawn(selections, projectilePrefab);
+			projectile = new Projectile(selections);
 			if(projectile == null || !projectile.CanLaunch()){
 				Debug.LogWarning("Putting back projectile parts for " + configuration + " due to the projectile not spawning correctly.");
 				foreach(PartSelectionBehavior nextSelection in selections.Parts){
@@ -47,7 +47,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Inventory{
 					this.Insert(nextSelection);
 				}
 			} else{
-				projectile.ignoreCollisionsWith(this.collider);
+				//WE SHOULD SETUP THE COLLISION IGNORANCE HERE
+				//projectile.ignoreCollisionsWith(this.collider);
 			}
 			return projectile;
 		}

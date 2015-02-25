@@ -14,7 +14,6 @@ namespace TheKeepStudios.Gravoid.CUBS{
 	#region public properties
 	
 		public bool m_disabled;
-		public ProjectileBehavior m_projectilePrefab;
 		public List<CUBSBehavior.SubSystemLink> m_SubSystemLinks = new List<CUBSBehavior.SubSystemLink>();
 	
 	#endregion
@@ -32,7 +31,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 		
 			foreach(SubSystemLink nextMap in this.m_SubSystemLinks){
 			
-				nextMap.Start(this.gameObject, this.m_projectilePrefab);
+				nextMap.Start(this.gameObject);
 			
 			}
 		
@@ -69,7 +68,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 			public LauncherBehavior m_launcher;
 			public ConfigurationSelectorBehavior m_componentSelector;
 			public InventoryBehavior m_inventory;
-			private ProjectileBehavior m_projectilePrefab;
+			private Projectile m_projectilePrefab;
 			private GameObject m_parent;
 
 			public LauncherBehavior launcher{
@@ -84,7 +83,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 				get { return this.m_inventory; }
 			}
 		
-			public void Start(GameObject _parent, ProjectileBehavior _projectilePrefab){
+			public void Start(GameObject _parent){
 			
 				if(this.m_launcher == null){
 				
@@ -105,8 +104,6 @@ namespace TheKeepStudios.Gravoid.CUBS{
 				}
 			
 				this.m_parent = _parent;
-			
-				this.m_projectilePrefab = _projectilePrefab;
 			
 			}
 		
@@ -134,7 +131,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 
 				Ballistics.IProjectileConfiguration selection = this.componentSelector.Configuration;
 			
-				ProjectileBehavior launchable = this.inventory.GetProjectile(selection, this.m_projectilePrefab);
+				Projectile launchable = this.inventory.GetProjectile(selection);
 
 				this.m_launcher.Launch(launchable);
 			

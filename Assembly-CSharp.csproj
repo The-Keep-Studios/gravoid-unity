@@ -167,7 +167,7 @@
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\ILaunchable.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\IProjectileConfiguration.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\PartSelectionBehavior.cs" />
-     <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\ProjectileBehavior.cs" />
+     <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\Projectile.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\Ballistics\ProjectileConfiguration.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\CUBSBehavior.cs" />
      <Compile Include="Assets\gravoid\scripts\CUBS\CollisionSound.cs" />

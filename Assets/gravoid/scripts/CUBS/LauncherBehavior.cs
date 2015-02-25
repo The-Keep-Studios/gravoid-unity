@@ -28,7 +28,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 			}		
 		}
 
-		public bool Launch(ProjectileBehavior _projectile){
+		public bool Launch(Projectile _projectile){
 		
 			bool success = false;
 		
@@ -37,7 +37,7 @@ namespace TheKeepStudios.Gravoid.CUBS{
 			
 				m_readyToLaunch = false;
 				
-				_projectile.ignoreCollisionsWith(this.gameObject.collider);
+				//_projectile.ignoreCollisionsWith(this.gameObject.collider);
 				
 				_projectile.Launch(launchingForce, this.transform); //need to get the world, not the local transform
 				
