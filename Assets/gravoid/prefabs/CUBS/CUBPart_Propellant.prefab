@@ -71,8 +71,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originSpawnPoolName: PartSelections
   lengthInAxisY: .25
-  burnTime: 10
-  force: 100
+  burnTime: 3
+  force: 50
 --- !u!114 &11439750
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -54,7 +54,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 					Debug.Log("Current timestep" + deltaTime);
 										
 					//Should apply the force in the +y direction of the nozzle
-					transform.parent.rigidbody.AddForce(Vector3.up * force);
+					transform.parent.rigidbody.AddForce(transform.TransformDirection(Vector3.up) * force);
 
 
 				} else{

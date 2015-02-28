@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{C9EB94A3-F93C-70A7-9F93-3A450582A1AE}</ProjectGuid>
+	<ProjectGuid>{5080780B-92D6-FDC4-7AD3-884F4D374637}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -69,7 +69,7 @@
      <None Include="Assets\gravoid\graphics\Shaders\Asteroid-shader.shader" />
      <None Include="Assets\gravoid\graphics\Shaders\Player-shader.shader" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>C:/Users/Ian Small/git/gravoid-unity_project/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>C:/Users/AntiTux/Documents/Gravoid Builds/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
@@ -83,7 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-vs.csproj">
-      <Project>{8441EC33-B71D-4AB0-2C46-2E4E8AABD702}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+      <Project>{C5D5B0D2-B3E5-B2D9-539A-E9C97AD23A60}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
