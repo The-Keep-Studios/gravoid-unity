@@ -16100,7 +16100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_disabled: 0
-  m_projectilePrefab: {fileID: 11400000, guid: 5f79c8216d608424c90d6b119a9c0043, type: 2}
   m_SubSystemLinks:
   - launchKeyName: Fire2
     m_launcher: {fileID: 1822291940}

@@ -89,8 +89,8 @@ MonoBehaviour:
   originSpawnPoolName: PartSelections
   lengthInAxisY: .25
   joint: {fileID: 0}
-  burnTime: 10
-  force: 100
+  burnTime: 3
+  force: 50
 --- !u!114 &11439750
 MonoBehaviour:
   m_ObjectHideFlags: 1
