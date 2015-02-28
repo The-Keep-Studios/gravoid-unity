@@ -149,6 +149,15 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			projectiles.Add(this);
 			projectiles.Add(tailSection);
 			
+			//set initial positions
+			headSection.Position = Position;
+			headSection.Rotation = Rotation;
+			
+			if(splitLocation.Next != null){
+				headSection.Position = splitLocation.Next.rigidbody.position;
+				headSection.Rotation = splitLocation.Next.rigidbody.rotation;
+			}
+			
 			//put the parts into the proper places
 			Boolean hasSeenSplitPoint = false;
 			foreach(CUBPart nextPart in this){
