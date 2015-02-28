@@ -4,100 +4,8 @@ using System.Collections.Generic;
 using TheKeepStudios.spawning;
 
 namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
+
 	public class Projectile : ILaunchable, ICollection<CUBPart>{
-
-		public void Add(CUBPart item){
-			if(Head == null){
-				if(Head != null){
-					item.rigidbody.position = Head.rigidbody.position;
-					item.rigidbody.rotation = Head.rigidbody.rotation;
-				}
-				Head = item;
-				Tail = item;
-				head.Next = null;
-			} else{
-				/*
-				 * see http://answers.unity3d.com/questions/532297/rotate-a-vector-around-a-certain-point.html
-				 * or  http://docs.unity3d.com/ScriptReference/Quaternion-operator_multiply.html
-				 * for an explaination of what multiplying a Quaternion by a Vector3 does
-				 */
-				Vector3 newLocalPos = Vector3.up * (Tail.offset + item.offset);
-				item.rigidbody.position = (Rotation * newLocalPos) + Tail.rigidbody.position;
-				item.rigidbody.rotation = Head.rigidbody.rotation;
-				item.Previous = Tail;
-				Tail.Next = item;
-				Tail = item;
-				
-			}
-		}
-
-		public void Clear(){
-			foreach(CUBPart nextPart in this){
-				nextPart.ContainingProjectile = null;
-				Head = null;
-				Tail = null;
-			}
-		}
-
-		public void CopyTo(CUBPart[] array, int arrayIndex){
-			//HACK sloppy but quick to implement
-			List<CUBPart> parts = new List<CUBPart>(this);
-			parts.CopyTo(array, arrayIndex);
-		}
-
-		public bool Remove(CUBPart item){
-			if(item == null || item.ContainingProjectile != this){
-				return false;
-			}
-			
-			//stitch next over
-			if(item.Previous != null){
-				item.Previous.Next = item.Next;
-			}
-			
-			//stitch previous over
-			if(item.Next != null){
-				item.Next.Previous = item.Previous;
-			}
-			
-			//move head if this was the head
-			if(item == Head){
-				Head = item.Next;
-			}
-			
-			//move tail if this was the tail
-			if(item == Tail){
-				Tail = item.Previous;
-			}
-			
-			return true;
-		}
-
-		public int Count{
-			get{
-				int count = 0;
-				foreach(CUBPart nextPart in this){
-					if(nextPart != null){
-						++count;
-					}
-				}
-				return count;
-			}
-		}
-
-		public bool IsReadOnly{
-			get{ return false;}
-		}
-		
-		public IEnumerator<CUBPart> GetEnumerator(){
-			for(CUBPart nextPart = Head; nextPart != null; nextPart = nextPart.Next){
-				yield return nextPart;
-			}
-		}
-
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator(){
-			return GetEnumerator();
-		}
 		
 		public ILaunchable m_state;
 
@@ -105,7 +13,12 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		public IProjectileConfiguration m_partSelections = null;
 		
 		CUBPart head = null;
+
 		CUBPart tail = null;
+		
+		Quaternion defaultRotation;
+		
+		Vector3 defaultPosition;
 
 		public CUBPart Head{
 			get{
@@ -144,13 +57,31 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		}
 
 		public Vector3 Position{
-			get;
-			set;
+			get{
+				return Head != null ? Head.rigidbody.position : defaultPosition;
+			}
+			set{
+				defaultPosition = value;
+				if(value != Position){
+					foreach(CUBPart nextPart in this){
+						SnapToPosition(nextPart);
+					}
+				}
+			}
 		}
-
+		
 		public Quaternion Rotation{
-			get;
-			set;
+			get{
+				return Head != null ? Head.rigidbody.rotation : defaultRotation;
+			}
+			set{
+				defaultRotation = value;
+				if(value != Rotation){
+					foreach(CUBPart nextPart in this){
+						SnapToPosition(nextPart);
+					}
+				}
+			}
 		}
 		
 		public Projectile(){
@@ -173,14 +104,13 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				}
 			}
 		}
-
-		public bool Contains(CUBPart containedPart){
-			for(CUBPart nextPart = Head; nextPart.Next != null; nextPart = nextPart.Next){
-				if(nextPart == containedPart){
-					return true;
-				}
+		
+		void SnapToPosition(CUBPart partToPosition){
+			if(partToPosition == Head){
+				partToPosition.SnapToPosition(Position, Rotation);
+			} else{
+				partToPosition.SnapToPosition();
 			}
-			return false;
 		}
 	
 		void SetPartSelections(IProjectileConfiguration config){
@@ -209,26 +139,29 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				throw new Exception("Split location CUBPart not a member of this projectile ");
 			}
 			
-			//make new head
+			//make new head and tail projectile
 			Projectile headSection = new Projectile();
-			for(CUBPart nextPart = Head; nextPart != splitLocation; nextPart = nextPart.Next){
-				Remove(nextPart);
-				headSection.Add(nextPart);
-			}
-			
-			//for clarity we will name "this" as mid
-			Projectile midSection = this;
-			
 			Projectile tailSection = new Projectile();
-			for(CUBPart nextPart = splitLocation.Next; nextPart != null; nextPart = nextPart.Next){
-				Remove(nextPart);
-				headSection.Add(nextPart);
-			}
 			
+			//setup the list of projectiles we will return
 			List<Projectile> projectiles = new List<Projectile>();
 			projectiles.Add(headSection);
-			projectiles.Add(midSection);
+			projectiles.Add(this);
 			projectiles.Add(tailSection);
+			
+			//put the parts into the proper places
+			Boolean hasSeenSplitPoint = false;
+			foreach(CUBPart nextPart in this){
+				if(hasSeenSplitPoint){
+					tailSection.Add(nextPart);
+				} else if(nextPart != splitLocation){
+					//we're still creating the new head projectile
+					headSection.Add(nextPart);
+				} else{
+					//we do not rearranging here, to leave the split location in the original projectile
+					hasSeenSplitPoint = true;
+				}
+			}
 			
 			return projectiles;
 		}
@@ -252,6 +185,117 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				}
 			}
 		}
+		
+		public bool Contains(CUBPart containedPart){
+			for(CUBPart nextPart = Head; nextPart.Next != null; nextPart = nextPart.Next){
+				if(nextPart == containedPart){
+					return true;
+				}
+			}
+			return false;
+		}
+		
+		#region ICollection
+		
+		public void Add(CUBPart item){			
+			//we only allow the addition of non-null parts
+			if(item != null){
+				//items may only be a member of one projectile at a time, so stitch up any gaps we are leaving behind
+				if(item.ContainingProjectile != null){
+					item.ContainingProjectile.Remove(item);
+				}
+				item.Next = null;
+				item.Previous = null;
+				if(Head == null){
+					Head = item;
+					Tail = item;
+				} else{
+					/*
+					 * see http://answers.unity3d.com/questions/532297/rotate-a-vector-around-a-certain-point.html
+					 * or  http://docs.unity3d.com/ScriptReference/Quaternion-operator_multiply.html
+					 * for an explaination of what multiplying a Quaternion by a Vector3 does
+					 */
+					item.Previous = Tail;
+					Tail.Next = item;
+					Tail = item;
+				}
+				SnapToPosition(item);
+				item.ContainingProjectile = this;
+			}
+		}
+		
+		public void Clear(){
+			foreach(CUBPart nextPart in this){
+				nextPart.ContainingProjectile = null;
+				Head = null;
+				Tail = null;
+			}
+		}
+		
+		public void CopyTo(CUBPart[] array, int arrayIndex){
+			//HACK sloppy but quick to implement
+			List<CUBPart> parts = new List<CUBPart>(this);
+			parts.CopyTo(array, arrayIndex);
+		}
+		
+		public bool Remove(CUBPart item){
+			if(item == null || item.ContainingProjectile != this){
+				return false;
+			}
+			
+			//stitch next over
+			if(item.Previous != null){
+				item.Previous.Next = item.Next;
+			}
+			
+			//stitch previous over
+			if(item.Next != null){
+				item.Next.Previous = item.Previous;
+			}
+			
+			//move head if this was the head
+			if(item == Head){
+				Head = item.Next;
+			}
+			
+			//move tail if this was the tail
+			if(item == Tail){
+				Tail = item.Previous;
+			}
+			
+			item.Next = null;
+			item.Previous = null;
+			item.ContainingProjectile = null;
+			
+			return true;
+		}
+		
+		public int Count{
+			get{
+				int count = 0;
+				foreach(CUBPart nextPart in this){
+					if(nextPart != null){
+						++count;
+					}
+				}
+				return count;
+			}
+		}
+		
+		public bool IsReadOnly{
+			get{ return false;}
+		}
+		
+		public IEnumerator<CUBPart> GetEnumerator(){
+			for(CUBPart nextPart = Head; nextPart != null; nextPart = nextPart.Next){
+				yield return nextPart;
+			}
+		}
+		
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator(){
+			return GetEnumerator();
+		}	
+	#endregion
 	
 	#region ILaunchableStates
 		
