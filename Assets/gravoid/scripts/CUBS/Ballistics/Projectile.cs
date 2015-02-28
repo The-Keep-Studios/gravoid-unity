@@ -4,101 +4,8 @@ using System.Collections.Generic;
 using TheKeepStudios.spawning;
 
 namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
+
 	public class Projectile : ILaunchable, ICollection<CUBPart>{
-
-		public void Add(CUBPart item){
-			if(Head == null){
-				if(item != null){
-					item.Next = null;
-					item.rigidbody.position = Position;
-					item.rigidbody.rotation = Rotation;
-				}
-				Head = item;
-				Tail = item;
-			} else{
-				/*
-				 * see http://answers.unity3d.com/questions/532297/rotate-a-vector-around-a-certain-point.html
-				 * or  http://docs.unity3d.com/ScriptReference/Quaternion-operator_multiply.html
-				 * for an explaination of what multiplying a Quaternion by a Vector3 does
-				 */
-				Vector3 newLocalPos = Vector3.up * (Tail.offset + item.offset);
-				item.rigidbody.position = (Rotation * newLocalPos) + Tail.rigidbody.position;
-				item.rigidbody.rotation = Head.rigidbody.rotation;
-				item.Previous = Tail;
-				Tail.Next = item;
-				Tail = item;
-				
-			}
-			item.ContainingProjectile = this;
-		}
-
-		public void Clear(){
-			foreach(CUBPart nextPart in this){
-				nextPart.ContainingProjectile = null;
-				Head = null;
-				Tail = null;
-			}
-		}
-
-		public void CopyTo(CUBPart[] array, int arrayIndex){
-			//HACK sloppy but quick to implement
-			List<CUBPart> parts = new List<CUBPart>(this);
-			parts.CopyTo(array, arrayIndex);
-		}
-
-		public bool Remove(CUBPart item){
-			if(item == null || item.ContainingProjectile != this){
-				return false;
-			}
-			
-			//stitch next over
-			if(item.Previous != null){
-				item.Previous.Next = item.Next;
-			}
-			
-			//stitch previous over
-			if(item.Next != null){
-				item.Next.Previous = item.Previous;
-			}
-			
-			//move head if this was the head
-			if(item == Head){
-				Head = item.Next;
-			}
-			
-			//move tail if this was the tail
-			if(item == Tail){
-				Tail = item.Previous;
-			}
-			
-			return true;
-		}
-
-		public int Count{
-			get{
-				int count = 0;
-				foreach(CUBPart nextPart in this){
-					if(nextPart != null){
-						++count;
-					}
-				}
-				return count;
-			}
-		}
-
-		public bool IsReadOnly{
-			get{ return false;}
-		}
-		
-		public IEnumerator<CUBPart> GetEnumerator(){
-			for(CUBPart nextPart = Head; nextPart != null; nextPart = nextPart.Next){
-				yield return nextPart;
-			}
-		}
-
-		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator(){
-			return GetEnumerator();
-		}
 		
 		public ILaunchable m_state;
 
@@ -106,6 +13,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		public IProjectileConfiguration m_partSelections = null;
 		
 		CUBPart head = null;
+
 		CUBPart tail = null;
 
 		public CUBPart Head{
@@ -253,6 +161,113 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				}
 			}
 		}
+		
+		#region ICollection
+		
+		
+		public void Add(CUBPart item){			
+			//we only allow the addition of non-null parts
+			if(item != null){
+				//items may only be a member of one projectile at a time, so stitch up any gaps we are leaving behind
+				if(item.ContainingProjectile != null){
+					item.ContainingProjectile.Remove(item);
+				}
+				item.Next = null;
+				item.Previous = null;
+				if(Head == null){
+					item.rigidbody.position = Position;
+					item.rigidbody.rotation = Rotation;
+					Head = item;
+					Tail = item;
+				} else{
+					/*
+					 * see http://answers.unity3d.com/questions/532297/rotate-a-vector-around-a-certain-point.html
+					 * or  http://docs.unity3d.com/ScriptReference/Quaternion-operator_multiply.html
+					 * for an explaination of what multiplying a Quaternion by a Vector3 does
+					 */
+					Vector3 newLocalPos = Vector3.up * (Tail.offset + item.offset);
+					item.rigidbody.position = (Rotation * newLocalPos) + Tail.rigidbody.position;
+					item.rigidbody.rotation = Head.rigidbody.rotation;
+					item.Previous = Tail;
+					Tail.Next = item;
+					Tail = item;
+				}
+				item.ContainingProjectile = this;
+			}
+		}
+		
+		public void Clear(){
+			foreach(CUBPart nextPart in this){
+				nextPart.ContainingProjectile = null;
+				Head = null;
+				Tail = null;
+			}
+		}
+		
+		public void CopyTo(CUBPart[] array, int arrayIndex){
+			//HACK sloppy but quick to implement
+			List<CUBPart> parts = new List<CUBPart>(this);
+			parts.CopyTo(array, arrayIndex);
+		}
+		
+		public bool Remove(CUBPart item){
+			if(item == null || item.ContainingProjectile != this){
+				return false;
+			}
+			
+			//stitch next over
+			if(item.Previous != null){
+				item.Previous.Next = item.Next;
+			}
+			
+			//stitch previous over
+			if(item.Next != null){
+				item.Next.Previous = item.Previous;
+			}
+			
+			//move head if this was the head
+			if(item == Head){
+				Head = item.Next;
+			}
+			
+			//move tail if this was the tail
+			if(item == Tail){
+				Tail = item.Previous;
+			}
+			
+			item.Next = null;
+			item.Previous = null;
+			item.ContainingProjectile = null;
+			
+			return true;
+		}
+		
+		public int Count{
+			get{
+				int count = 0;
+				foreach(CUBPart nextPart in this){
+					if(nextPart != null){
+						++count;
+					}
+				}
+				return count;
+			}
+		}
+		
+		public bool IsReadOnly{
+			get{ return false;}
+		}
+		
+		public IEnumerator<CUBPart> GetEnumerator(){
+			for(CUBPart nextPart = Head; nextPart != null; nextPart = nextPart.Next){
+				yield return nextPart;
+			}
+		}
+		
+		System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator(){
+			return GetEnumerator();
+		}	
+	#endregion
 	
 	#region ILaunchableStates
 		
