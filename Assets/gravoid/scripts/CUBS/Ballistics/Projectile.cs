@@ -15,6 +15,10 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		CUBPart head = null;
 
 		CUBPart tail = null;
+		
+		Quaternion defaultRotation;
+		
+		Vector3 defaultPosition;
 
 		public CUBPart Head{
 			get{
@@ -53,13 +57,31 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		}
 
 		public Vector3 Position{
-			get;
-			set;
+			get{
+				return Head != null ? Head.rigidbody.position : defaultPosition;
+			}
+			set{
+				defaultPosition = value;
+				if(value != Position){
+					foreach(CUBPart nextPart in this){
+						SnapToPosition(nextPart);
+					}
+				}
+			}
 		}
-
+		
 		public Quaternion Rotation{
-			get;
-			set;
+			get{
+				return Head != null ? Head.rigidbody.rotation : defaultRotation;
+			}
+			set{
+				defaultRotation = value;
+				if(value != Rotation){
+					foreach(CUBPart nextPart in this){
+						SnapToPosition(nextPart);
+					}
+				}
+			}
 		}
 		
 		public Projectile(){
@@ -82,14 +104,13 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				}
 			}
 		}
-
-		public bool Contains(CUBPart containedPart){
-			for(CUBPart nextPart = Head; nextPart.Next != null; nextPart = nextPart.Next){
-				if(nextPart == containedPart){
-					return true;
-				}
+		
+		void SnapToPosition(CUBPart partToPosition){
+			if(partToPosition == Head){
+				partToPosition.SnapToPosition(Position, Rotation);
+			} else{
+				partToPosition.SnapToPosition();
 			}
-			return false;
 		}
 	
 		void SetPartSelections(IProjectileConfiguration config){
@@ -118,26 +139,29 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				throw new Exception("Split location CUBPart not a member of this projectile ");
 			}
 			
-			//make new head
+			//make new head and tail projectile
 			Projectile headSection = new Projectile();
-			for(CUBPart nextPart = Head; nextPart != splitLocation; nextPart = nextPart.Next){
-				Remove(nextPart);
-				headSection.Add(nextPart);
-			}
-			
-			//for clarity we will name "this" as mid
-			Projectile midSection = this;
-			
 			Projectile tailSection = new Projectile();
-			for(CUBPart nextPart = splitLocation.Next; nextPart != null; nextPart = nextPart.Next){
-				Remove(nextPart);
-				headSection.Add(nextPart);
-			}
 			
+			//setup the list of projectiles we will return
 			List<Projectile> projectiles = new List<Projectile>();
 			projectiles.Add(headSection);
-			projectiles.Add(midSection);
+			projectiles.Add(this);
 			projectiles.Add(tailSection);
+			
+			//put the parts into the proper places
+			Boolean hasSeenSplitPoint = false;
+			foreach(CUBPart nextPart in this){
+				if(hasSeenSplitPoint){
+					tailSection.Add(nextPart);
+				} else if(nextPart != splitLocation){
+					//we're still creating the new head projectile
+					headSection.Add(nextPart);
+				} else{
+					//we do not rearranging here, to leave the split location in the original projectile
+					hasSeenSplitPoint = true;
+				}
+			}
 			
 			return projectiles;
 		}
@@ -162,8 +186,16 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			}
 		}
 		
-		#region ICollection
+		public bool Contains(CUBPart containedPart){
+			for(CUBPart nextPart = Head; nextPart.Next != null; nextPart = nextPart.Next){
+				if(nextPart == containedPart){
+					return true;
+				}
+			}
+			return false;
+		}
 		
+		#region ICollection
 		
 		public void Add(CUBPart item){			
 			//we only allow the addition of non-null parts
@@ -175,8 +207,6 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				item.Next = null;
 				item.Previous = null;
 				if(Head == null){
-					item.rigidbody.position = Position;
-					item.rigidbody.rotation = Rotation;
 					Head = item;
 					Tail = item;
 				} else{
@@ -185,13 +215,11 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 					 * or  http://docs.unity3d.com/ScriptReference/Quaternion-operator_multiply.html
 					 * for an explaination of what multiplying a Quaternion by a Vector3 does
 					 */
-					Vector3 newLocalPos = Vector3.up * (Tail.offset + item.offset);
-					item.rigidbody.position = (Rotation * newLocalPos) + Tail.rigidbody.position;
-					item.rigidbody.rotation = Head.rigidbody.rotation;
 					item.Previous = Tail;
 					Tail.Next = item;
 					Tail = item;
 				}
+				SnapToPosition(item);
 				item.ContainingProjectile = this;
 			}
 		}

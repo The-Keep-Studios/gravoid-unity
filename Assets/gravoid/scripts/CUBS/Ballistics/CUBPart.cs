@@ -54,7 +54,49 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		}
 	
 		virtual public float offset{
-			get { return this.lengthInAxisY / 2; }
+			get{
+				return this.lengthInAxisY / 2;
+			}
+		}
+		
+		virtual public void SnapToPosition(Vector3 position, Quaternion rotation){
+			if(Previous != null){
+				/*
+				 * see http://answers.unity3d.com/questions/532297/rotate-a-vector-around-a-certain-point.html
+				 * or  http://docs.unity3d.com/ScriptReference/Quaternion-operator_multiply.html
+				 * for an explaination of what multiplying a Quaternion by a Vector3 does
+				 */
+				Vector3 prevPosition = rigidbody.position - (rotation * (Vector3.up * (Previous.offset + offset)));
+				Previous.SnapToPosition(prevPosition, rotation);
+			} else{
+				Debug.Log("Snapping to position: " + position + " and rotation: " + rotation);
+				rigidbody.position = position;
+				rigidbody.rotation = rotation;
+				if(Next != null){
+					SnapToPosition();
+				}
+			}
+		}
+
+		virtual public void SnapToPosition(){
+			if(Previous != null){
+				/*
+				 * see http://answers.unity3d.com/questions/532297/rotate-a-vector-around-a-certain-point.html
+				 * or  http://docs.unity3d.com/ScriptReference/Quaternion-operator_multiply.html
+				 * for an explaination of what multiplying a Quaternion by a Vector3 does
+				 */
+				Vector3 newLocalPos = Vector3.up * (Previous.offset + offset);
+				Rigidbody myRb = rigidbody;
+				Rigidbody prevRb = Previous.rigidbody;
+				myRb.position = (prevRb.rotation * newLocalPos) + prevRb.position;
+				myRb.rotation = prevRb.rotation;
+				Debug.Log("Snapping to position: " + myRb.position + " and rotation: " + myRb.rotation);
+			} else{
+				Debug.LogWarning("SnapToPosition called with no arguments and no previous CUBPart");
+			}
+			if(Next != null){
+				Next.SnapToPosition();
+			}
 		}
 
 		abstract public void Activate(GameObject activator);
