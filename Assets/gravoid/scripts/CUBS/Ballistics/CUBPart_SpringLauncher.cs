@@ -8,6 +8,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		
 		public float power;
 		
+		public bool activateOnCollision;
+		
 		override public void Activate(GameObject activator){
 			Debug.Log("Activating the spring launcher: " + this.name);
 			List<Projectile> detatchedProjectiles = Detatch();
@@ -35,7 +37,9 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		}
 		
 		public override void OnCollisionEnter(Collision collision){
-			Activate(collision.gameObject);
+			if(activateOnCollision){
+				Activate(collision.gameObject);				
+			}
 		}
 		
 		private List<Projectile> Detatch(){

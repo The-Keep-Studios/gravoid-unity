@@ -120,7 +120,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		public bool CanLaunch(){
 			return this.State.CanLaunch();
 		}
-
+ 
 		public bool Launch(float _force, Transform _tm){
 			return this.State.Launch(_force, _tm);
 		}
@@ -187,7 +187,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		}
 		
 		public bool Contains(CUBPart containedPart){
-			for(CUBPart nextPart = Head; nextPart.Next != null; nextPart = nextPart.Next){
+			for(CUBPart nextPart = Head; nextPart != null; nextPart = nextPart.Next){
 				if(nextPart == containedPart){
 					return true;
 				}
@@ -206,9 +206,11 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				}
 				item.Next = null;
 				item.Previous = null;
+				item.ContainingProjectile = this;
 				if(Head == null){
 					Head = item;
 					Tail = item;
+					item.SnapToPosition(defaultPosition, defaultRotation);
 				} else{
 					/*
 					 * see http://answers.unity3d.com/questions/532297/rotate-a-vector-around-a-certain-point.html
@@ -218,9 +220,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 					item.Previous = Tail;
 					Tail.Next = item;
 					Tail = item;
+					item.SnapToPosition();
 				}
-				SnapToPosition(item);
-				item.ContainingProjectile = this;
 			}
 		}
 		
@@ -287,6 +288,9 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		}
 		
 		public IEnumerator<CUBPart> GetEnumerator(){
+			if(Head == null){
+				yield break;
+			}
 			for(CUBPart nextPart = Head; nextPart != null; nextPart = nextPart.Next){
 				yield return nextPart;
 			}
@@ -344,7 +348,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			
 			override public bool Launch(float _force, Transform _tm){
 				//to prevent race conditions we switch to the LaunchingState
-				Parent.State = new LaunchingState(Parent);
+				Parent.State = new LaunchingState(Parent); 
 				Debug.Log("Launching " + Parent + " from Transform " + _tm);
 				Parent.Position = _tm.position;
 				Parent.Rotation = _tm.rotation;

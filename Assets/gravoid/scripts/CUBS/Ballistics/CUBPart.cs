@@ -17,6 +17,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		Projectile parent;
 		
 		CUBPart next;
+		CUBPart previous;
 
 		public FixedJoint ConnectionJoint{
 			get{
@@ -41,10 +42,15 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 
 		public CUBPart Previous{
 			get{
-				return ConnectionJoint.connectedBody ? ConnectionJoint.connectedBody.GetComponent<CUBPart>() : null;
+				return previous;
 			}
 			set{
-				ConnectionJoint.connectedBody = value ? value.rigidbody : null;
+				previous = value;
+				if(previous != null && previous.rigidbody != null){
+					ConnectionJoint.connectedBody = previous.rigidbody;
+				} else if(joint != null){
+					Destroy(joint);
+				}
 			}
 		}
 		
@@ -69,11 +75,10 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				Vector3 prevPosition = rigidbody.position - (rotation * (Vector3.up * (Previous.offset + offset)));
 				Previous.SnapToPosition(prevPosition, rotation);
 			} else{
-				Debug.Log("Snapping to position: " + position + " and rotation: " + rotation);
-				rigidbody.position = position;
-				rigidbody.rotation = rotation;
+				Debug.Log("Snapping " + this + " to position: " + position + " and rotation: " + rotation);
+				DoSnap(position, rotation);
 				if(Next != null){
-					SnapToPosition();
+					Next.SnapToPosition();
 				}
 			}
 		}
@@ -84,19 +89,34 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				 * see http://answers.unity3d.com/questions/532297/rotate-a-vector-around-a-certain-point.html
 				 * or  http://docs.unity3d.com/ScriptReference/Quaternion-operator_multiply.html
 				 * for an explaination of what multiplying a Quaternion by a Vector3 does
-				 */
+       				 */
 				Vector3 newLocalPos = Vector3.up * (Previous.offset + offset);
+				Debug.Log("Snapping " + this + " to position: " + newLocalPos + " relative to: " + Previous);
 				Rigidbody myRb = rigidbody;
 				Rigidbody prevRb = Previous.rigidbody;
-				myRb.position = (prevRb.rotation * newLocalPos) + prevRb.position;
-				myRb.rotation = prevRb.rotation;
-				Debug.Log("Snapping to position: " + myRb.position + " and rotation: " + myRb.rotation);
+				DoSnap(
+					(prevRb.rotation * newLocalPos) + prevRb.position
+					, prevRb.rotation);
 			} else{
 				Debug.LogWarning("SnapToPosition called with no arguments and no previous CUBPart");
 			}
 			if(Next != null){
 				Next.SnapToPosition();
 			}
+		}
+		
+		private void DoSnap(Vector3 pos, Quaternion rot){
+			if(joint){
+				Destroy(joint);
+			}
+			transform.position = pos;
+			transform.rotation = rot;
+			rigidbody.position = pos;
+			rigidbody.rotation = rot;
+			if(Previous != null){
+				ConnectionJoint.connectedBody = Previous.rigidbody;
+			}
+			Debug.Log("Snapped " + this + " to position: " + pos + " and rotation: " + rot);
 		}
 
 		abstract public void Activate(GameObject activator);
