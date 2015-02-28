@@ -8,13 +8,13 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 
 		public void Add(CUBPart item){
 			if(Head == null){
-				if(Head != null){
-					item.rigidbody.position = Head.rigidbody.position;
-					item.rigidbody.rotation = Head.rigidbody.rotation;
+				if(item != null){
+					item.Next = null;
+					item.rigidbody.position = Position;
+					item.rigidbody.rotation = Rotation;
 				}
 				Head = item;
 				Tail = item;
-				head.Next = null;
 			} else{
 				/*
 				 * see http://answers.unity3d.com/questions/532297/rotate-a-vector-around-a-certain-point.html
@@ -29,6 +29,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				Tail = item;
 				
 			}
+			item.ContainingProjectile = this;
 		}
 
 		public void Clear(){
