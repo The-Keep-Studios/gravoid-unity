@@ -74,8 +74,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 				 * or  http://docs.unity3d.com/ScriptReference/Quaternion-operator_multiply.html
 				 * for an explaination of what multiplying a Quaternion by a Vector3 does
 				 */
-				Vector3 prevPosition = rigidbody.position - (rotation * (Vector3.up * (Previous.offset + offset)));
-				Previous.SnapToPosition(prevPosition, rotation);
+				Vector3 newPosition = position + (rotation * (Vector3.up * (Previous.offset + offset)));
+				Previous.SnapToPosition(newPosition, rotation);
 			}
 			else {
 				Debug.Log("Snapping " + this + " to position: " + position + " and rotation: " + rotation);
@@ -92,13 +92,12 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 				 * see http://answers.unity3d.com/questions/532297/rotate-a-vector-around-a-certain-point.html
 				 * or  http://docs.unity3d.com/ScriptReference/Quaternion-operator_multiply.html
 				 * for an explaination of what multiplying a Quaternion by a Vector3 does
-       				 */
-				Vector3 newLocalPos = Vector3.up * (Previous.offset + offset);
-				Debug.Log("Snapping " + this + " to position: " + newLocalPos + " relative to: " + Previous);
+       			 */
+				Debug.Log("Snapping to local position relative to Previous (headward) CUBPart");
 				Rigidbody myRb = rigidbody;
 				Rigidbody prevRb = Previous.rigidbody;
 				DoSnap(
-					(prevRb.rotation * newLocalPos) + prevRb.position
+					prevRb.position - (prevRb.rotation * (Vector3.up * (Previous.offset + offset)))
 					, prevRb.rotation);
 			}
 			else {
