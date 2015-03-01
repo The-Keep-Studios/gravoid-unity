@@ -143,7 +143,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 				Next.Previous = Previous;
 			}
 			else if (ContainingProjectile != null) {
-				ContainingProjectile.Head = Previous;
+				ContainingProjectile.Tail = Previous;
 			}
 
 			//destroy ourselves
@@ -152,7 +152,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 				spawnedComponent.Despawn();
 			}
 			else {
-				Destroy(this);
+				gameObject.Recycle();
 			}
 		}
 	}
