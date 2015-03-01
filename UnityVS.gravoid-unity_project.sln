@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.gravoid-unity_project.CSharp", "UnityVS.gravoid-unity_project.CSharp.csproj", "{8D4606F6-8917-892E-AB9D-47A6999D884D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.gravoid-unity_project.CSharp.Editor", "UnityVS.gravoid-unity_project.CSharp.Editor.csproj", "{79F98B68-E7AA-221F-E5EA-DCBDAFB9F7CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D4606F6-8917-892E-AB9D-47A6999D884D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D4606F6-8917-892E-AB9D-47A6999D884D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D4606F6-8917-892E-AB9D-47A6999D884D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D4606F6-8917-892E-AB9D-47A6999D884D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79F98B68-E7AA-221F-E5EA-DCBDAFB9F7CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F98B68-E7AA-221F-E5EA-DCBDAFB9F7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F98B68-E7AA-221F-E5EA-DCBDAFB9F7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F98B68-E7AA-221F-E5EA-DCBDAFB9F7CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

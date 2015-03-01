@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEditor;
-
 //NOTE If things get buggy/slow with this, make it only retreive location once. 
 
 namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
