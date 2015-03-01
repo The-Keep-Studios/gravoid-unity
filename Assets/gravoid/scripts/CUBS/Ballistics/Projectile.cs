@@ -371,6 +371,16 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 				Parent.Rotation = _tm.rotation;
 				//spawn all our selections to new part instances
 				Parent.InitializeParts();
+				//Geting the rigidbody from the playership to determine its velocity
+				
+				Rigidbody rb = _tm.GetComponentInParent<Rigidbody>();
+				if (rb != null)
+				{
+					foreach (CUBPart nextPart in Parent)
+					{
+						nextPart.rigidbody.velocity = rb.velocity;
+					}
+				}
 				if (Parent.Tail) {
 					//get the tail most object
 					Parent.Tail.OnLaunch(_tm.gameObject);

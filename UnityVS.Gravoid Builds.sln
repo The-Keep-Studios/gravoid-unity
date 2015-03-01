@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.Gravoid Builds.CSharp", "UnityVS.Gravoid Builds.CSharp.csproj", "{DF5F9439-E102-8CE1-1FCF-9CDD6CB43ED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.Gravoid Builds.CSharp.Editor", "UnityVS.Gravoid Builds.CSharp.Editor.csproj", "{E61709D9-E49F-E7E1-ACE7-B25911938467}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF5F9439-E102-8CE1-1FCF-9CDD6CB43ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF5F9439-E102-8CE1-1FCF-9CDD6CB43ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF5F9439-E102-8CE1-1FCF-9CDD6CB43ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF5F9439-E102-8CE1-1FCF-9CDD6CB43ED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E61709D9-E49F-E7E1-ACE7-B25911938467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E61709D9-E49F-E7E1-ACE7-B25911938467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E61709D9-E49F-E7E1-ACE7-B25911938467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E61709D9-E49F-E7E1-ACE7-B25911938467}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
