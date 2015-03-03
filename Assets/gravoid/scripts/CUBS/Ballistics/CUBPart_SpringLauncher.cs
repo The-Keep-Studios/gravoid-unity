@@ -8,15 +8,16 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		
 		public float power;
 		
-		[ContextMenu("Activate Spring Launcher")]
+		public bool activateOnCollision;
+		
 		override public void Activate(GameObject activator){
 			Debug.Log("Activating the spring launcher: " + this.name);
-			List<ProjectileBehavior> detatchedProjectiles = Detatch();
+			List<Projectile> detatchedProjectiles = Detatch();
 			List<Rigidbody> bodiesToPush = new List<Rigidbody>();
-			foreach(ProjectileBehavior nextProj in detatchedProjectiles){
-				if(!nextProj.m_parts.Contains(this)){
-					if(nextProj && nextProj.rigidbody){
-						bodiesToPush.Add(nextProj.rigidbody);
+			foreach(Projectile nextProj in detatchedProjectiles){
+				if(!nextProj.Contains(this)){
+					if(nextProj != null && nextProj.Head != null && nextProj.Head.rigidbody != null){
+						bodiesToPush.Add(nextProj.Head.rigidbody);
 					}
 				}
 			}
@@ -26,25 +27,27 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			}
 			PushObjects(bodiesToPush);
 			//for now springs will immediately despawn once they have completed activation
-			getParentProjectile().GetComponent<Spawned>().Despawn();
+			ContainingProjectile.Head = null;
+			ContainingProjectile.Tail = null;
 		}
 		
-		[ContextMenu("Perform Launch Sequence")]
 		override public void OnLaunch(GameObject activator){
 			Activate(activator);
 			RefundResources(activator);
 		}
 		
 		public override void OnCollisionEnter(Collision collision){
-			Activate(collision.gameObject);
+			if(activateOnCollision){
+				Activate(collision.gameObject);				
+			}
 		}
 		
-		private List<ProjectileBehavior> Detatch(){
-			ProjectileBehavior parentProjectile = getParentProjectile();
+		private List<Projectile> Detatch(){
+			Projectile parentProjectile = ContainingProjectile;
 			if(parentProjectile != null){
 				return parentProjectile.Split(this);
 			}
-			return new List<ProjectileBehavior>(); 
+			return new List<Projectile>(); 
 		}
 		
 		private void RefundResources(GameObject refundDestination){
@@ -58,6 +61,15 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			foreach(Rigidbody nextRB in rbList){
 				Debug.Log("Pushing " + nextRB.name + " with spring launcher " + this.name);
 				nextRB.AddExplosionForce(power, pushOrigin, 0);
+			}
+		}
+		
+		[ContextMenu("Simulate Next Part Activating Spring Launcher")]
+		void SimulateNextPartActivation(){
+			if(Next){
+				this.Activate(Next.gameObject);
+			} else{
+				this.Activate(null);
 			}
 		}
 	}

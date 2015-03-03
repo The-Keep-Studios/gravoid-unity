@@ -36,7 +36,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		//When the part is activated it will call this function
 		[ContextMenu("Light this candle")]
 		private void IgnitePropellant(){
-			Debug.Log("the propellent should be active");
+			///Debug.Log("the propellent should be active");
 			isFiring = true;
 
 
@@ -50,16 +50,16 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 								
 								
 				if(deltaTime <= burnTime){
-					//transform.parent.rigidbody
-					Debug.Log("Current timestep" + deltaTime);
+				
+					//Debug.Log("Current timestep" + deltaTime); Testing Spam
 										
 					//Should apply the force in the +y direction of the nozzle
-					transform.parent.rigidbody.AddForce(transform.TransformDirection(Vector3.up) * force);
+					transform.rigidbody.AddForce(transform.TransformDirection (Vector3.up) * force);
 
 
 				} else{
 					canStillFire = false;
-					Debug.Log("All Done!");
+					//Debug.Log("All Done!");
 				}
 			}
 

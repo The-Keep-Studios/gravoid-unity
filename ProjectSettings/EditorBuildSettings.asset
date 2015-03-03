@@ -21,3 +21,5 @@ EditorBuildSettings:
     path: Assets/gravoid/scenes/production/connect_to_server.unity
   - enabled: 0
     path: Assets/gravoid/scenes/dev/mpAsteroidTest/server.unity
+  - enabled: 0
+    path: Assets/gravoid/scenes/dev/dev_CUBS.unity

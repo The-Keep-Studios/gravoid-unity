@@ -8,3 +8,5 @@ Temp/**
 *.suo
 obj/Debug/*
 **.orig.meta
+*.csproj
+*.sln
