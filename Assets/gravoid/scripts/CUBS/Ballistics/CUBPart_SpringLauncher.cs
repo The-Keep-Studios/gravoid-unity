@@ -53,7 +53,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		private void RefundResources(GameObject refundDestination){
 			Debug.Log("Refunding  " + refundDestination.name + " for " + this.name);
 			//TODO GRA-367 Put this component BACK in the inventory
-			throw new System.NotImplementedException("GRA-367 Not yet completed, inventory not refunded CUBPart_SpringLauncher resources");
+			Debug.LogError("GRA-367 Not yet completed, inventory not refunded CUBPart_SpringLauncher resources");
 		}
 		
 		void PushObjects(List<Rigidbody> rbList){
