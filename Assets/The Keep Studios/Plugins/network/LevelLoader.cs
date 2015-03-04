@@ -27,7 +27,7 @@ namespace TheKeepStudios.network{
 		void Awake(){
 			// Network level loading is done in a separate channel.
 			DontDestroyOnLoad(this);
-			networkView.group = gameLevelNetworkDataGroup;
+			GetComponent<NetworkView>().group = gameLevelNetworkDataGroup;
 			if(disconnectedLevel < 0 || disconnectedLevel >= Application.levelCount){
 				//if 
 				disconnectedLevel = Application.loadedLevel;
@@ -45,7 +45,7 @@ namespace TheKeepStudios.network{
 				if(networkLoadableLevels[netLvlIdx] == levelToLoad){
 					Network.RemoveRPCsInGroup(defaultNetworkDataGroup);
 					Network.RemoveRPCsInGroup(gameLevelNetworkDataGroup);
-					this.networkView.RPC("NetworkLoadLevel", RPCMode.AllBuffered, new object[] {
+					this.GetComponent<NetworkView>().RPC("NetworkLoadLevel", RPCMode.AllBuffered, new object[] {
 					levelToLoad,
 					netLvlIdx
 				});

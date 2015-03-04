@@ -24,7 +24,7 @@ namespace TheKeepStudios.events.listeners {
 	GameObject GetLocalPlayer(){
 		foreach(GameObject player in GameObject.FindGameObjectsWithTag ("Player")){
 			bool networkConnected = Network.isServer || Network.isClient;
-			bool networkOwned = player.networkView != null && player.networkView.isMine;
+			bool networkOwned = player.GetComponent<NetworkView>() != null && player.GetComponent<NetworkView>().isMine;
 			if(!networkConnected || networkOwned){
 				return player;
 			}

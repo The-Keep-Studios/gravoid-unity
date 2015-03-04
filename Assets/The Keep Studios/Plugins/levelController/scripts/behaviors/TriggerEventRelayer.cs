@@ -29,7 +29,7 @@ namespace TheKeepStudios.levelController
 		void Start ()
 		{
 			
-			this.collider.isTrigger = true; //turn on trigger effect
+			this.GetComponent<Collider>().isTrigger = true; //turn on trigger effect
 		
 		}
 		

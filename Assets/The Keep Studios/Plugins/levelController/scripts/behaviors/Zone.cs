@@ -85,7 +85,7 @@ public class Zone : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		this.collider.isTrigger = true; //turn on trigger effect just in case
+		this.GetComponent<Collider>().isTrigger = true; //turn on trigger effect just in case
 		
 		if ( wakers == null ) {
 			
@@ -105,7 +105,7 @@ public class Zone : MonoBehaviour {
 		
 		if ( other.GetComponent<ZoneAnchor> () != null ) {
 		
-			Debug.Log ( "Zone Entered by \n\t" + other.collider.gameObject.ToString () );
+			Debug.Log ( "Zone Entered by \n\t" + other.GetComponent<Collider>().gameObject.ToString () );
 			
 			SleepZones ( other );
 			
@@ -261,7 +261,7 @@ public class Zone : MonoBehaviour {
 	
 	private Vector3 calcTtesselationStart ( Vector3 matrixLayout, Vector3 spawnerSize ) {
 		
-		Vector3 ts = this.collider.bounds.min + (spawnerSize / 2);
+		Vector3 ts = this.GetComponent<Collider>().bounds.min + (spawnerSize / 2);
 		
 		if ( matrixLayout.x == 0 ) {
 			

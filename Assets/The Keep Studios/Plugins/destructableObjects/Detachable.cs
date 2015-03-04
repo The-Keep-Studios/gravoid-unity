@@ -12,11 +12,11 @@ namespace TheKeepStudios.Destructable{
 
 			Transform parent = this.transform.parent;
 
-			Rigidbody rb = this.rigidbody;
+			Rigidbody rb = this.GetComponent<Rigidbody>();
 						
-			if(rb && parent && parent.rigidbody){
+			if(rb && parent && parent.GetComponent<Rigidbody>()){
 
-				Rigidbody prb = parent.rigidbody;
+				Rigidbody prb = parent.GetComponent<Rigidbody>();
 
 				Vector3 myWorldPosition = parent.transform.InverseTransformPoint(rb.position);
 

@@ -35,9 +35,9 @@ public class ShipVelocityController : BaseShipMovementController{
 		
 		base.FixedUpdate();
 		
-		rigidbody.drag = positionalMovement.ComputeDrag(inputVal, rigidbody.velocity);
+		GetComponent<Rigidbody>().drag = positionalMovement.ComputeDrag(inputVal, GetComponent<Rigidbody>().velocity);
 		
-		lastDrag = rigidbody.drag;
+		lastDrag = GetComponent<Rigidbody>().drag;
 			
 		float forceMagnitude = (inputVal > 0.0) 
 			? positionalMovement.positiveAcceleration 
@@ -49,7 +49,7 @@ public class ShipVelocityController : BaseShipMovementController{
 		
 		lastForce = force;
 
-		rigidbody.AddRelativeForce(force, ForceMode.Acceleration);
+		GetComponent<Rigidbody>().AddRelativeForce(force, ForceMode.Acceleration);
 		
 	}
 	

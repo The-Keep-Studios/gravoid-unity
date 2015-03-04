@@ -15,7 +15,7 @@ public class Gravity : MonoBehaviour {
 		
 		get {
 			
-			return this.rigidbody ? this.rigidbody.mass : 0;
+			return this.GetComponent<Rigidbody>() ? this.GetComponent<Rigidbody>().mass : 0;
 			
 		}
 		
@@ -29,7 +29,7 @@ public class Gravity : MonoBehaviour {
 			
 			Rigidbody rb = c.attachedRigidbody;
 			
-			if(rb != null && rb != rigidbody ){//&& !rbs.Contains(rb)
+			if(rb != null && rb != GetComponent<Rigidbody>() ){//&& !rbs.Contains(rb)
 				
 				rb.AddForce( CalculateGravitationalForce(rb) , ForceMode.Force);
 				

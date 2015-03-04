@@ -23,9 +23,9 @@ public class ShipRotationController : BaseShipMovementController{
 			? rotationalMovement.positiveAcceleration 
 			: rotationalMovement.negativeAcceleration;
 
-		rigidbody.angularDrag = rotationalMovement.ComputeDrag(inputVal, rigidbody.angularVelocity);
+		GetComponent<Rigidbody>().angularDrag = rotationalMovement.ComputeDrag(inputVal, GetComponent<Rigidbody>().angularVelocity);
 		     
-		rigidbody.AddRelativeTorque(rotationalMovement.forceNormal * inputVal * Time.deltaTime, ForceMode.VelocityChange);
+		GetComponent<Rigidbody>().AddRelativeTorque(rotationalMovement.forceNormal * inputVal * Time.deltaTime, ForceMode.VelocityChange);
 	}
 
 	/* The Update () function only serves to provide special effects in this case. */

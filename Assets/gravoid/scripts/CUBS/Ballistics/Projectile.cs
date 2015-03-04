@@ -58,7 +58,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 
 		public Vector3 Position {
 			get {
-				return Head != null ? Head.rigidbody.position : defaultPosition;
+				return Head != null ? Head.GetComponent<Rigidbody>().position : defaultPosition;
 			}
 			set {
 				defaultPosition = value;
@@ -72,7 +72,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 
 		public Quaternion Rotation {
 			get {
-				return Head != null ? Head.rigidbody.rotation : defaultRotation;
+				return Head != null ? Head.GetComponent<Rigidbody>().rotation : defaultRotation;
 			}
 			set {
 				defaultRotation = value;
@@ -158,8 +158,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 			headSection.Rotation = Rotation;
 
 			if (splitLocation.Next != null) {
-				headSection.Position = splitLocation.Next.rigidbody.position;
-				headSection.Rotation = splitLocation.Next.rigidbody.rotation;
+				headSection.Position = splitLocation.Next.GetComponent<Rigidbody>().position;
+				headSection.Rotation = splitLocation.Next.GetComponent<Rigidbody>().rotation;
 			}
 
 			//put the parts into the proper places
@@ -185,7 +185,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 		void InitializeParts() {
 			foreach (CUBPart nextPart in this) {
 				//despawn any existing parts
-				nextPart.GetComponent<TheKeepStudios.spawning.Spawned>().Despawn();
+				nextPart.Recycle();
 			}
 
 			if (m_partSelections != null && m_partSelections.Count != 0) {
@@ -195,7 +195,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 						continue; //skip null parts
 					}
 					CUBPart prefab = nextSelection.ProjectilePartPrefab;
-					CUBPart nextPart = prefab.Spawn().GetComponent<CUBPart>();
+					CUBPart nextPart = prefab.Spawn();
 					Add(nextPart);
 				}
 			}
@@ -378,7 +378,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 				{
 					foreach (CUBPart nextPart in Parent)
 					{
-						nextPart.rigidbody.velocity = rb.velocity;
+						nextPart.GetComponent<Rigidbody>().velocity = rb.velocity;
 					}
 				}
 				if (Parent.Tail) {

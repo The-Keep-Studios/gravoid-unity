@@ -54,7 +54,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 					//Debug.Log("Current timestep" + deltaTime); Testing Spam
 										
 					//Should apply the force in the +y direction of the nozzle
-					transform.rigidbody.AddForce(transform.TransformDirection (Vector3.up) * force);
+					transform.GetComponent<Rigidbody>().AddForce(transform.TransformDirection (Vector3.up) * force);
 
 
 				} else{

@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400004}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 148: {fileID: 14800000}
   m_Layer: 0
@@ -51,41 +50,6 @@ MonoBehaviour:
   _perPrefabPoolOptions: []
   spawnOnNetwork: 0
   maxParticleDespawnTime: 60
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59dfbc0f4f3a98b4ebf4ad40fc3f43aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolName: Projectile
-  matchPoolScale: 0
-  matchPoolLayer: 0
-  dontReparent: 0
-  _dontDestroyOnLoad: 0
-  logMessages: 0
-  _perPrefabPoolOptions:
-  - prefab: {fileID: 400000, guid: 5f79c8216d608424c90d6b119a9c0043, type: 2}
-    preloadAmount: 1
-    preloadTime: 0
-    preloadFrames: 2
-    preloadDelay: 0
-    limitInstances: 0
-    limitAmount: 100
-    limitFIFO: 0
-    cullDespawned: 0
-    cullAbove: 50
-    cullDelay: 60
-    cullMaxPerPass: 5
-    _logMessages: 0
-    spawnPool: {fileID: 0}
-    spawnOnNetwork: 0
-  spawnOnNetwork: 0
-  maxParticleDespawnTime: 60
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,7 +67,82 @@ MonoBehaviour:
   dontReparent: 0
   _dontDestroyOnLoad: 0
   logMessages: 0
-  _perPrefabPoolOptions: []
+  _perPrefabPoolOptions:
+  - prefab: {fileID: 400000, guid: 1316f60a40deca34aa84110ab62ace5d, type: 2}
+    preloadAmount: 1
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 0
+    limitAmount: 100
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 50
+    cullDelay: 60
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
+    spawnOnNetwork: 1
+  - prefab: {fileID: 400000, guid: b4805a4a44a733f4bacb6274ac8eb935, type: 2}
+    preloadAmount: 1
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 0
+    limitAmount: 100
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 50
+    cullDelay: 60
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
+    spawnOnNetwork: 1
+  - prefab: {fileID: 400000, guid: e65b126e4b058eb42ad87a49d3a01f55, type: 2}
+    preloadAmount: 1
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 0
+    limitAmount: 100
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 50
+    cullDelay: 60
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
+    spawnOnNetwork: 1
+  - prefab: {fileID: 400000, guid: 1d113bd2691cdbc46a8aae0e05fc0919, type: 2}
+    preloadAmount: 1
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 0
+    limitAmount: 100
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 50
+    cullDelay: 60
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
+    spawnOnNetwork: 1
+  - prefab: {fileID: 400000, guid: dbc3e9cac1dbe8846b195407b6d3d841, type: 2}
+    preloadAmount: 1
+    preloadTime: 0
+    preloadFrames: 2
+    preloadDelay: 0
+    limitInstances: 0
+    limitAmount: 100
+    limitFIFO: 0
+    cullDespawned: 0
+    cullAbove: 50
+    cullDelay: 60
+    cullMaxPerPass: 5
+    _logMessages: 0
+    spawnPool: {fileID: 0}
+    spawnOnNetwork: 1
   spawnOnNetwork: 1
   maxParticleDespawnTime: 60
 --- !u!148 &14800000
@@ -129,4 +168,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
   m_IsPrefabParent: 1
-  m_IsExploded: 1

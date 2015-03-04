@@ -16,14 +16,14 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			List<Rigidbody> bodiesToPush = new List<Rigidbody>();
 			foreach(Projectile nextProj in detatchedProjectiles){
 				if(!nextProj.Contains(this)){
-					if(nextProj != null && nextProj.Head != null && nextProj.Head.rigidbody != null){
-						bodiesToPush.Add(nextProj.Head.rigidbody);
+					if(nextProj != null && nextProj.Head != null && nextProj.Head.GetComponent<Rigidbody>() != null){
+						bodiesToPush.Add(nextProj.Head.GetComponent<Rigidbody>());
 					}
 				}
 			}
 			// if our activator is NOT in the list of objects to push already, make sure it is
-			if(activator && activator.rigidbody && !bodiesToPush.Contains(activator.rigidbody)){
-				bodiesToPush.Add(activator.rigidbody);
+			if(activator && activator.GetComponent<Rigidbody>() && !bodiesToPush.Contains(activator.GetComponent<Rigidbody>())){
+				bodiesToPush.Add(activator.GetComponent<Rigidbody>());
 			}
 			PushObjects(bodiesToPush);
 			//for now springs will immediately despawn once they have completed activation

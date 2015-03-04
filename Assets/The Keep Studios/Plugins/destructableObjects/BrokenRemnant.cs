@@ -6,7 +6,7 @@ namespace TheKeepStudios.Destructable{
 
 	public class BrokenRemnant : Detachable{
 
-		public TheKeepStudios.spawning.Spawnable remnantToSpawn;
+		public GameObject remnantToSpawn;
 
 		// Use this for initialization
 		void Start(){
@@ -20,17 +20,17 @@ namespace TheKeepStudios.Destructable{
 
 		override public void Detach(){
 
-			Spawnable remnant = remnantToSpawn.Spawn(this.transform);
-			
-			remnant.gameObject.SetActive(true);
+			GameObject remnant = remnantToSpawn.Spawn(null, transform.position, transform.rotation);
+
+			remnant.SetActive(true);
 			
 			Transform parent = this.transform.parent;
 			
-			Rigidbody rb = remnant.rigidbody;
+			Rigidbody rb = remnant.GetComponent<Rigidbody>();
 			
-			if(rb && parent && parent.rigidbody){
+			if(rb && parent && parent.GetComponent<Rigidbody>()){
 				
-				Rigidbody prb = parent.rigidbody;
+				Rigidbody prb = parent.GetComponent<Rigidbody>();
 				
 				Vector3 myWorldPosition = parent.transform.InverseTransformPoint(rb.position);
 				
