@@ -372,14 +372,14 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 				//spawn all our selections to new part instances
 				Parent.InitializeParts();
 				//Geting the rigidbody from the playership to determine its velocity
-				
+
 				Rigidbody rb = _tm.GetComponentInParent<Rigidbody>();
-				if (rb != null)
-				{
-					foreach (CUBPart nextPart in Parent)
-					{
+				foreach (CUBPart nextPart in Parent) {
+					if (rb != null) {
 						nextPart.GetComponent<Rigidbody>().velocity = rb.velocity;
 					}
+					//HACK bit hacky here, but we are just presuming that there is one and only one collider on CUBParts and they should activate on launch
+					nextPart.GetComponent<CapsuleCollider>().enabled = true;
 				}
 				if (Parent.Tail) {
 					//get the tail most object
