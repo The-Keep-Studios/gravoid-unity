@@ -1,94 +1,65 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TheKeepStudios.Gravoid.CUBS.Ballistics;
 
-namespace TheKeepStudios.Gravoid 
-{
-public class LauncherBehavior : MonoBehaviour
-{
+namespace TheKeepStudios.Gravoid.CUBS{
+
+	public class LauncherBehavior : MonoBehaviour{
+		
+		Transform launchVector;
 	
-	#region PUBLIC PROPERTIES
-	public float launchingForce;
+		public float launchingForce;
 
-	public float launchDelayTime = 0.0f;
+		public float launchDelayTime = 0.0f;
 
-	public float launchCooldownTime = 0.0f;
-	#endregion
-	
-	#region PRIVATE PROPERTIES
-	private bool m_readyToLaunch = false;
-	#endregion	
-	
-	#region PUBLIC METHODS
+		public float launchCooldownTime = 0.0f;
 
+		private bool m_readyToLaunch = false;
 
-	public void Start ()
-	{
+		public void Start(){
 		
-		this.m_readyToLaunch = true;
+			this.m_readyToLaunch = true;
 		
-	}
-
-
-	public bool ReadyToLaunch ()
-	{
-		
-		return this.m_readyToLaunch;
-		
-	}
-	
-
-	public bool Launch (ProjectileBehavior _projectile)
-	{
-		
-		bool success = false;
-		
-		
-		if (this.ReadyToLaunch () && _projectile != null && _projectile.CanBeLaunched ()) {
-			
-			this.startLaunch ( _projectile );
-			
-			success = true;
-			
 		}
+
+		public bool IsReadyToLaunch{
+			get{
+				return this.m_readyToLaunch;
+			}		
+		}
+
+		public bool Launch(Projectile _projectile){
 		
-		return success;
+			bool success = false;
 		
+		
+			if(this.IsReadyToLaunch && _projectile != null && _projectile.CanLaunch()){
+			
+				m_readyToLaunch = false;
+				
+				//_projectile.ignoreCollisionsWith(this.gameObject.collider);
+				
+				_projectile.Launch(launchingForce, this.transform); //need to get the world, not the local transform
+				
+				this.StartCoroutine(this.startCooldown());
+			
+				success = true;
+			
+			}
+		
+			return success;
+		
+		}
+
+		protected System.Collections.IEnumerator startCooldown(){
+		
+			m_readyToLaunch = false;
+		
+			yield return new WaitForSeconds(this.launchCooldownTime);
+		
+			m_readyToLaunch = true;
+		
+		}
+
 	}
-	#endregion
-	
-	#region PROTECTED METHODS
-	protected void startLaunch (ProjectileBehavior _projectile)
-	{
-		
-		m_readyToLaunch = false;
-		
-		_projectile.ignoreCollisionsWith( this.gameObject.collider );
-		
-		_projectile.Launch (launchingForce, this.transform); //need to get the world, not the local transform
-		
-		this.StartCoroutine( this.startCooldown () );
-		
-	}
-
-
-	protected System.Collections.IEnumerator startCooldown ()
-	{
-		
-		m_readyToLaunch = false;
-		
-		yield return new WaitForSeconds (this.launchCooldownTime);
-		
-		m_readyToLaunch = true;
-		
-	}
-	#endregion
-	
-	#region PRIVATE METHODS
-	#endregion
-	
-	#region INTERNAL CLASSES, STRUCTS AND INTERFACES
-	#endregion
-
-
-}
 }
