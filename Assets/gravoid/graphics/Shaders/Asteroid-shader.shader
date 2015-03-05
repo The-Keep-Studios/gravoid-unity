@@ -51,9 +51,9 @@ Shader "Asteroid Shader" {
 			float4 frag (vertexOutput vertIn) : COLOR
 			{
 			
-				float4 mixColor = tex2D(_MixTex, float2(vertIn.tex)); //Color from b&w mix map
-				float4 mainColor = tex2D(_MainTex, float2(vertIn.tex)); //white (1)
-				float4 otherColor = tex2D(_OtherTex, float2(vertIn.tex)); //black (0)
+				float4 mixColor = tex2D(_MixTex, vertIn.tex); //Color from b&w mix map
+				float4 mainColor = tex2D(_MainTex, vertIn.tex); //white (1)
+				float4 otherColor = tex2D(_OtherTex, vertIn.tex); //black (0)
 				
  
 				

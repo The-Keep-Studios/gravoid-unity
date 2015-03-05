@@ -49,7 +49,7 @@ public class ThrusterSpecialEffect : MonoBehaviour{
 		
 		CreatePoints();
 		
-		particleSystem.SetParticles(points, points.Length);
+		GetComponent<ParticleSystem>().SetParticles(points, points.Length);
 
 		bool soundUpdateSuccessful = IsActive ? PlaySound() : StopSound();
 
@@ -84,11 +84,11 @@ public class ThrusterSpecialEffect : MonoBehaviour{
 	}
 	
 	bool PlaySound(){
-		if(this.audio){
-			if(!this.audio.isPlaying){
-				this.audio.Play();
+		if(this.GetComponent<AudioSource>()){
+			if(!this.GetComponent<AudioSource>().isPlaying){
+				this.GetComponent<AudioSource>().Play();
 			}
-			this.audio.volume = ThrottleRatio;
+			this.GetComponent<AudioSource>().volume = ThrottleRatio;
 			return true;
 		} else{
 			return false;
@@ -96,8 +96,8 @@ public class ThrusterSpecialEffect : MonoBehaviour{
 	}
 
 	bool StopSound(){
-		if(this.audio && this.audio.isPlaying){
-			this.audio.Stop();
+		if(this.GetComponent<AudioSource>() && this.GetComponent<AudioSource>().isPlaying){
+			this.GetComponent<AudioSource>().Stop();
 		}
 		return true;
 	}

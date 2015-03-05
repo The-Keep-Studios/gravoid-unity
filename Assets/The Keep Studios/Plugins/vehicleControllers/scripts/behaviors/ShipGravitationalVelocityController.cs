@@ -15,7 +15,7 @@ public class ShipGravitationalVelocityController : MonoBehaviour {
 	
 	void Start(){
 		
-		Screen.showCursor = true; //TODO turn this on somewhere nicer, but for now this works
+		Cursor.visible = true; //TODO turn this on somewhere nicer, but for now this works
 			
 		this.gravityWell.gameObject.SetActive(false);
 		

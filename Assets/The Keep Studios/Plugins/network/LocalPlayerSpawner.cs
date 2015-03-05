@@ -25,7 +25,7 @@ public class LocalPlayerSpawner : MonoBehaviour{
 	bool IsLocalPlayerSpawned(){
 		foreach(GameObject player in GameObject.FindGameObjectsWithTag ("Player")){
 			bool networkConnected = Network.isServer || Network.isClient;
-			bool networkOwned = player.networkView != null && player.networkView.isMine;
+			bool networkOwned = player.GetComponent<NetworkView>() != null && player.GetComponent<NetworkView>().isMine;
 			if(!networkConnected || networkOwned){
 				return true;
 			}

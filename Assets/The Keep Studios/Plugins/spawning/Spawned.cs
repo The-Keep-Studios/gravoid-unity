@@ -18,7 +18,7 @@ namespace TheKeepStudios.spawning{
 		}
 		
 		public void Despawn(){
-			NetworkView nview = this.networkView;
+			NetworkView nview = this.GetComponent<NetworkView>();
 			if((Network.isClient || Network.isServer) && nview != null){
 				if(nview.isMine){ //only the owner can cause despawning
 					nview.RPC("_Despawn", RPCMode.AllBuffered);
@@ -26,7 +26,6 @@ namespace TheKeepStudios.spawning{
 			} else{
 				_Despawn();
 			}
-			
 		}
 		
 		private void _Despawn(){

@@ -14,7 +14,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		}
 		
 		private void GrabObject(GameObject objectToGrab){
-			if(!objectToGrab.rigidbody){
+			if(!objectToGrab.GetComponent<Rigidbody>()){
 				Debug.Log("Not grabbing object " + objectToGrab + " with " + gameObject + " as it has no RidgidBody component");
 				return;
 			} else if(ConnectionJoint.connectedBody){
@@ -22,7 +22,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 				return;
 			} else{
 				Debug.Log("Grabbing object " + objectToGrab + " with " + gameObject);
-				ConnectionJoint.connectedBody = objectToGrab.rigidbody;
+				ConnectionJoint.connectedBody = objectToGrab.GetComponent<Rigidbody>();
 				if(Next){
 					Debug.Log(gameObject + " is activating the next object CUBPart");
 					Next.Activate(gameObject);

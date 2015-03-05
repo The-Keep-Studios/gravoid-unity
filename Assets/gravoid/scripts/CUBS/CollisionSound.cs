@@ -13,7 +13,7 @@ public class CollisionSound : MonoBehaviour {
 		}
 		if (collision.relativeVelocity.magnitude > 2)
 			{ 
-			audio.Play();
+			GetComponent<AudioSource>().Play();
 			}
 		
 	}

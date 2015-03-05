@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 using TheKeepStudios.spawning;
 
-namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
+namespace TheKeepStudios.Gravoid.CUBS.Ballistics { 
 	[RequireComponent(typeof(Rigidbody))]
-	public abstract class CUBPart : TheKeepStudios.spawning.Spawnable {
+	public abstract class CUBPart : MonoBehaviour {
 
 		[SerializeField]
 		float
@@ -49,8 +49,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 			}
 			set {
 				previous = value;
-				if (previous != null && previous.rigidbody != null) {
-					ConnectionJoint.connectedBody = previous.rigidbody;
+				if (previous != null && previous.GetComponent<Rigidbody>() != null) {
+					ConnectionJoint.connectedBody = previous.GetComponent<Rigidbody>();
 				}
 				else { ConnectionJoint = null; } 
 			}
@@ -94,8 +94,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 				 * for an explaination of what multiplying a Quaternion by a Vector3 does
        			 */
 				Debug.Log("Snapping to local position relative to Previous (headward) CUBPart");
-				Rigidbody myRb = rigidbody;
-				Rigidbody prevRb = Previous.rigidbody;
+				Rigidbody myRb = GetComponent<Rigidbody>();
+				Rigidbody prevRb = Previous.GetComponent<Rigidbody>();
 				DoSnap(
 					prevRb.position - (prevRb.rotation * (Vector3.up * (Previous.offset + offset)))
 					, prevRb.rotation);

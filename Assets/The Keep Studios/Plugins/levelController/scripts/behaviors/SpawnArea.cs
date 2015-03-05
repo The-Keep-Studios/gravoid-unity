@@ -21,7 +21,7 @@ public class SpawnArea : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//this.rigidbody.isKinematic = true; // avoid gravity or other physics effects
-		this.collider.isTrigger = true; //turn on trigger effect
+		this.GetComponent<Collider>().isTrigger = true; //turn on trigger effect
 		numberOccupying = 0;//init the number of other objects occupying the space
 	}
 	
@@ -44,7 +44,7 @@ public class SpawnArea : MonoBehaviour {
 	
 	bool canFit(Collider spawnable){
 		
-		Vector3 mySize = this.collider.bounds.size;
+		Vector3 mySize = this.GetComponent<Collider>().bounds.size;
 		
 		float myMinSize = Mathf.Min(new float[] {mySize.x, mySize.y, mySize.z});
 		
@@ -72,7 +72,7 @@ public class SpawnArea : MonoBehaviour {
 		
 		Transform thingSpawned = pool.Spawn(spawnable);
 		
-		if( thingSpawned != null && !this.canSpawn(thingSpawned.collider) ){
+		if( thingSpawned != null && !this.canSpawn(thingSpawned.GetComponent<Collider>()) ){
 			
 			//failed to fit the object, despawn it!
 			pool.Despawn(thingSpawned);
@@ -86,14 +86,14 @@ public class SpawnArea : MonoBehaviour {
 			
 			Vector3 oldRot = thingSpawned.eulerAngles;
 			
-			Vector3 newPos = this.collider.bounds.center;
+			Vector3 newPos = this.GetComponent<Collider>().bounds.center;
 			
 			Vector3 newRot = initRot;
 			
-			if( thingSpawned.rigidbody ){
+			if( thingSpawned.GetComponent<Rigidbody>() ){
 				
 				//check the constraints and reset the new coords to old coords where contraints are set
-				RigidbodyConstraints c = thingSpawned.rigidbody.constraints;
+				RigidbodyConstraints c = thingSpawned.GetComponent<Rigidbody>().constraints;
 				
 				newPos.x = (c & RigidbodyConstraints.FreezePositionX) == RigidbodyConstraints.FreezePositionX ? oldPos.x : newPos.x;
 				newPos.y = (c & RigidbodyConstraints.FreezePositionY) == RigidbodyConstraints.FreezePositionY ? oldPos.y : newPos.y;

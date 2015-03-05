@@ -39,7 +39,7 @@ public class CameraScrolling : MonoBehaviour{
 			//multiple players, so we must assume that this
 			foreach(GameObject player in players){
 				bool networkConnected = Network.isServer || Network.isClient;
-				bool networkOwned = player.networkView != null && player.networkView.isMine;
+				bool networkOwned = player.GetComponent<NetworkView>() != null && player.GetComponent<NetworkView>().isMine;
 				if(!networkConnected || networkOwned){
 					SetTarget(player.transform, true);
 					return;

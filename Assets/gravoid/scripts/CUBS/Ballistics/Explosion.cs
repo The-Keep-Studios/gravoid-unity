@@ -4,7 +4,7 @@ using UnityEditor;
 
 namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 
-	public class Explosion : TheKeepStudios.spawning.Spawnable {
+	public class Explosion : MonoBehaviour {
 
 		//indicates the radius encompassed by the explosion
 		[SerializeField]
@@ -37,8 +37,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 				//Gathers all of the rigidbodies which will be affected by the explosion
 				Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
 				foreach (Collider hit in colliders) {
-					if (hit && hit.rigidbody) {
-						hit.rigidbody.AddExplosionForce(force, explosionPos, currentSize);
+					if (hit && hit.GetComponent<Rigidbody>()) {
+						hit.GetComponent<Rigidbody>().AddExplosionForce(force, explosionPos, currentSize);
 					}
 				}
 			}
@@ -49,13 +49,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 		}
 
 		void Despawn() {
-			var spawned = GetComponent<spawning.Spawned>();
-			if (spawned != null) {
-				spawned.Despawn();
-			}
-			else {
-				gameObject.Recycle();
-			}
+			gameObject.Recycle();
 		}
 		 
 

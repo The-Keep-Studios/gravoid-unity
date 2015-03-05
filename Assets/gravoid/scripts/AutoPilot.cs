@@ -184,17 +184,17 @@ namespace TheKeepStudios.Gravoid
 			Vector3 targetV = targetDistance / dT;
 			
 			//find how much of a change in velocity we need (i.e. our needed delta velocity or dV)
-			Vector3 dV = targetV - rigidbody.velocity;
+			Vector3 dV = targetV - GetComponent<Rigidbody>().velocity;
 			
 			//find our acceleration but NEVER exceed our max accelleration
 			Vector3 a = Vector3.ClampMagnitude (dV / dT, this.maxAcceleration); 
 			
 			//determine our desired thrust as force in newtons (a product of the ridged body mass and the desired accelleration)
-			Vector3 f = rigidbody.mass * a;
+			Vector3 f = GetComponent<Rigidbody>().mass * a;
 			
 			Debug.Log ("Propelling towards " + this.Target.ToString () + " with force " + f.ToString (), this.gameObject);
 			
-			rigidbody.AddForce (f, ForceMode.Force);
+			GetComponent<Rigidbody>().AddForce (f, ForceMode.Force);
 			
 		}
 		
@@ -212,7 +212,7 @@ namespace TheKeepStudios.Gravoid
 			
 			//TODO actually calculate this to reach our goal exactly so we don't overshoot (and also slow DOWN when needed) 
 			// apply torque along that axis according to the magnitude of the angle.
-			rigidbody.AddTorque (torque, ForceMode.Acceleration);
+			GetComponent<Rigidbody>().AddTorque (torque, ForceMode.Acceleration);
 			
 		}
 		

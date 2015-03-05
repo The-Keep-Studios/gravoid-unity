@@ -16,14 +16,14 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 			List<Rigidbody> bodiesToPush = new List<Rigidbody>();
 			foreach(Projectile nextProj in detatchedProjectiles){
 				if(!nextProj.Contains(this)){
-					if(nextProj != null && nextProj.Head != null && nextProj.Head.rigidbody != null){
-						bodiesToPush.Add(nextProj.Head.rigidbody);
+					if(nextProj != null && nextProj.Head != null && nextProj.Head.GetComponent<Rigidbody>() != null){
+						bodiesToPush.Add(nextProj.Head.GetComponent<Rigidbody>());
 					}
 				}
 			}
 			// if our activator is NOT in the list of objects to push already, make sure it is
-			if(activator && activator.rigidbody && !bodiesToPush.Contains(activator.rigidbody)){
-				bodiesToPush.Add(activator.rigidbody);
+			if(activator && activator.GetComponent<Rigidbody>() && !bodiesToPush.Contains(activator.GetComponent<Rigidbody>())){
+				bodiesToPush.Add(activator.GetComponent<Rigidbody>());
 			}
 			PushObjects(bodiesToPush);
 			//for now springs will immediately despawn once they have completed activation
@@ -53,7 +53,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics{
 		private void RefundResources(GameObject refundDestination){
 			Debug.Log("Refunding  " + refundDestination.name + " for " + this.name);
 			//TODO GRA-367 Put this component BACK in the inventory
-			throw new System.NotImplementedException("GRA-367 Not yet completed, inventory not refunded CUBPart_SpringLauncher resources");
+			Debug.LogError("GRA-367 Not yet completed, inventory not refunded CUBPart_SpringLauncher resources");
 		}
 		
 		void PushObjects(List<Rigidbody> rbList){

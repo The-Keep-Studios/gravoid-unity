@@ -58,7 +58,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 
 		public Vector3 Position {
 			get {
-				return Head != null ? Head.rigidbody.position : defaultPosition;
+				return Head != null ? Head.GetComponent<Rigidbody>().position : defaultPosition;
 			}
 			set {
 				defaultPosition = value;
@@ -72,7 +72,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 
 		public Quaternion Rotation {
 			get {
-				return Head != null ? Head.rigidbody.rotation : defaultRotation;
+				return Head != null ? Head.GetComponent<Rigidbody>().rotation : defaultRotation;
 			}
 			set {
 				defaultRotation = value;
@@ -158,8 +158,8 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 			headSection.Rotation = Rotation;
 
 			if (splitLocation.Next != null) {
-				headSection.Position = splitLocation.Next.rigidbody.position;
-				headSection.Rotation = splitLocation.Next.rigidbody.rotation;
+				headSection.Position = splitLocation.Next.GetComponent<Rigidbody>().position;
+				headSection.Rotation = splitLocation.Next.GetComponent<Rigidbody>().rotation;
 			}
 
 			//put the parts into the proper places
@@ -185,7 +185,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 		void InitializeParts() {
 			foreach (CUBPart nextPart in this) {
 				//despawn any existing parts
-				nextPart.GetComponent<TheKeepStudios.spawning.Spawned>().Despawn();
+				nextPart.Recycle();
 			}
 
 			if (m_partSelections != null && m_partSelections.Count != 0) {
@@ -195,7 +195,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 						continue; //skip null parts
 					}
 					CUBPart prefab = nextSelection.ProjectilePartPrefab;
-					CUBPart nextPart = prefab.Spawn().GetComponent<CUBPart>();
+					CUBPart nextPart = prefab.Spawn();
 					Add(nextPart);
 				}
 			}
@@ -372,14 +372,14 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 				//spawn all our selections to new part instances
 				Parent.InitializeParts();
 				//Geting the rigidbody from the playership to determine its velocity
-				
+
 				Rigidbody rb = _tm.GetComponentInParent<Rigidbody>();
-				if (rb != null)
-				{
-					foreach (CUBPart nextPart in Parent)
-					{
-						nextPart.rigidbody.velocity = rb.velocity;
+				foreach (CUBPart nextPart in Parent) {
+					if (rb != null) {
+						nextPart.GetComponent<Rigidbody>().velocity = rb.velocity;
 					}
+					//HACK bit hacky here, but we are just presuming that there is one and only one collider on CUBParts and they should activate on launch
+					nextPart.GetComponent<CapsuleCollider>().enabled = true;
 				}
 				if (Parent.Tail) {
 					//get the tail most object
