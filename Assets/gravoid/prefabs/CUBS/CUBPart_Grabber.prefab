@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lengthInAxisY: .25
   joint: {fileID: 0}
+  grabConeAngle: 75
 --- !u!114 &11475166
 MonoBehaviour:
   m_ObjectHideFlags: 1
