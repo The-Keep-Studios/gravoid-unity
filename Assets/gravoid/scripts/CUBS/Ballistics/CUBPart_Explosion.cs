@@ -39,6 +39,7 @@ namespace TheKeepStudios.Gravoid.CUBS.Ballistics {
 			Debug.Log("The object should be exploding");
 			ContainingProjectile.Split(this);
 			Explosion explosion = new GameObject(name + "_Explosion",typeof(Explosion)).GetComponent<Explosion>();
+			explosion.transform.position = transform.position;
 			explosion.radius = radius;
 			explosion.rateOfExpansion = rateOfExpansion;
 			explosion.force = force;
